@@ -1,86 +1,32 @@
-{% macro card(product) %}
+{% macro card(product, already_paid) %}
 {% import 'macros/progress_bar.html' as progress_bar %}
-<div class="product_card productSliddingDivs">
-    <a href="{{url_for('products.product',product_id=product.id)}}">
-        {% if product.images %}
-        <img src="{{url_for('static',filename='images/{value}'.format(value = product.images[0].filename))}}" alt="Imagem da Peça">
-        {% else %}
-        <img src="{{url_for('static',filename='images/products/no_product.jpg')}}" alt="Imagem da Peça">
-        {% endif %}
-        <div>
-            <p>{{product.name}}</p>
+<div class="product_card {% if already_paid %}already_paid{% endif %}">
+    <div class="product_link" data-href="{{url_for('products.product',product_id=product.id)}}" onclick="linkToDatasetHref(this)">
+        <div class="product_image_container">
+            <div class="product_image"> 
+                {% if product.images %}
+                <img class="fit_image" src="{{url_for('static',filename='images/{value}'.format(value = product.images[0].filename))}}" alt="Imagem da Peça">
+                {% else %}
+                <img class="fit_image" src="{{url_for('static',filename='images/products/no_product.jpg')}}" alt="Imagem da Peça">
+                {% endif %}
+            </div>
         </div>
-        {% if product.show_price %}
-        <div>
-            <p>{{product.price}}€</p>
-            {{progress_bar.progress_bar(product.calculate_percentage()|int)}}
+        <div class="product_info_container">
+            <div class="product_name">
+                <div>{{product.name}}</div>
+            </div>
+            <div class="product_price">
+                {% if product.show_price %}
+                <div>{{product.price}}€</div>
+                {{progress_bar.progress_bar(product.calculate_percentage()|int)}}
+                {% endif %}
+            </div>
+            <div class="product_contribute">
+                <div class="contribute_button">
+                    Contribuir
+                </div>
+            </div>
         </div>
-        {% else %}
-        <div>
-            <p>&nbsp;</p>
-            &nbsp;
-        </div>
-        {% endif %}
-    </a>
-</div>
-{% endmacro %}
-
-{% macro card_paid(product) %}
-{% import 'macros/progress_bar.html' as progress_bar %}
-<div class="product_card paid productSliddingDivs">
-    <a href="{{url_for('products.product',product_id=product.id)}}">
-        {% if product.images %}
-        <img src="{{url_for('static',filename='images/{value}'.format(value = product.images[0].filename))}}" alt="Imagem da Peça">
-        {% else %}
-        <img src="{{url_for('static',filename='images/products/no_product.jpg')}}" alt="Imagem da Peça">
-        {% endif %}
-        {% if product.show_price %}
-        <div>
-            <p>{{product.name}}</p>
-            <p>{{product.price}}€</p>
-            {{progress_bar.progress_bar(product.calculate_percentage()|int)}}
-        </div>
-        {% else %}
-        <div>
-            <p>&nbsp;</p>
-            <p>&nbsp;</p>
-            &nbsp;
-        </div>
-        {% endif %}
-    </a>
-</div>
-{% endmacro %}
-
-{% macro honeymoon_card(product) %}
-{% import 'macros/progress_bar.html' as progress_bar %}
-<div class="product_card productSliddingDivs">
-    <a href="{{url_for('honeymoon.product',product_id=product.id)}}">
-        {% if product.images %}
-        <img src="{{url_for('static',filename='images/{value}'.format(value = product.images[0].filename))}}" alt="Imagem da Peça">
-        {% else %}
-        <img src="{{url_for('static',filename='images/products/no_product.jpg')}}" alt="Imagem da Peça">
-        {% endif %}
-        <div>
-            <p>{{product.name}}</p>
-            {{progress_bar.progress_bar(product.calculate_percentage()|int)}}
-        </div>
-    </a>
-</div>
-{% endmacro %}
-
-{% macro honeymoon_card_paid(product) %}
-{% import 'macros/progress_bar.html' as progress_bar %}
-<div class="product_card paid productSliddingDivs">
-    <a href="{{url_for('honeymoon.product',product_id=product.id)}}">
-        {% if product.images %}
-        <img src="{{url_for('static',filename='images/{value}'.format(value = product.images[0].filename))}}" alt="Imagem da Peça">
-        {% else %}
-        <img src="{{url_for('static',filename='images/products/no_product.jpg')}}" alt="Imagem da Peça">
-        {% endif %}
-        <div>
-            <p>{{product.name}}</p>
-            {{progress_bar.progress_bar(product.calculate_percentage()|int)}}
-        </div>
-    </a>
+    </div>
 </div>
 {% endmacro %}

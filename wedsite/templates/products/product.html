@@ -1,59 +1,78 @@
 {% extends 'layout.html' %}
-{% import 'macros/progress_bar.html' as progress_bar with context %}
-{% import 'macros/contributions.html' as contributions with context %}
+{% import 'macros/products.html' as product_macro %}
+{% import 'macros/progress_bar.html' as progress_bar %}
+{% import 'macros/frontend_inputs.html' as inputs %}
+{% import 'macros/animations.html' as loader_checkmark %}
 
 {% block content %}
-<script src="{{ url_for('static', filename='js/products.js')}}" defer></script>
-<script src="{{ url_for('static', filename='js/products_product.js')}}" defer></script>
-{% if product.images %}
-{% set product_background = url_for('static',filename=product.images[0].path) %}
-{% else %}
-{% set product_background = url_for('static',filename='images/products/no_product.jpg') %}
-{% endif %}
-<div class="product_background"  style="background:url('{{product_background}}');"> 
-  <div class="product_container_column">
+<div class="products_all_background"></div>
+<div class="products_product appearing frontend_page">
     {% if contribution %}
-      <div class="contribution_thank_you">
-        {{contribution.thank_you_message()}}
-      </div>
-    {% endif %}
-    <div class="preco">
-    
-      <p><b>{{product.name}}</b></p>
-      {% if product.description %}
-        <p>{{product.description}}</p>
-      {% endif %}
-      {% if product.show_price %}
-        <p>Preço: {{product.price}}</p>
-        <p>Valor em falta: {{product.missing_value()}}€</p>      
-        {{progress_bar.progress_bar(product.calculate_percentage()|int)}}
-      {% endif %}
+        <div class="contribution_done_container">
+            <div class="contribution_loader_animation">
+                {{loader_checkmark.loader_checkmark()}}
+            </div>
+            <div class="contribution_thank_you">
+                {{contribution.thank_you_message()}}
+            </div>
+        </div>
+    {% else %}
+    <div class="cards_container">
+        <div class="products_info">
+            <div class="product_image">
+                {% set multiple_images = product.images|length > 1 %}
+                {% if multiple_images %}
+                <div class="previous_picture_button_container" onclick="showOtherImage('previous')">
+                    <img src="{{url_for('static',filename='svg/left_chevron.svg')}}" class="fit_image" alt="Right Chevron">
+                </div>
+                {% endif %}
+                {% if product.images %}
+                    {% for image in product.images %}
+                        <img class="fit_image gallery {% if loop.index == 1 %} image_shown {% else %} hidden_image {% endif %}" src="{{url_for('static',filename='images/{value}'.format(value = image.filename))}}" alt="Imagem da Peça">
+                    {% endfor %}
+                {% else %}
+                <img class="fit_image" src="{{url_for('static',filename='images/products/no_product.jpg')}}" alt="Imagem da Peça">
+                {% endif %}
+                {% if multiple_images %}
+                <div class="next_picture_button_container" onclick="showOtherImage('next')">
+                    <img src="{{url_for('static',filename='svg/right_chevron.svg')}}" class="fit_image" alt="Right Chevron">
+                </div>
+                {% endif %}
+            </div>
+            <div class="product_name">
+                <div>{{product.name}}</div>
+            </div>
+            {% if product.description %}
+            <div class="product_description">
+                <div>{{product.description}}</div>
+            </div>
+            {% endif %}
+            <div class="product_price">
+                {% if product.show_price %}
+                <div>Preço: {{product.price}}€</div>
+                <div>Valor em falta: {{product.missing_value()}}€</div>
+                {{progress_bar.progress_bar(product.calculate_percentage()|int)}}
+                {% endif %}
+            </div>
+        </div>
+        <div class="contribution_container">
+            <form method="post">
+                <input type="hidden" name="product_id" value="{{product.id}}">
+                <div class="contribution_input">
+                    {{inputs.text_input('Nome','name',true)}}
+                </div>
+                <div class="contribution_input">
+                    {{inputs.float_input('Valor a contribuir','value_contributed',true)}}
+                </div>
+                <div class="contribution_input">
+                    {{inputs.long_text_input('Mensagem para os noivos','message',false)}}
+                </div>
+                <div class="contribution_button">
+                    {{ inputs.submit_button('Contribuir') }}
+                </div>
+            </form>
+        </div>
     </div>
-    
-    {{contributions.contribution_form()}}
-  </div>
-
-  <div class="product_container_column">
-
-    {% for image in product.images %}
-      <div class="mySlides">
-        <img src="{{url_for('static',filename='images/{value}'.format(value = image.filename))}}" style="width:100%">
-      </div>
-    {% endfor %}
-
-    {% if product.images|length > 1 %}
-    <a class="prev" onclick="plusSlides(-1)">❮</a>
-    <a class="next" onclick="plusSlides(1)">❯</a>
-  
-    <div class="row product_caroussel">
-      {% for image in product.images %}
-      <div class="column_product">
-        <img class="demo cursor" src="{{url_for('static',filename='images/{value}'.format(value = image.filename))}}" style="height:3rem" value="{{loop.index}}" onclick="currentSlide(this)">
-      </div>
-      {% endfor %}
-    </div>
     {% endif %}
-  </div>
 </div>
-  
 {% endblock %}

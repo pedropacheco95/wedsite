@@ -1,16 +1,18 @@
 {% extends 'layout.html' %}
-{% import 'macros/products.html' as products_macro with context %}
+{% import 'macros/products.html' as product_macro %}
 
 {% block content %}
-<script src="{{ url_for('static', filename='js/products.js')}}" defer></script>
-
-
-<div class="products_background">
-  {% for product in products %}
-    {{products_macro.card(product)}}
-  {% endfor %}
-  {% for product in products_paid %}
-    {{products_macro.card_paid(product)}}
-  {% endfor %}
+<div class="products_all_background"></div>
+<div class="products_all appearing frontend_page">
+    <div class="products_container">
+        {% for product in products %}
+            {{product_macro.card(product, False)}}
+        {% endfor %}
+    </div>
+    <div class="products_container already_paid">
+        {% for product in products_paid %}
+            {{product_macro.card(product, True)}}
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}
