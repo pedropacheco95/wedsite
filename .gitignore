@@ -3,6 +3,7 @@ database.db
 
 # Ignore Python cache directories
 __pycache__/
+.webassets-cache
 
 # Ignore compiled Python files
 *.pyc
@@ -12,3 +13,5 @@ __pycache__/
 # Ignore virtual environment directories
 venv/
 env/
+.venv/
+.env/
