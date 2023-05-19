@@ -855,13 +855,13 @@
                   cursor: pointer; }
 
                   .editor_navbar_item_image {
-                    height: 100%;
-                    padding: 0.2rem; }
+                    height: 100%; }
 
                     .editor_container {
                       display: flex;
                       justify-content: center;
-                      flex-direction: column; }
+                      flex-direction: column;
+                      align-items: center; }
 
                       .editor_section {
                         display: flex;
@@ -1118,32 +1118,39 @@
 
   .editor_objects_information_container .input-box .dropzone-wrapper {
     height: 20rem;
-    border-radius: 5px;
-    min-width: 50%; }
-    .editor_objects_information_container .input-box .added_image {
-      height: 20rem;
-      width: 20rem; }
-      .editor_objects_information_container .input-box .input-1 {
-        border: none;
-        border-bottom: 1px solid #000000;
-        border-radius: 0; }
-        .editor_objects_information_container .input-box .image_galery {
-          height: 15%;
-          width: 100%;
-          position: absolute;
-          bottom: 0;
-          display: flex;
-          justify-content: center; }
-          .editor_objects_information_container .input-box .dot_label {
-            background: rgba(255, 255, 255, 0.7);
-            width: 1.2rem;
-            height: 1.2rem;
-            border-radius: 50%;
-            margin: 0.4rem; }
-            .editor_objects_information_container .input-box .dot_label:hover {
+    border-radius: 5px; }
+    @media (min-width: 940px) {
+      .editor_objects_information_container .input-box .dropzone-wrapper {
+        min-width: 70%;   }
+}
+      @media (max-width: 940px) {
+        .editor_objects_information_container .input-box .dropzone-wrapper {
+          min-width: 100%;   }
+}
+  .editor_objects_information_container .input-box .added_image {
+    height: 20rem;
+    width: 20rem; }
+    .editor_objects_information_container .input-box .input-1 {
+      border: none;
+      border-bottom: 1px solid #000000;
+      border-radius: 0; }
+      .editor_objects_information_container .input-box .image_galery {
+        height: 15%;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        justify-content: center; }
+        .editor_objects_information_container .input-box .dot_label {
+          background: rgba(255, 255, 255, 0.7);
+          width: 1.2rem;
+          height: 1.2rem;
+          border-radius: 50%;
+          margin: 0.4rem; }
+          .editor_objects_information_container .input-box .dot_label:hover {
+            background: white; }
+            .editor_objects_information_container .input-box .dot_label.active_dot_label {
               background: white; }
-              .editor_objects_information_container .input-box .dot_label.active_dot_label {
-                background: white; }
   .editor_objects_information_container .for_color {
     display: flex;
     flex-direction: row;

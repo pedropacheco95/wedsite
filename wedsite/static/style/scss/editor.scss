@@ -52,13 +52,13 @@
 
 .editor_navbar_item_image{
     height: 100%;
-    padding: 0.2rem;
 }
 
 .editor_container{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
 }
 
 .editor_section{
@@ -364,7 +364,12 @@
         .dropzone-wrapper {
             height: 20rem;
             border-radius: 5px;
-            min-width: 50%;
+            @include size-query(large) {
+                min-width: 70%;
+            }
+            @include size-query(small) {
+                min-width: 100%;
+            }
         }
 
         .added_image{
