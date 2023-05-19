@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% import 'macros/hotels.html' as hotel_cards %}
+
+{% block content %}
+<script src="{{ url_for('static', filename='js/index.js')}}" defer></script>
+    <div class="indexContainer">
+        <div class="indexContent index_background loading_animation">
+            <div class="text_wed_align">
+                <div class="loading_animation" id="website_title"> <b> Marta e Luís </b></div>
+                <div class="loading_animation extra_info">22/07, 14:30</div>
+                {% set url = url_for('confirmations.confirmation') %}
+                <button class="rsvp_button" data-url="{{url}}" onclick="redirectTo(this)"> RSVP </button>
+            </div>
+        </div>
+        <div class="text_wed_info_background">
+            <div class="appearingDivs">
+                <div class="text_wed_info">
+                    <div class="info_align_left">
+                        <div class="text_wed_info_block index_block_text">
+                            <p id="indicacoes" class="slidingAppearingDivsLeft"> Igreja do Mosteiro de Bustelo </p>
+                            <button class="show_map slidingAppearingDivsRight" onclick="revealMap(this,'map_church')"> Mostrar mapa</button>
+                            <iframe id="map_church" class="slidingAppearingDivsRight" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000.641405994238!2d-8.272779223664635!3d41.229584405768236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24922c1d2d216d%3A0xf74c4e399ca9d4ee!2sMosteiro%20de%20Bustelo!5e0!3m2!1spt-PT!2spt!4v1683139077592!5m2!1spt-PT!2spt" 
+                            width="90%" height="100%" frameborder="0" style="border:0;display: none;" allowfullscreen="" aria-hidden="false" tabindex="0", padding-bottom="30px"></iframe>
+                        </div>
+                    </div>
+                    <div class="info_align_right">
+                        <div class="text_wed_info_block index_block_text">
+                            <p id="indicacoes" class="slidingAppearingDivsLeft"> Quinta de Segade </p>
+                            <button class="show_map slidingAppearingDivsRight" onclick="revealMap(this,'map_party')"> Mostrar mapa</button>
+                            <iframe id="map_party" class="slidingAppearingDivsRight" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12004.08318076697!2d-8.2581246!3d41.2213173!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24917c6a9fc9b3%3A0xca747c16a9de30c1!2sQuinta%20de%20Segade!5e0!3m2!1spt-PT!2spt!4v1683139018120!5m2!1spt-PT!2spt" 
+                            width="90%" height="100%" frameborder="0" style="border:0;display: none;" allowfullscreen="" aria-hidden="false" tabindex="0", padding-bottom="30px"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
