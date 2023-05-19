@@ -329,6 +329,12 @@ body{
       height: 100%;
       object-fit: cover;
       border-radius: $border-radius;
+
+      .fit_image{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
 
     .product_name{
@@ -369,7 +375,9 @@ body{
     }
 
     .product_contribute:hover{
-      background: #4c65b8;
+      @include size-query(large) {
+        background: #4c65b8;
+      }
     }
   }
   .already_paid{
@@ -419,7 +427,7 @@ body{
 
   .products_info{
     .product_name{
-      padding: 0.75rem;
+      padding: 0.5rem;
       width: 100%;
       font-size: 1.2rem;
       font-weight: 800;
@@ -746,6 +754,7 @@ body{
       @include size-query(small){
         height: 70%;
       }
+    }
 
       .fit_image{
         width: 100%;
