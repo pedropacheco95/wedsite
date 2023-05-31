@@ -331,8 +331,10 @@ input::-webkit-inner-spin-button {
 }
 
 .submit_button:hover{
-    background: $fourth-color;
-    color: $primary-color;
+    @include size-query(large) {
+        background: $fourth-color;
+        color: $primary-color;
+    }
 }
 
 .general_form{

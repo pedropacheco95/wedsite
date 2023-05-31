@@ -225,6 +225,8 @@ $background-image:#ecf0f5;
     width: 100%;
 
     &:hover{
-        background: #4c65b8;
+        @include size-query(large) {
+            background: #4c65b8;
+        }
     }
 }

@@ -39,6 +39,7 @@
     background: rgba(255,255,255,0.5);
     padding: 0.2rem!important;
     overflow: hidden;
+    aspect-ratio: 1/1;
 }
 
 .editor_navbar_item_link{
@@ -52,6 +53,7 @@
 
 .editor_navbar_item_image{
     height: 100%;
+    object-fit: cover;
 }
 
 .editor_container{
@@ -166,6 +168,7 @@
 
 .logout_image{
     height: 60%!important;
+    object-fit: cover;
 }
 
 .editor_objects_container{
