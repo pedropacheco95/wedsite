@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<script src="{{ url_for('static', filename='js/faqs.js')}}" defer></script>
+
+<div class="informations_background"></div>
+<div class="informations_informations">
+    <div class="timeline">
+        <div class="card">
+            <div class="image_content">
+                <img src="{{ url_for('static', filename='images/church.jpg')}}" alt="Church" class="fit_image">
+            </div>
+            <div class="description_content">
+                <div class="title"> Igreja do Mosteiro de Bustelo </div>
+                <div class="info"><a href="https://www.google.com/maps/dir/41.1744228,-8.6882867/igreja+do+mosteiro+de+bustelo/@41.2227988,-8.7576789,10z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0xd24922c1d2d216d:0xf74c4e399ca9d4ee!2m2!1d-8.2702017!2d41.2295325?entry=ttu">Ver mapa</a></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="image_content">
+                <img src="{{ url_for('static', filename='images/party.jpg')}}" alt="Party" class="fit_image">
+            </div>
+            <div class="description_content">
+                <div class="title"> Quinta de Cegade </div>
+                <div class="info"><a href="https://www.google.com/maps/dir/41.1744228,-8.6882867/Quinta+de+Segade,+Rua+Vila+Irene+85,+4560-042+PNF/@41.1919513,-8.6387686,11z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0xd24917c6a9fc9b3:0xca747c16a9de30c1!2m2!1d-8.2581246!2d41.2213173?entry=ttu">Ver mapa</a></div>
+            </div>
+        </div>
+    </div>
+    {% if hotels %}
+    <div class="hotels_container">
+        <h2 class="hotels_header"> Onde ficar?</h2>
+        <div class="hotels_cards_container">
+            {% for hotel in hotels %}
+                <div class="hotel_card">
+                    <div class="title">{{hotel.name}}</div>
+                    <div class="info">
+                        <div class="info_line">
+                            {% if hotel.adress %}<span class="label">Morada:</span> <br> {{hotel.adress}}{% endif %}
+                        </div>
+                        <div class="info_line">
+                            {% if hotel.email %}<span class="label">Email:</span> <br> {{hotel.email}}{% endif %}
+                        </div>
+                        <div class="info_line">
+                            {% if hotel.phone %}<span class="label">Telefone:</span> <br> {{hotel.phone}}{% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

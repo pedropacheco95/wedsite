@@ -1,52 +1,4 @@
-window.addEventListener("scroll", reveal);
-window.addEventListener("load",updateAllProgressBars)
-
-function reveal(){
-    var reveals = document.querySelectorAll('.appearing')
-
-    for (let reveal of reveals){
-        let windowHeight = window.innerHeight;
-        let revealTop = reveal.getBoundingClientRect().top;
-        let revealPoint = 150;
-
-        if (revealTop < windowHeight - revealPoint){
-            reveal.classList.add('active');
-        }else{
-            reveal.classList.remove('active');
-        }
-    }
-}
-
-function changeNavbarDisplay(){
-    let navbar = document.getElementById('collapsingNavbar');
-    let body = document.getElementById('overlay');
-
-    if (navbar.classList.contains("show")) {
-        navbar.classList.remove("show");
-        body.classList.remove("background_over")
-    } else {
-        navbar.classList.add("show");
-        body.classList.add("background_over")
-    }
-}
-
-function updateProgressBar(element){
-    element.style.opacity = 1;
-    element.style.width = element.getAttribute('data-done') + '%';
-}
-
-function updateAllProgressBars(){
-    let progressBars = document.querySelectorAll('.progressBar-done');
-    for (let element of progressBars){
-        updateProgressBar(element)
-    }
-}
-
-function redirectTo(ele){
-    window.location.href = ele.dataset.url;
-}
-
-var isMobile = ('ontouchstart' in document.documentElement);
+var isMobile = ('ontouchstart' in document.documentElement); 
 
 document.addEventListener('click', function(event) {
     let hideIfClickOutside = document.getElementsByClassName('hide_if_click_outside');
@@ -61,6 +13,12 @@ document.addEventListener('click', function(event) {
         }
     }
 });
+
+function toggleNavbar(){
+    addOrRemoveClass('.navbar_toggler','collapsed');
+    addOrRemoveClass('.navbar_items_container','show');
+    addOrRemoveClass('overlay','background_overlay');
+}
 
 function duplicateElement(element){
     var newElement = element.cloneNode(true);
@@ -386,4 +344,15 @@ function downloadFile(filepath) {
         URL.revokeObjectURL(link.href);
         link.parentNode.removeChild(link);
     }, 0);
+}
+
+function showHideElements(elements){
+    for (let element of elements){
+        element = document.getElementById(element);
+        if (element.style.display === "none") {
+            element.style.display = "";
+        } else {
+            element.style.display = "none";
+        }
+    }
 }

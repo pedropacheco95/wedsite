@@ -1361,6 +1361,5 @@
         text-decoration: none;
         color: inherit; }
 
-        @font-face {
-          font-family: "FAKIU";
-          src: url('../fonts/Formula1-Bold_web_0.ttf') format("ttf"); }
+        label {
+          margin: 0; }

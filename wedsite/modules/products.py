@@ -16,7 +16,6 @@ def all(update=None):
             product.update_price_paid()
     products_paid = [product for product in products if product.is_paid()]
     products = [product for product in products if not product.is_paid()]
-    #products = list(set(products) - set(products_paid))
     return render_template('products/all.html',products=products , products_paid=products_paid)
 
 @bp.route('/product/<product_id>', methods=('GET', 'POST'))
@@ -31,16 +30,13 @@ def product(product_id,contribution_id=None):
     if request.method == 'POST':
         error = None
         name = request.form.get('name')
-        value_contributed_original = request.form.get('value_to_contribute')
-        value_contributed = float(value_contributed_original) if tools.is_float(value_contributed_original) else None
+        value_contributed = float(request.form.get('value_contributed')) if request.form.get('value_contributed') else None
         message = request.form.get('message')
 
         if not name:
             error = 'Pedimos desculpa, mas precisamos de um nome para poder registar a contribuição'
-        if not value_contributed_original:
-            error = 'Pedimos desculpa, mas precisamos de um valor para poder registar a contribuição'
         if not value_contributed:
-            error = 'Pedimos desculpa, mas o valor precisa de ser escrito só com números'
+            error = 'Pedimos desculpa, mas precisamos de um valor para poder registar a contribuição'
 
         if error is None:
             contribution = Contribution(name=name,value_contributed=value_contributed,product_id=product.id)
