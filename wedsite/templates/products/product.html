@@ -54,6 +54,10 @@
                 {{progress_bar.progress_bar(product.calculate_percentage()|int)}}
                 {% endif %}
             </div>
+            <div class="transfer_type">
+                <img src="{{ url_for('static', filename='images/transfer_logo.png')}}" class="transfer_type_images">
+                <div>  IBAN: PT50 0023 0000 4565 3441 7849 4 </div>
+            </div>
         </div>
         <div class="contribution_container">
             <form method="post">
