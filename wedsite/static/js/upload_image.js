@@ -9,9 +9,6 @@ let scaleFactor;
 let canvasRect;
 let stop;
 
-
-const multipleDataTransfer = new DataTransfer();
-
 let position_of_corner = {
     x: 0,
     y: 0
@@ -244,21 +241,22 @@ function inputEditableChangeHandler(element){
 
 function confirmInputPicture(image,ele){
     // it will save locally
+    let multipleDataTransfer = new DataTransfer();
     let picture_name = ele.dataset.picture_name;
     let final_image = document.getElementById(picture_name);
     final_image.src = image;
-
+    
     let imageInputContainer = document.getElementById('imageInputContainer_' + picture_name);
     imageInputContainer.classList.remove('dropzone-wrapper');
     imageInputContainer.classList.add('added_image');
-
+    
     for (let child of imageInputContainer.children){
         child.classList.add('disp-none');
     }
-
+    
     final_image.classList.remove('disp-none');
     final_image.classList.add('final_input_image');
-
+    
     let filename = picture_name + '.png';
     var file = dataURLtoFile(image,filename);
     let finalFile = document.getElementById('finalFile_' + picture_name);
@@ -309,6 +307,7 @@ function rechoseImage(element_id){
 }
 
 function confirmEditableInputPicture(ele){
+    let multipleDataTransfer = new DataTransfer();
     stop = true;
     var image = canvas.toDataURL();
     // it will save locally

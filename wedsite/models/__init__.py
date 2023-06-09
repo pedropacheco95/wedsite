@@ -1,3 +1,4 @@
+from .clients import Client
 from .products import Product
 from .contributions import Contribution
 from .confirmations import Confirmation

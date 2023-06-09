@@ -618,7 +618,7 @@ body {
                       @media (min-width: 940px) {
                         .products_all .products_container .product_card {
                           width: 30%;
-                          max-width: 20rem;   }
+                          max-width: 22.5rem;   }
 }
                         @media (max-width: 940px) {
                           .products_all .products_container .product_card {
@@ -713,7 +713,8 @@ body {
           .products_product .cards_container {
             height: 100%;
             width: 100%;
-            flex-direction: column;   }
+            flex-direction: column;
+            padding: 1.2rem 0;   }
 }
   .products_product .fit_image {
     width: 100%;
@@ -740,7 +741,7 @@ body {
             width: 100%;
             font-size: 0.9rem;
             font-weight: 200;
-            height: 2.5rem;
+            height: 3rem;
             display: flex;
             align-items: center;
             justify-content: space-between;

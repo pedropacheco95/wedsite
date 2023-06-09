@@ -1174,15 +1174,18 @@
       border: none;
       border-bottom: 1px solid #000000;
       align-items: center;
-      width: 30% !important;
       justify-content: space-between; }
+      @media (min-width: 940px) {
+        .editor_objects_information_container .for_checkbox {
+          width: 30% !important;   }
+}
 
   .editor_objects_tabs_names {
     display: flex;
-    justify-content: flex-start;
-    height: 2.5rem; }
+    justify-content: flex-start; }
     @media (min-width: 940px) {
       .editor_objects_tabs_names {
+        height: 2.5rem;
         flex-direction: row;   }
 }
       @media (max-width: 940px) {

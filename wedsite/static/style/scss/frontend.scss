@@ -289,7 +289,7 @@ body{
       overflow: hidden;
       @include size-query(large) {
         width: 30%;
-        max-width: 20rem;
+        max-width: 22.5rem;
       }
       @include size-query(small) {
         width: 75%;
@@ -453,7 +453,7 @@ body{
       width: 100%;
       font-size: 0.9rem;
       font-weight: 200;
-      height: 2.5rem;
+      height: 3rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
