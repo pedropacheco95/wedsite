@@ -1,12 +1,14 @@
 import os
 
-from flask import Flask
+from flask import Flask , session
 from tempfile import mkdtemp
 from flask_session import Session
 from flask_assets import Environment, Bundle
 
 from . import sql_db
 from . import modules
+
+from wedsite.models import Client
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
@@ -25,6 +27,16 @@ def create_app(test_config=None):
         response.headers["Expires"] = 0
         response.headers["Pragma"] = "no-cache"
         return response
+    
+    @app.before_first_request
+    def initialize_app():
+        client = Client.query.first()
+        session['client'] = client
+
+    @app.context_processor
+    def inject_client_info():
+        client = session.get('client')
+        return dict(client=client)
 
     # Configure session to use filesystem (instead of signed cookies)
     app.config["SESSION_FILE_DIR"] = mkdtemp()

@@ -432,17 +432,19 @@
         border: none;
         border-bottom: 1px solid #000000;
         align-items: center;
-        width: 30%!important;
         justify-content: space-between;
+        @include size-query(large) {
+            width: 30%!important;
+        }
     }
 }
 
 .editor_objects_tabs_names{
     display: flex;
     justify-content: flex-start;
-    height: 2.5rem;
     
     @include size-query(large) {
+        height: 2.5rem;
         flex-direction: row;
     }
     @include size-query(small) {

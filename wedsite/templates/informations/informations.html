@@ -8,20 +8,20 @@
     <div class="timeline">
         <div class="card">
             <div class="image_content">
-                <img src="{{ url_for('static', filename='images/church.jpg')}}" alt="Church" class="fit_image">
+                <img src="{{url_for('static',filename='images/{value}'.format(value = client.church_image_path))}}" alt="Church" class="fit_image">
             </div>
             <div class="description_content">
-                <div class="title"> Igreja do Mosteiro de Bustelo </div>
-                <div class="info"><a href="https://www.google.com/maps/dir/41.1744228,-8.6882867/igreja+do+mosteiro+de+bustelo/@41.2227988,-8.7576789,10z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0xd24922c1d2d216d:0xf74c4e399ca9d4ee!2m2!1d-8.2702017!2d41.2295325?entry=ttu">Ver mapa</a></div>
+                <div class="title"> {{client.church_location_name}} </div>
+                <div class="info"><a href="{{client.church_location_url}}">Ver mapa</a></div>
             </div>
         </div>
         <div class="card">
             <div class="image_content">
-                <img src="{{ url_for('static', filename='images/party.jpg')}}" alt="Party" class="fit_image">
+                <img src="{{url_for('static',filename='images/{value}'.format(value = client.party_image_path))}}" alt="Party" class="fit_image">
             </div>
             <div class="description_content">
-                <div class="title"> Quinta de Segade </div>
-                <div class="info"><a href="https://www.google.com/maps/dir/41.1744228,-8.6882867/Quinta+de+Segade,+Rua+Vila+Irene+85,+4560-042+PNF/@41.1919513,-8.6387686,11z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0xd24917c6a9fc9b3:0xca747c16a9de30c1!2m2!1d-8.2581246!2d41.2213173?entry=ttu">Ver mapa</a></div>
+                <div class="title"> {{client.party_location_name}} </div>
+                <div class="info"><a href="{{client.party_location_url}}">Ver mapa</a></div>
             </div>
         </div>
     </div>
