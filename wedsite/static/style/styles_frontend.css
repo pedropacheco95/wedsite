@@ -189,7 +189,8 @@ ul li {
         @media (min-width: 940px) {
           .navbar {
             height: 4rem;
-            background: linear-gradient(#405181, transparent 100%, rgba(0, 212, 255, 0));   }
+            background: linear-gradient(rgba(142, 111, 132, 0.8), transparent 100%, rgba(0, 212,
+                        255, 0));   }
 }
           @media (max-width: 940px) {
             .navbar {
@@ -202,7 +203,7 @@ ul li {
   width: 100%;
   margin: 0;
   padding: 0;
-  color: #2a3147; }
+  color: #7d0c5a; }
   @media (min-width: 940px) {
     .navbar_items_container {
       display: flex;
@@ -377,7 +378,7 @@ body {
         .progressBar .progressBar_fill {
           display: flex;
           justify-content: flex-end;
-          background-color: #405181;
+          background-color: rgba(142, 111, 132, 0.8);
           border-radius: 5px;
           transition: 0.5s ease-in-out;
           align-items: center; }
@@ -410,7 +411,7 @@ body {
       font-weight: 200; }
 
       .index .first_page {
-        height: 100vh;
+        height: calc(100vh - env(safe-area-inset-bottom));
         box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.25);
         background-position: top;
         background-repeat: no-repeat;
@@ -429,7 +430,7 @@ body {
               justify-content: space-between;   }
 }
             .index .first_page .first_page_content {
-              color: #2a3147;
+              color: #7d0c5a;
               display: flex;
               flex-direction: column;
               justify-content: center;
@@ -525,9 +526,9 @@ body {
               width: 100%;   }
 }
       .index button {
-        color: #2a3147;
+        color: #7d0c5a;
         background-color: #F0F0F0;
-        border: 0.2rem solid #2a3147;
+        border: 0.2rem solid #7d0c5a;
         border-radius: 5px;
         height: 5rem;
         width: 10rem;
@@ -535,7 +536,7 @@ body {
         transition: 0.5s !important; }
         .index button:hover {
           color: #F0F0F0;
-          background-color: #2a3147;
+          background-color: #7d0c5a;
           box-shadow: 0px 14px 22px -9px #bbcbd8, 4px 3px 10px rgba(0, 0, 0, 0.24); }
 
 .frontend_page {
@@ -634,7 +635,7 @@ body {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    color: #2a3147; }
+                    color: #7d0c5a; }
                     .products_all .products_container .product_image_container {
                       height: 65%;
                       width: 100%; }
@@ -1021,9 +1022,9 @@ body {
 }
                   .informations_informations .card .description_content .title {
                     font-size: 1.4rem;
-                    color: #2a3147; }
+                    color: #7d0c5a; }
                     .informations_informations .card .description_content .info {
-                      color: #405181; }
+                      color: rgba(142, 111, 132, 0.8); }
   @media (min-width: 940px) {
     .informations_informations .card:nth-child(even) {
       left: -30rem;   }
@@ -1083,7 +1084,7 @@ body {
 }
     .informations_informations .hotels_container .hotels_header {
       font-size: 1.6rem;
-      color: #2a3147; }
+      color: #7d0c5a; }
       .informations_informations .hotels_container .hotel_card {
         border-radius: 5px;
         background-color: white;
@@ -1102,7 +1103,7 @@ body {
             .informations_informations .hotels_container .hotel_card .title {
               font-size: 1.2rem;
               font-weight: bold;
-              color: #2a3147;
+              color: #7d0c5a;
               text-transform: uppercase; }
               .informations_informations .hotels_container .hotel_card .info {
                 padding: 0.5rem; }
@@ -1110,7 +1111,7 @@ body {
                   margin: 0.25rem; }
                   .informations_informations .hotels_container .hotel_card .info .info_line .label {
                     font-weight: bold;
-                    color: #2a3147; }
+                    color: #7d0c5a; }
     @media (min-width: 940px) {
       .informations_informations .hotels_container .hotel_card:nth-child(odd) {
         transform: translateY(1.5rem);   }

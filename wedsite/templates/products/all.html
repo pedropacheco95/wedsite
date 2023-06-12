@@ -5,6 +5,25 @@
 <div class="products_all_background"></div>
 <div class="products_all appearing frontend_page">
     <div class="products_container">
+        
+        <div class="product_card ">
+            <div class="product_link" data-href="http://www.portadeferro.pt/" onclick="linkToDatasetHref(this)">
+                <div class="product_image_container">
+                    <div class="product_image"> 
+                        <img class="fit_image" src="/static/images/porta_de_ferro.jpg" alt="Imagem da Peça">
+                    </div>
+                </div>
+                <div class="product_info_container">
+                    <div class="product_name">
+                        <div>Porta de Ferro</div>
+                    </div>
+                    <div class="product_price">
+                        <div>Login: FrCa358C</div> 
+                        <div>Password: hYHb1RBd</div> 
+                    </div>
+                </div>
+            </div>
+        </div>
         {% for product in products %}
             {{product_macro.card(product, False)}}
         {% endfor %}
