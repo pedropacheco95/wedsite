@@ -88,7 +88,7 @@ body{
       flex-direction: row;
       justify-content: space-between;
     }
-    
+
     .first_page_content{
       color: $primary-color;
       display: flex;
@@ -260,7 +260,7 @@ body{
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  
+
   @include size-query(large) {
     height: 100vh;
   }
@@ -396,7 +396,7 @@ body{
   align-items: center;
   justify-content: center;
   width: 100vw;
-  
+
   @include size-query(large) {
     height: 100vh;
   }
@@ -418,7 +418,7 @@ body{
       padding: 1.2rem 0;
     }
   }
-  
+
   .fit_image {
     width: 100%;
     height: 100%;
@@ -510,7 +510,7 @@ body{
     padding: 2rem;
     border-radius: 5px;
     height: 75%;
-    
+
     @include size-query(large) {
       width: 45%;
       background: rgba(255, 255, 255, 0.9);
@@ -599,14 +599,14 @@ body{
           object-fit: cover;
         }
       }
-      
+
       .confirmation_form_container{
         height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        
+
         @include size-query(large) {
           width: 55%;
         }
@@ -669,7 +669,7 @@ body{
     column-gap: 0.2em;
     align-items: center;
   }
-  
+
   .item-icon {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -693,26 +693,26 @@ body{
     font-weight: 500;
     margin: 1rem;
   }
-  
+
   .active .item-icon i {
     transform: rotate(180deg);
   }
-  
+
   .active .item-question {
     font-weight: 500;
   }
-  
+
   .answer_container {
     max-height: 0;
     overflow: hidden;
     transition: all 300ms ease;
   }
-  
+
   .item-answer {
     line-height: 150%;
     opacity: 0.8;
   }
-  
+
   .accordion-content {
     padding-top: 6rem;
     max-width: 570px;
@@ -722,7 +722,7 @@ body{
     box-shadow: $box-shadow;
     border-radius: 8px;
   }
-  
+
 }
 
 .informations_informations{
@@ -777,13 +777,13 @@ body{
     .fit_image{
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       border-radius: $border-radius $border-radius 0 0;
     }
 
     .description_content{
       width: 100%;
-      
+
       @include size-query(large){
         height: 20%;
         padding: 1rem;
@@ -899,7 +899,7 @@ body{
         padding: 0.5rem;
         .info_line{
           margin: 0.25rem;
-          
+
           .label{
             font-weight: bold;
             color: $primary-color;
