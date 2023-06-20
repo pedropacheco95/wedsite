@@ -692,14 +692,12 @@ body{
     line-height: 1;
     font-weight: 500;
     margin: 1rem;
+    font-weight: bold;
+    color: $primary-color;
   }
 
   .active .item-icon i {
     transform: rotate(180deg);
-  }
-
-  .active .item-question {
-    font-weight: 500;
   }
 
   .answer_container {
@@ -917,4 +915,15 @@ body{
       }
     }
   }
+}
+
+.products_phrase_1{
+  font-size: 1.6rem;
+  color: $primary-color;
+}
+
+.products_phrase_2{
+  font-size: 1.1rem;
+  text-align: center;
+  color: $primary-color;
 }
