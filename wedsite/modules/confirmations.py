@@ -12,8 +12,8 @@ def confirmation():
         error = None
         name = request.form.get('name')
         comment = request.form.get('comment')
-        is_vegetarian = True if request.form.get('is_vegetarian') == 'True' else False
-        has_food_restriction = True if request.form.get('has_food_restriction') == 'True' else False
+        is_vegetarian = True if request.form.get('is_vegetarian') == 'on' else False
+        has_food_restriction = True if request.form.get('has_food_restriction') == 'on' else False
         food_restriction = request.form.get('food_restriction')
 
         if not name:
@@ -26,7 +26,7 @@ def confirmation():
             if comment:
                 confirmation.comment = comment
             if is_vegetarian:
-                confirmation.comment = comment
+                confirmation.is_vegetarian = is_vegetarian
             if has_food_restriction:
                 confirmation.has_food_restriction = has_food_restriction
                 confirmation.food_restriction = food_restriction
