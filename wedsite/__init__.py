@@ -28,10 +28,11 @@ def create_app(test_config=None):
         response.headers["Pragma"] = "no-cache"
         return response
     
-    @app.before_first_request
+    @app.before_request
     def initialize_app():
-        client = Client.query.first()
-        session['client'] = client
+        if not session.get('client'):
+            client = Client.query.first()
+            session['client'] = client
 
     @app.context_processor
     def inject_client_info():
