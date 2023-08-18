@@ -27,11 +27,9 @@ def create_app(test_config=None):
         response.headers["Expires"] = 0
         response.headers["Pragma"] = "no-cache"
         return response
-    
+
     @app.before_request
     def initialize_app():
-        client = Client.query.first()
-        session['client'] = client
         if not session.get('client'):
             client = Client.query.first()
             session['client'] = client
