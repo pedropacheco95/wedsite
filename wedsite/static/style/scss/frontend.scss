@@ -126,6 +126,7 @@ body{
       }
       line-height: 1.2em;
       text-shadow: 0.5px 0.5px #6f7070;
+      text-align: end;
     }
   }
   .second_page{
@@ -549,6 +550,7 @@ body{
     font-size: 1.4rem;
     opacity: 0;
     transition: 500ms;
+    text-align: center;
   }
 
   .confirmation_done_container{

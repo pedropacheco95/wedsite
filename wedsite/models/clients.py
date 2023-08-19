@@ -43,7 +43,27 @@ class Client(db.Model ,model.Model,model.Base):
         return self.nibs.split(';')
     
     def get_formatted_datetime(self):
-        return self.datetime.strftime("%d/%m, %H:%M")
+        months = {
+            1: "Janeiro",
+            2: "Fevereiro",
+            3: "Março",
+            4: "Abril",
+            5: "Maio",
+            6: "Junho",
+            7: "Julho",
+            8: "Agosto",
+            9: "Setembro",
+            10: "Outubro",
+            11: "Novembro",
+            12: "Dezembro"
+        }
+        
+        day = self.datetime.day
+        month = months[self.datetime.month]
+        time = self.datetime.strftime("%H:%M")
+        
+        formatted_datetime = f"{day} de {month}"
+        return [formatted_datetime,time]
     
     def get_formatted_mbways(self):
         mbways = self.get_mbway_numbers()

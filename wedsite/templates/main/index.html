@@ -9,7 +9,10 @@
                 <b> {{ client.main_title }} </b>
             </div>
             <div class="first_page_date">
-                <div> {{ client.get_formatted_datetime() }} </div>
+                {% set datetime = client.get_formatted_datetime() %}
+                {% for i in datetime %}
+                <div> {{ i }} </div>
+                {% endfor %}
             </div>
         </div>
     </div>

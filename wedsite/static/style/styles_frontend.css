@@ -458,7 +458,8 @@ body {
 }
         .index .first_page .first_page_date {
           line-height: 1.2em;
-          text-shadow: 0.5px 0.5px #6f7070; }
+          text-shadow: 0.5px 0.5px #6f7070;
+          text-align: end; }
           @media (min-width: 940px) {
             .index .first_page .first_page_date {
               font-size: 4rem;   }
@@ -811,7 +812,8 @@ body {
     .confirmations_confirmation .confirmation_thank_you {
       font-size: 1.4rem;
       opacity: 0;
-      transition: 500ms; }
+      transition: 500ms;
+      text-align: center; }
       .confirmations_confirmation .confirmation_done_container {
         display: flex;
         flex-direction: column;
