@@ -45,9 +45,16 @@ class Product(model.Imageable ,model.Model):
         return False if self.missing_value()>0 else True
 
     def update_price_paid(self):
-        price_paid = sum([contribution.value_contributed for contribution in self.contributions])
+        """ price_paid = sum([contribution.value_contributed for contribution in self.contributions])
         self.price_paid = price_paid
-        self.save()
+        self.save() """
+        Contribution = self.contributions.__class__
+        contributions = Contribution.query.all()
+        relevant_contributions = [contribution for contribution in contributions if contribution.product_id == self.id]
+        price_paid = sum([contribution.value_contributed for contribution in relevant_contributions])
+        self.price_paid = price_paid
+        self.save() 
+
 
     def display_all_info(self):
         searchable_column = {'field': 'name','label':'Nome'}
