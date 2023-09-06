@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import class_mapper
 from flask import url_for
 
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String, ForeignKey, Boolean, inspect
 from sqlalchemy.orm import relationship
 
 Base = declarative_base()
@@ -13,6 +13,12 @@ class Model():
     _name = None
     _description = None
     __tablename__ = None
+
+    def __repr__(self):
+        return f"{self.model_name}: {self.name}"
+    
+    def __str__(self):
+        return f"{self.model_name}: {self.name}"
 
     def create(self):
         db.session.add(self)
@@ -81,7 +87,9 @@ class Model():
                         for image in values[key]:
                             images.append(image)
                 elif relationship_type == 'MANYTOONE':
-                    related_instance = self.get_related_object(key).query.filter_by(id=values[key]).first()
+                    obj = self.get_related_object(key)
+                    related_instance = obj.query.filter(obj.id.in_(values[key])).first()
+                    #related_instance = self.get_related_object(key).query.filter_by(id=values[key]).first()
                     if getattr(self,key) != related_instance:
                         setattr(self,key,related_instance)
                 elif relationship_type in ['MANYTOMANY','ONETOMANY']:
@@ -97,6 +105,12 @@ class Model():
 
             elif values[key] and values[key] != getattr(self,key):
                 setattr(self,key,values[key])
+            else:
+                mapper = inspect(self.__class__)
+                column = mapper.columns.get(key)
+                #Deal with unset boolean values
+                if column is not None and isinstance(column.type, Boolean) and values[key] != getattr(self, key):
+                    setattr(self,key,values[key])
         self.save()
         return True
 

@@ -44,6 +44,7 @@ class Contribution(db.Model ,model.Model,model.Base):
             get_field(name='name',label='Nome',type='Text',required=True),
             get_field(name='value_contributed',label='Valor',type='Float',required=True),
             get_field(name='message',label='Mensagem',type='Text'),
+            get_field(name='product',label='Produto',type='ManyToOne',related_model='Product'),
         ]
         info_block = Block('info_block',fields)
         form.add_block(info_block)

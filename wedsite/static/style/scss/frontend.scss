@@ -426,6 +426,12 @@ body{
     object-fit: cover;
   }
 
+  .fit_image_chevron {
+    width: 100%;
+    height: 100%;
+    border-radius: $border-radius;
+  }
+
   .products_info{
     .product_name{
       padding: 0.5rem;
@@ -471,6 +477,7 @@ body{
       object-fit: cover;
       border-radius: $border-radius;
       display: flex;
+      justify-content: center;
 
       .hidden_image{
         display: none;
@@ -533,6 +540,7 @@ body{
     font-size: 1.4rem;
     opacity: 0;
     transition: 500ms;
+    text-align: center;
   }
 }
 
@@ -549,6 +557,7 @@ body{
     font-size: 1.4rem;
     opacity: 0;
     transition: 500ms;
+    text-align: center;
   }
 
   .confirmation_done_container{

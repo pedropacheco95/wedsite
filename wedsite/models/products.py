@@ -25,7 +25,7 @@ class Product(model.Imageable ,model.Model):
     show_price = Column(Boolean, default=True)
     priority = Column(Integer, default=10)
 
-    contributions = relationship('Contribution', back_populates="product", uselist=False, cascade="all, delete-orphan")
+    contributions = relationship('Contribution', back_populates="product", cascade="all, delete-orphan")
 
     __mapper_args__ = {
         'polymorphic_identity': model_name,

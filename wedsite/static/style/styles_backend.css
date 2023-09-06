@@ -1151,9 +1151,11 @@
           width: 1.2rem;
           height: 1.2rem;
           border-radius: 50%;
-          margin: 0.4rem; }
+          margin: 0.4rem;
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 2px 2px 0 rgba(0, 0, 0, 0.08); }
           .editor_objects_information_container .input-box .dot_label:hover {
-            background: white; }
+            background: white;
+            transform: scale(1.1); }
             .editor_objects_information_container .input-box .dot_label.active_dot_label {
               background: white; }
   .editor_objects_information_container .for_color {
