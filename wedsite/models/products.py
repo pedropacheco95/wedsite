@@ -48,8 +48,8 @@ class Product(model.Imageable ,model.Model):
         """ price_paid = sum([contribution.value_contributed for contribution in self.contributions])
         self.price_paid = price_paid
         self.save() """
-        Contribution = self.contributions.__class__
-        if Contribution:
+        if self.contributions:
+            Contribution = self.contributions.__class__
             contributions = Contribution.query.all()
             relevant_contributions = [contribution for contribution in contributions if contribution.product_id == self.id]
             price_paid = sum([contribution.value_contributed for contribution in relevant_contributions])
