@@ -23,7 +23,7 @@
                 {% set multiple_images = product.images|length > 1 %}
                 {% if multiple_images %}
                 <div class="previous_picture_button_container" onclick="showOtherImage('previous')">
-                    <img src="{{url_for('static',filename='svg/left_chevron.svg')}}" class="fit_image" alt="Right Chevron">
+                    <img src="{{url_for('static',filename='svg/left_chevron.svg')}}" class="fit_image_chevron" alt="Right Chevron">
                 </div>
                 {% endif %}
                 {% if product.images %}
@@ -35,7 +35,7 @@
                 {% endif %}
                 {% if multiple_images %}
                 <div class="next_picture_button_container" onclick="showOtherImage('next')">
-                    <img src="{{url_for('static',filename='svg/right_chevron.svg')}}" class="fit_image" alt="Right Chevron">
+                    <img src="{{url_for('static',filename='svg/right_chevron.svg')}}" class="fit_image_chevron" alt="Right Chevron">
                 </div>
                 {% endif %}
             </div>

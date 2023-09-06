@@ -11,6 +11,7 @@ class FAQ(db.Model ,model.Model,model.Base):
     page_title = 'FAQs'
     model_name = 'FAQ'
 
+    name = Column(Text)
     question = Column(Text)
     answer = Column(Text)
 
