@@ -6,13 +6,12 @@
     <div class="first_page">
         <div class="first_page_content">
             <div class="first_page_title">
-                <b> {{ client.main_title }} </b>
+                <div><img src="{{ url_for('static', filename='images/title.png') }}" alt="Title Picture"  class="first_page_title_image"></div>
+                <!-- <b> {{ client.main_title }} </b> -->
             </div>
             <div class="first_page_date">
                 {% set datetime = client.get_formatted_datetime() %}
-                {% for i in datetime %}
-                <div> {{ i }} </div>
-                {% endfor %}
+                <div> {{ datetime[0] }} | {{ datetime[1] }}</div>
             </div>
         </div>
     </div>

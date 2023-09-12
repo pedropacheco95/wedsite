@@ -1,5 +1,5 @@
 body{
-  font-family: "HelveticaNeue-Light";
+  font-family: 'BallingerMono', "HelveticaNeue-Light", sans-serif;
 }
 
 .background_overlay{
@@ -73,7 +73,6 @@ body{
 .index{
   .first_page{
     height: 100vh;
-    box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.25);
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -90,18 +89,19 @@ body{
     }
     
     .first_page_content{
-      color: $primary-color;
+      color: white;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: flex-end;
+      justify-content: flex-end;
+      align-items: center;
       text-align: center;
+      height: 100vh;
       @include size-query(large) {
-        padding-top: 5rem;
+        padding-bottom: 4rem;
         padding-right: 1rem;
       }
       @include size-query(small) {
-        padding: 1rem;
+        padding: 0 1rem 2rem 1rem;
         width: 100%;
       }
     }
@@ -117,16 +117,23 @@ body{
       text-shadow: 0.5px 0.5px #6f7070;
     }
 
+    .first_page_title_image{
+      width: 100%;
+      @include size-query(large) {
+        max-width: 45rem;
+      }
+    }
+
     .first_page_date{
       @include size-query(large) {
-        font-size: 4rem;
+        font-size: 2.2rem;
       }
       @include size-query(small) {
-        font-size: 2rem;
+        font-size: 1.4rem;
       }
       line-height: 1.2em;
-      text-shadow: 0.5px 0.5px #6f7070;
       text-align: end;
+      font-family: 'BallingerMono', sans-serif;
     }
   }
   .second_page{
@@ -220,11 +227,12 @@ body{
   height: 100vh;
   width: 100vw;
   background-size: cover;
-  background-position: center;
+  @include size-query(large) {
+    background-position: center;
+  }
 }
 
 .confirmation_background{
-  background-image: url(../images/confirmation_background.jpg);
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.5);
   z-index: -10;
   position: fixed;
@@ -232,6 +240,12 @@ body{
   width: 100vw;
   background-size: cover;
   background-position: center;
+  @include size-query(small) {
+    background-image: url(../images/confirmation_background.jpg);
+  }
+  @include size-query(large) {
+    background-image: url(../images/confirmation_background_phone.jpg);
+  }
 }
 
 .faqs_background{
@@ -360,24 +374,25 @@ body{
     .product_contribute{
       margin: 1rem 0.75rem;
       display: flex;
-      background: #94a2c9;
+      background: white;
       justify-content: center;
       height: 3rem;
       align-items: center;
       border-radius: $border-radius;
       transition: 250ms;
+      border: 1px solid $mariaemiguel-color;
+      color: $mariaemiguel-color;
 
       .contribute_button{
         padding: 0.4rem;
-        color: white;
-        text-transform: uppercase;
         letter-spacing: .2rem;
       }
     }
 
     .product_contribute:hover{
       @include size-query(large) {
-        background: #4c65b8;
+        background: $mariaemiguel-color;
+        color: white;
       }
     }
   }
@@ -616,6 +631,7 @@ body{
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        font-family: 'BallingerMono', sans-serif;
         
         @include size-query(large) {
           width: 55%;

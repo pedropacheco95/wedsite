@@ -82,10 +82,6 @@ $background-image:#ecf0f5;
     }
 }
 
-.for_checkbox{
-    width: 12.5rem;
-}
-
 .slider_container{
     width: 100%;
 }
@@ -161,7 +157,7 @@ $background-image:#ecf0f5;
 	}
 
     &:checked + .slider {
-        background: #869cd9;
+        background: $mariaemiguel-color;
         &:active {
             box-shadow: none;
             &:after {
@@ -208,25 +204,27 @@ $background-image:#ecf0f5;
 }
 
 .submit_button{
+    font-family: 'BallingerMono', sans-serif;
+    font-weight: 300;
     display: flex;
-    background: #94a2c9;
+    background: white;
     justify-content: center;
     height: 3rem;
     align-items: center;
-    border-radius: $border-radius;
+    border-radius: 0.6rem;
     transition: 250ms;
-    padding: 0.4rem;
-    color: white;
-    text-transform: uppercase;
+    padding: 0.4rem 2rem;
+    color: $mariaemiguel-color;
     letter-spacing: 0.2rem;
     cursor: pointer;
     outline: 0;
-    border: 0;
+    border: 1px solid $mariaemiguel-color;
     width: 100%;
 
     &:hover{
         @include size-query(large) {
-            background: #4c65b8;
+            background: $mariaemiguel-color;
+            color: white;
         }
     }
 }
