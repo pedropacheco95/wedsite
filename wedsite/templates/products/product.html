@@ -28,10 +28,10 @@
                 {% endif %}
                 {% if product.images %}
                     {% for image in product.images %}
-                        <img class="fit_image gallery {% if loop.index == 1 %} image_shown {% else %} hidden_image {% endif %}" src="{{url_for('static',filename='images/{value}'.format(value = image.filename))}}" alt="Imagem da Peça">
+                        <img class="fit_image gallery {% if loop.index == 1 %} image_shown {% else %} hidden_image {% endif %}" src="{{url_for('static',filename='images/{value}'.format(value = image.filename))}}" alt="Imagem da Peça" loading="lazy">
                     {% endfor %}
                 {% else %}
-                <img class="fit_image" src="{{url_for('static',filename='images/products/no_product.jpg')}}" alt="Imagem da Peça">
+                <img class="fit_image" src="{{url_for('static',filename='images/products/no_product.jpg')}}" alt="Imagem da Peça" loading="lazy">
                 {% endif %}
                 {% if multiple_images %}
                 <div class="next_picture_button_container" onclick="showOtherImage('next')">
