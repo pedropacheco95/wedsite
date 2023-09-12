@@ -5,9 +5,9 @@
         <div class="product_image_container">
             <div class="product_image"> 
                 {% if product.images %}
-                <img class="fit_image" src="{{url_for('static',filename='images/{value}'.format(value = product.images[0].filename))}}" alt="Imagem da Peça">
+                <img class="fit_image" src="{{url_for('static',filename='images/{value}'.format(value = product.images[0].filename))}}" alt="Imagem da Peça" loading="lazy">
                 {% else %}
-                <img class="fit_image" src="{{url_for('static',filename='images/products/no_product.jpg')}}" alt="Imagem da Peça">
+                <img class="fit_image" src="{{url_for('static',filename='images/products/no_product.jpg')}}" alt="Imagem da Peça" loading="lazy">
                 {% endif %}
             </div>
         </div>

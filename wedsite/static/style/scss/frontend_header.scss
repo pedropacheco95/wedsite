@@ -4,7 +4,6 @@
     z-index: 1000;
     @include size-query(large) {
         height: 4rem;
-        background: linear-gradient($primary-color-shade, transparent 100%, rgba(0, 212, 255, 0));
     }
     @include size-query(small) {
         display: flex;
@@ -60,7 +59,7 @@
 
 .navbar_item:hover{
     border-bottom: 2px solid white;
-    color: #e2e2e2;
+    color: #b2b2b2;
 }
 
 .navbar_toggler{
@@ -75,7 +74,7 @@
     height: 0.35rem;
     border-radius: 0.3rem;
     width: 3rem;
-    background-color: black;
+    background-color: white;
     transition: all 0.25s;
     transform-origin: 10% 10%;
     transform: rotate(0);
