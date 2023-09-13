@@ -279,7 +279,7 @@ body{
     height: 100svh;
   }
 
-  .logo{
+  .wedding_logo{
     @include size-query(large) {
       width: 15%;
       padding-top: 5rem;
@@ -289,7 +289,7 @@ body{
     }
   }
 
-  .logo img{
+  .wedding_logo img{
     width: 100%;
   }
 
@@ -436,17 +436,18 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: rgba(255, 255, 255, 0.8);
     border-radius: $border-radius;
     @include size-query(large) {
       height: 65%;
       width: 80%;
+      background-color: rgba(255, 255, 255, 0.8);
     }
     @include size-query(small) {
       height: 100%;
       width: 100%;
       flex-direction: column;
       padding: 1.2rem 0;
+      background-color: rgba(205, 205, 205, 0.8);
     }
   }
   
@@ -621,6 +622,19 @@ body{
       flex-direction: row;
       align-items: center;
       transition: 250ms;
+
+      .wedding_logo{
+        @include size-query(large) {
+          width: 20%;
+        }
+        @include size-query(small) {
+          width: 50%;
+        }
+      }
+    
+      .wedding_logo img{
+        width: 100%;
+      }
 
       @include size-query(large) {
         width: 75%;

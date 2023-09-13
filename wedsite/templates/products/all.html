@@ -4,7 +4,7 @@
 {% block content %}
 <div class="products_all_background"></div>
 <div class="products_all appearing frontend_page">
-    <div class="logo"><img src="{{url_for('static',filename='images/logo.png')}}" alt=""></div>
+    <div class="wedding_logo"><img src="{{url_for('static',filename='images/logo.png')}}" alt=""></div>
     <div class="products_container">
         {% for product in products %}
             {{product_macro.card(product, False)}}

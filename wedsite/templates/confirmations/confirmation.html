@@ -8,9 +8,10 @@
     <div class="confirmation_card_container">
         <div class="confirmation_card">
             <div class="confirmation_image_container">
-                <img class="fit_image" src="{{ url_for('static',filename='images/confirmation_background.jpg') }}" alt="Confirmation picture">
+                <img class="fit_image" src="{{ url_for('static',filename='images/confirmation_background.jpg') }}" alt="Confirmation picture" loading="lazy">
             </div>
             <div class="confirmation_form_container">
+                <div class="wedding_logo"><img src="{{url_for('static',filename='images/logo.png')}}" alt=""></div>
                 <form method="post" class="confirmation_form">
                     <div class="confirmation_input_container_row">
                         <div class="confirmation_input">
