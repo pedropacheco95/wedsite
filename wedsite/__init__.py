@@ -61,8 +61,8 @@ def create_app(test_config=None):
 
     assets = Environment(app)
 
-    scss_bundle_backend = Bundle('style/scss/main_backend.scss', filters='pyscss', depends='style/scss/*.scss',output='style/styles_backend.css')
-    scss_bundle_frontend = Bundle('style/scss/main_frontend.scss', filters='pyscss', depends='style/scss/*.scss',output='style/styles_frontend.css')
+    scss_bundle_backend = Bundle('style/scss/main_backend.scss', filters='pyscss', depends='style/scss/*.scss',output='style/styles_backend_2.css')
+    scss_bundle_frontend = Bundle('style/scss/main_frontend.scss', filters='pyscss', depends='style/scss/*.scss',output='style/styles_frontend_2.css')
     assets.register('scss_backend', scss_bundle_backend)
     assets.register('scss_frontend', scss_bundle_frontend)
 
