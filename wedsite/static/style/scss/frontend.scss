@@ -285,7 +285,7 @@ body{
       padding-top: 5rem;
     }
     @include size-query(small) {
-      width: 50%;
+      width: 25%;
     }
   }
 
@@ -798,7 +798,7 @@ body{
     padding-top: 20rem;
   }
   @include size-query(small){
-    padding-top: 10rem;
+    padding-top: 30rem;
     padding-left: 2rem;
   }
 
