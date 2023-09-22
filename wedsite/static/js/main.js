@@ -1,4 +1,6 @@
 var isMobile = ('ontouchstart' in document.documentElement); 
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 document.addEventListener('click', function(event) {
     let hideIfClickOutside = document.getElementsByClassName('hide_if_click_outside');
