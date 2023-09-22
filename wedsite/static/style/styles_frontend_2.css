@@ -592,7 +592,7 @@
       box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.5);
       z-index: -10;
       position: fixed;
-      height: calc(100 * var(--vh));
+      height: 100%;
       width: 100vw;
       background-size: cover; }
       @media (min-width: 940px) {
@@ -631,7 +631,7 @@
       box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.5);
       z-index: -10;
       position: fixed;
-      height: calc(100 * var(--vh));
+      height: 100%;
       width: 100vw;
       background-size: cover;
       background-position: center; }
@@ -918,7 +918,7 @@
 }
               @media (max-width: 940px) {
                 .confirmations_confirmation .confirmation_card_container .confirmation_card .wedding_logo {
-                  width: 50%;   }
+                  width: 25%;   }
 }
             .confirmations_confirmation .confirmation_card_container .confirmation_card .wedding_logo img {
               width: 100%; }
@@ -1044,7 +1044,7 @@
                         border-radius: 8px; }
 
   .informations_informations {
-    height: calc(100 * var(--vh));
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center; }
@@ -1055,7 +1055,7 @@
 }
       @media (max-width: 940px) {
         .informations_informations {
-          padding-top: 30rem;
+          padding-top: 2.5rem;
           padding-left: 2rem;   }
 }
         .informations_informations .timeline {
