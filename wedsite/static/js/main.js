@@ -1,5 +1,12 @@
 var isMobile = ('ontouchstart' in document.documentElement); 
 
+window.addEventListener('load', loadHandler);
+
+function loadHandler(){
+    createCountdown();
+}
+
+
 document.addEventListener('click', function(event) {
     let hideIfClickOutside = document.getElementsByClassName('hide_if_click_outside');
     for (let elementToHide of hideIfClickOutside) {
@@ -355,4 +362,33 @@ function showHideElements(elements){
             element.style.display = "none";
         }
     }
+}
+
+function createCountdown() {
+    const countdownElements = document.querySelectorAll('.countdown-timer');
+
+    countdownElements.forEach(function(timerElement) {
+        const targetDatetime = new Date(timerElement.getAttribute('data-target-datetime'));
+
+        const interval = setInterval(function() {
+            const now = new Date();
+            const difference = targetDatetime - now;
+
+            if (difference <= 0) {
+                clearInterval(interval);
+                timerElement.textContent = 'Countdown finished';
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            timerElement.querySelector('#days').textContent = days.toString().padStart(2, '0');
+            timerElement.querySelector('#hours').textContent = hours.toString().padStart(2, '0');
+            timerElement.querySelector('#minutes').textContent = minutes.toString().padStart(2, '0');
+            timerElement.querySelector('#seconds').textContent = seconds.toString().padStart(2, '0');
+        }, 1000);
+    });
 }
