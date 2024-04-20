@@ -8,64 +8,61 @@
 <div class="products_all_background"></div>
 <div class="products_product appearing frontend_page">
     {% if contribution %}
-        <div class="contribution_done_container">
-            <div class="contribution_loader_animation">
-                {{loader_checkmark.loader_checkmark()}}
-            </div>
-            <div class="contribution_thank_you">
-                {{contribution.thank_you_message()}}
-            </div>
+    <div class="contribution_done_container">
+        <div class="contribution_loader_animation">
+            {{loader_checkmark.loader_checkmark()}}
         </div>
+        <div class="contribution_thank_you">
+            {{contribution.thank_you_message()}}
+        </div>
+    </div>
     {% else %}
     <div class="cards_container">
         <div class="products_info">
-            <div class="product_image">
-                {% set multiple_images = product.images|length > 1 %}
-                {% if multiple_images %}
-                <div class="previous_picture_button_container" onclick="showOtherImage('previous')">
-                    <img src="{{url_for('static',filename='svg/left_chevron.svg')}}" class="fit_image_chevron" alt="Right Chevron">
-                </div>
-                {% endif %}
-                {% if product.images %}
+            <div class="product_image_name">
+                <div class="product_image">
+                    {% set multiple_images = product.images|length > 1 %}
+                    {% if multiple_images %}
+                    <div class="previous_picture_button_container" onclick="showOtherImage('previous')">
+                        <img src="{{url_for('static',filename='svg/left_chevron.svg')}}" class="fit_image_chevron"
+                            alt="Right Chevron">
+                    </div>
+                    {% endif %}
+                    {% if product.images %}
                     {% for image in product.images %}
-                        <img class="fit_image gallery {% if loop.index == 1 %} image_shown {% else %} hidden_image {% endif %}" src="{{url_for('static',filename='images/{value}'.format(value = image.filename))}}" alt="Imagem da Peça">
+                    <img class="fit_image gallery {% if loop.index == 1 %} image_shown {% else %} hidden_image {% endif %}"
+                        src="{{url_for('static',filename='images/{value}'.format(value = image.filename))}}"
+                        alt="Imagem da Peça">
                     {% endfor %}
-                {% else %}
-                <img class="fit_image" src="{{url_for('static',filename='images/products/no_product.jpg')}}" alt="Imagem da Peça">
-                {% endif %}
-                {% if multiple_images %}
-                <div class="next_picture_button_container" onclick="showOtherImage('next')">
-                    <img src="{{url_for('static',filename='svg/right_chevron.svg')}}" class="fit_image_chevron" alt="Right Chevron">
+                    {% else %}
+                    <img class="fit_image" src="{{url_for('static',filename='images/products/no_product.jpg')}}"
+                        alt="Imagem da Peça">
+                    {% endif %}
+                    {% if multiple_images %}
+                    <div class="next_picture_button_container" onclick="showOtherImage('next')">
+                        <img src="{{url_for('static',filename='svg/right_chevron.svg')}}" class="fit_image_chevron"
+                            alt="Right Chevron">
+                    </div>
+                    {% endif %}
                 </div>
-                {% endif %}
+                <div class="product_name_description">
+                    <div class="product_name">
+                        <div>{{product.name}}</div>
+                    </div>
+                    {% if product.description %}
+                    <div class="product_description">
+                        <div>{{product.description}}</div>
+                    </div>
+                    {% endif %}
+                </div>
             </div>
-            <div class="product_name">
-                <div>{{product.name}}</div>
-            </div>
-            {% if product.description %}
-            <div class="product_description">
-                <div>{{product.description}}</div>
-            </div>
-            {% endif %}
             <div class="product_price">
                 {% if product.show_price %}
-                <div>Preço: {{product.price}}€</div>
-                <div>Valor em falta: {{product.missing_value()}}€</div>
+                <div><span class="new_bold">Preço:</span> {{product.price}}€</div>
+                <div><span class="new_bold">Valor em falta:</span> {{product.missing_value()}}€</div>
                 {{progress_bar.progress_bar(product.calculate_percentage()|int)}}
                 {% endif %}
             </div>
-            {% if client.use_mbway %}
-            <div class="transfer_type">
-                <img src="{{ url_for('static', filename='images/mbway_logo.png')}}" class="transfer_type_images">
-                <div> MB Way: {{ client.get_formatted_mbways()}} </div>
-            </div>
-            {% endif %}
-            {% if client.use_nib %}
-            <div class="transfer_type">
-                <img src="{{ url_for('static', filename='images/transfer_logo.png')}}" class="transfer_type_images">
-                <div>  IBAN: {{ client.get_formatted_nibs() }} </div>
-            </div>
-            {% endif %}
         </div>
         <div class="contribution_container">
             <form method="post">
@@ -83,6 +80,14 @@
                     {{ inputs.submit_button('Contribuir') }}
                 </div>
             </form>
+            <div class="transfer_type">
+                {% if client.use_mbway %}
+                <div><span class="new_bold">MB Way:</span> {{ client.get_formatted_mbways()}} </div>
+                {% endif %}
+                {% if client.use_nib %}
+                <div><span class="new_bold">IBAN:</span> {{ client.get_formatted_nibs() }} </div>
+                {% endif %}
+            </div>
         </div>
     </div>
     {% endif %}
