@@ -28,7 +28,6 @@
         flex-direction: row;
         justify-content: space-around;
         font-size: 1.2rem;
-        font-weight: bold;
     }
 
     @include size-query(small) {
@@ -52,7 +51,7 @@
     border-bottom: 2px solid rgba(0, 0, 0, 0);
 
     @include size-query(large) {
-        padding: 0.5rem;
+        padding: 0.25rem;
     }
 
     @include size-query(small) {
@@ -62,11 +61,12 @@
 
 .navbar_item:hover {
     border-bottom: 2px solid white;
-    color: #b6b8bd;
+    color: white;
 }
 
 .navbar_item.active {
     border-bottom: 2px solid;
+    font-weight: 500;
 }
 
 .navbar_toggler {

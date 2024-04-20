@@ -52,12 +52,6 @@ body {
   transition: 1.5s ease-in-out !important;
 }
 
-.active {
-  opacity: 1;
-  transform: translateX(0);
-  transition: 1.5s ease-in-out !important;
-}
-
 .progressBar_text {
   color: white;
   font-size: 1rem;
@@ -73,14 +67,13 @@ body {
 .index {
   .first_page {
     height: 100vh;
-    box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.25);
-    background-position: top;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
 
     @include size-query(large) {
-      background-image: url(../images/index_background.jpg);
+      background-image: url(../images/kikalu.webp);
     }
 
     @include size-query(small) {
@@ -92,16 +85,16 @@ body {
     }
 
     .first_page_content {
-      color: $primary-color;
+      color: $cover-color;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: flex-end;
       text-align: center;
 
       @include size-query(large) {
-        padding-top: 5rem;
-        padding-right: 1rem;
+        padding-top: 4rem;
+        align-items: flex-start;
+        padding-left: 5rem;
       }
 
       @include size-query(small) {
@@ -112,11 +105,11 @@ body {
 
     .first_page_title {
       @include size-query(large) {
-        font-size: 5rem;
+        font-size: 4.5rem;
       }
 
       @include size-query(small) {
-        font-size: 3rem;
+        font-size: 2.5rem;
       }
 
       line-height: 1.2em;
@@ -125,7 +118,7 @@ body {
 
     .first_page_date {
       @include size-query(large) {
-        font-size: 4rem;
+        font-size: 2.5rem;
       }
 
       @include size-query(small) {
@@ -763,6 +756,11 @@ body {
     background: rgba(255, 254, 254, 0.8);
     box-shadow: $box-shadow;
     border-radius: 8px;
+    color: $primary-color;
+
+    h2 {
+      margin-bottom: 2rem;
+    }
   }
 
 }

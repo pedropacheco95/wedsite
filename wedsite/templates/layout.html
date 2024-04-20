@@ -35,19 +35,19 @@
                 </button>
             </div>
             <ul class="navbar_items_container">
-                <li class="navbar_item">
-                    <a href="{{url_for('main.index')}}">Home</a>
+                <li class="navbar_item {{ 'active' if request.endpoint == 'main.index' else '' }}">
+                    <a href="{{url_for('main.index')}}">Início</a>
                 </li>
-                <li class="navbar_item">
+                <li class="navbar_item {{ 'active' if request.endpoint == 'main.informations' else '' }}">
                     <a href="{{url_for('main.informations')}}">Informações</a>
                 </li>
-                <li class="navbar_item">
+                <li class="navbar_item {{ 'active' if request.endpoint == 'confirmations.confirmation' else '' }}">
                     <a href="{{url_for('confirmations.confirmation')}}">Confirmar Presença</a>
                 </li>
-                <li class="navbar_item active">
+                <li class="navbar_item {{ 'active' if request.endpoint == 'products.all' else '' }}">
                     <a href="{{url_for('products.all')}}">Lista de Casamento</a>
                 </li>
-                <li class="navbar_item">
+                <li class="navbar_item {{ 'active' if request.endpoint == 'main.faqs' else '' }}">
                     <a href="{{url_for('main.faqs')}}">Perguntas Frequentes</a>
                 </li>
             </ul>
