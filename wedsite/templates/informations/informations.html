@@ -8,20 +8,54 @@
     <div class="timeline">
         <div class="card">
             <div class="image_content">
-                <img src="{{url_for('static',filename='images/{value}'.format(value = client.church_image_path))}}" alt="Church" class="fit_image">
+                <img src="{{url_for('static',filename='images/{value}'.format(value = client.church_image_path))}}"
+                    alt="Church" class="fit_image">
             </div>
             <div class="description_content">
-                <div class="title"> {{client.church_location_name}} </div>
-                <div class="info"><a href="{{client.church_location_url}}">Ver mapa</a></div>
+                <div class="title">Cerimónia | 14:30</div>
+                <div>
+                    <div class="icon_text">
+                        <span class="fa fa-church" aria-hidden="true" style="color: #6299b0"></span>
+                        <p>Igreja São José das Taipas</p>
+                    </div>
+                    <p>A Igreja localiza-se na baixa do Porto, logo depois do tribunal, junto ao jardim da Cordoaria.
+                        Têm o parque de estacionamento Palácio da Justiça mesmo em frente à Igreja.</p>
+                    <div class="info"><a href="https://maps.app.goo.gl/QMMqEStkpZUxNsCv9">Ver mapa</a></div>
+                </div>
             </div>
         </div>
         <div class="card">
             <div class="image_content">
-                <img src="{{url_for('static',filename='images/{value}'.format(value = client.party_image_path))}}" alt="Party" class="fit_image">
+                <img src="{{url_for('static',filename='images/{value}'.format(value = client.party_image_path))}}"
+                    alt="Party" class="fit_image">
             </div>
             <div class="description_content">
-                <div class="title"> {{client.party_location_name}} </div>
-                <div class="info"><a href="{{client.party_location_url}}">Ver mapa</a></div>
+                <div class="title">Copo d'Água</div>
+                <div>
+                    <div class="icon_text">
+                        <span class="fa fa-glass-martini" aria-hidden="true" style="color: #6299b0"></span>
+                        <p>Torre Bella</p>
+                    </div>
+                    <p>A Quinta da Torre Bella fica a 14 minutos da Igreja. Têm parque de estacionamento, mas parece-nos
+                        a distância ótima para quem preferir ir de Uber.
+                    </p>
+                    <div class="info"><a href="https://maps.app.goo.gl/5gSFNvKRpjwHRng17">Ver mapa</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="image_content">
+                <img src="{{url_for('static',filename='images/{value}'.format(value = client.church_image_path))}}"
+                    alt="Church" class="fit_image">
+            </div>
+            <div class="description_content">
+                <div class="title">Dress Code</div>
+                <div>
+                    <div class="icon_text">
+                        <span class="fa fa-user-tie" aria-hidden="true" style="color: #6299b0"></span>
+                        <p>Fato escuro</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -30,20 +64,20 @@
         <h2 class="hotels_header"> Onde ficar?</h2>
         <div class="hotels_cards_container">
             {% for hotel in hotels %}
-                <div class="hotel_card">
-                    <div class="title">{{hotel.name}}</div>
-                    <div class="info">
-                        <div class="info_line">
-                            {% if hotel.adress %}<span class="label">Morada:</span> <br> {{hotel.adress}}{% endif %}
-                        </div>
-                        <div class="info_line">
-                            {% if hotel.email %}<span class="label">Email:</span> <br> {{hotel.email}}{% endif %}
-                        </div>
-                        <div class="info_line">
-                            {% if hotel.phone %}<span class="label">Telefone:</span> <br> {{hotel.phone}}{% endif %}
-                        </div>
+            <div class="hotel_card">
+                <div class="title">{{hotel.name}}</div>
+                <div class="info">
+                    <div class="info_line">
+                        {% if hotel.adress %}<span class="label">Morada:</span> <br> {{hotel.adress}}{% endif %}
+                    </div>
+                    <div class="info_line">
+                        {% if hotel.email %}<span class="label">Email:</span> <br> {{hotel.email}}{% endif %}
+                    </div>
+                    <div class="info_line">
+                        {% if hotel.phone %}<span class="label">Telefone:</span> <br> {{hotel.phone}}{% endif %}
                     </div>
                 </div>
+            </div>
             {% endfor %}
         </div>
     </div>

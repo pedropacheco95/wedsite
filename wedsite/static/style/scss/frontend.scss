@@ -49,7 +49,11 @@ body {
 
 .appearing {
   opacity: 0;
-  transition: 1.5s ease-in-out !important;
+  transition: 1s ease-in-out !important;
+}
+
+.active {
+  opacity: 1;
 }
 
 .progressBar_text {
@@ -130,73 +134,6 @@ body {
     }
   }
 
-  .second_page {
-    box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.1);
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: scroll;
-
-    @include size-query(large) {
-      background-image: url(../images/church.jpg);
-    }
-
-    @include size-query(small) {
-      height: 100vh;
-      background-image: url(../images/church_phone.jpg);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-    }
-
-    .information_block {
-      font-size: 2rem;
-      color: white;
-      width: 100%;
-      text-align: center;
-
-      @include size-query(large) {
-        padding: 5rem 2rem;
-      }
-    }
-
-    .content_right {
-      width: 100%;
-      display: flex;
-
-      @include size-query(large) {
-        justify-content: flex-end;
-      }
-
-      @include size-query(small) {
-        justify-content: center;
-      }
-    }
-
-    .content_left {
-      width: 100%;
-      display: flex;
-
-      @include size-query(large) {
-        justify-content: flex-start;
-      }
-
-      @include size-query(small) {
-        justify-content: center;
-      }
-    }
-
-    .information_container {
-      @include size-query(large) {
-        width: 50%;
-      }
-
-      @include size-query(small) {
-        width: 100%;
-      }
-    }
-  }
-
   button {
     color: $primary-color;
     background-color: $secondary-color;
@@ -221,8 +158,7 @@ body {
 }
 
 .products_all_background {
-  background-image: url(../images/products_all_background.jpg);
-  box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.5);
+  background-color: #a6c8d1;
   z-index: -10;
   position: fixed;
   height: 100vh;
@@ -232,8 +168,7 @@ body {
 }
 
 .confirmation_background {
-  background-image: url(../images/confirmation_background.jpg);
-  box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.5);
+  background-color: #a6c8d1;
   z-index: -10;
   position: fixed;
   height: 100vh;
@@ -243,8 +178,7 @@ body {
 }
 
 .faqs_background {
-  background-image: url(../images/faqs_background.jpg);
-  box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.5);
+  background-color: #a6c8d1;
   z-index: -10;
   position: fixed;
   height: 100vh;
@@ -254,8 +188,7 @@ body {
 }
 
 .informations_background {
-  background-image: url(../images/informations_background.jpg);
-  box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.5);
+  background-color: #a6c8d1;
   z-index: -10;
   position: fixed;
   height: 100vh;
@@ -782,7 +715,7 @@ body {
 
   .timeline {
     width: 0.3rem;
-    background: #a3c3ce;
+    background: #6299b0;
     border-radius: $border-radius;
   }
 
@@ -829,8 +762,14 @@ body {
       width: 100%;
 
       @include size-query(large) {
-        height: 20%;
         padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        p {
+          margin: 0;
+        }
       }
 
       @include size-query(small) {
@@ -842,12 +781,30 @@ body {
       }
 
       .title {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
         color: $primary-color;
       }
 
+      .icon_text {
+        font-size: 1.3rem;
+        display: flex;
+        gap: 0.7rem;
+
+        span {
+          display: flex;
+          align-items: center;
+        }
+      }
+
       .info {
-        color: $primary-color-shade;
+        padding-top: 0.5rem;
+        font-size: 1rem;
+        color: #6299b0;
+        cursor: pointer;
+      }
+
+      .info:hover {
+        text-decoration: underline;
       }
     }
   }
@@ -863,7 +820,7 @@ body {
     position: absolute;
     width: 1.2rem;
     height: 1.2rem;
-    background: #a3c3ce;
+    background: #6299b0;
     border-radius: 50%;
   }
 
