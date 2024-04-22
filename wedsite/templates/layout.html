@@ -55,17 +55,20 @@
                 </li>
             </ul>
         </nav>
-        {% if get_flashed_messages() %}
-        <header>
-            <div class="alert alert-danger border text-center flash_warning" role="alert">
-                {{ get_flashed_messages() | join(" ") }}
-            </div>
-        </header>
-        {% endif %}
     </div>
-    <overlay></overlay>
     {% block content %}
     {% endblock %}
+
+    {% if get_flashed_messages() %}
+    <footer>
+        <div class="alert alert-danger border text-center flash_warning" role="alert">
+            {{ get_flashed_messages() | join(" ") }}
+        </div>
+    </footer>
+    {% endif %}
+
+    <overlay></overlay>
+
 </body>
 
 </html>

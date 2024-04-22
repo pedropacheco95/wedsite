@@ -60,80 +60,82 @@
         border: 2px solid #d1d4d7; }
         .input-box .input-1:focus {
           outline: none;
-          border: 2px solid #1a73e8; }
+          border: 2px solid #6299b0; }
     .input-box textarea {
       height: 12rem !important; }
 
 .for_checkbox {
   width: 12.5rem; }
+  .for_checkbox input {
+    cursor: pointer; }
 
-  .slider_container {
-    width: 100%; }
+.slider_container {
+  width: 100%; }
 
-    .checkbox {
-      position: relative;
-      z-index: 10; }
+  .checkbox {
+    position: relative;
+    z-index: 10; }
 
-      .checkbox-label {
-        width: 50%; }
+    .checkbox-label {
+      width: 50%; }
 
-        .for_checkbox input {
-          opacity: 0; }
-          .for_checkbox input, .for_checkbox input:after, .for_checkbox input:before,
-          .for_checkbox input *, .for_checkbox input *:after, .for_checkbox input *:before,
-          .for_checkbox input + .slider {
-            box-sizing: border-box;
-            background: #fbfbfb;
-            border-radius: 2em;
-            padding: 2px;
-            transition: all 0.4s ease;
-            border: 1px solid #e8eae9; }
-            .for_checkbox input::selection, .for_checkbox input:after::selection,
-            .for_checkbox input:before::selection, .for_checkbox input *::selection,
-            .for_checkbox input *:after::selection, .for_checkbox input *:before::selection,
-            .for_checkbox input + .slider::selection {
-              background: none; }
-          .for_checkbox input + .slider {
-            outline: 0;
+      .for_checkbox input {
+        opacity: 0; }
+        .for_checkbox input, .for_checkbox input:after, .for_checkbox input:before,
+        .for_checkbox input *, .for_checkbox input *:after, .for_checkbox input *:before,
+        .for_checkbox input + .slider {
+          box-sizing: border-box;
+          background: #fbfbfb;
+          border-radius: 2em;
+          padding: 2px;
+          transition: all 0.4s ease;
+          border: 1px solid #e8eae9; }
+          .for_checkbox input::selection, .for_checkbox input:after::selection,
+          .for_checkbox input:before::selection, .for_checkbox input *::selection,
+          .for_checkbox input *:after::selection, .for_checkbox input *:before::selection,
+          .for_checkbox input + .slider::selection {
+            background: none; }
+        .for_checkbox input + .slider {
+          outline: 0;
+          display: block;
+          width: 4em;
+          height: 2em;
+          position: absolute;
+          cursor: pointer;
+          user-select: none;
+          top: 0.5em;
+          right: 2em;
+          z-index: 1; }
+          .for_checkbox input + .slider:after, .for_checkbox input + .slider:before {
+            position: relative;
             display: block;
-            width: 4em;
-            height: 2em;
-            position: absolute;
-            cursor: pointer;
-            user-select: none;
-            top: 0.5em;
-            right: 2em;
-            z-index: 1; }
-            .for_checkbox input + .slider:after, .for_checkbox input + .slider:before {
-              position: relative;
-              display: block;
-              content: "";
-              width: 50%;
-              height: 100%; }
-              .for_checkbox input + .slider:after {
-                left: 0;
-                border-radius: 2em;
-                background: #fbfbfb;
-                transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease,
-                                margin 0.3s ease;
-                box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 0 rgba(0, 0, 0, 0.08); }
-                .for_checkbox input + .slider:before {
-                  display: none; }
-          .for_checkbox input:checked + .slider:after {
-            left: 50%; }
-            .for_checkbox input:checked + .slider {
-              background: #869cd9; }
-              .for_checkbox input:checked + .slider:active {
-                box-shadow: none; }
-                .for_checkbox input:checked + .slider:active:after {
-                  margin-left: -0.8em; }
+            content: "";
+            width: 50%;
+            height: 100%; }
+            .for_checkbox input + .slider:after {
+              left: 0;
+              border-radius: 2em;
+              background: #fbfbfb;
+              transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease,
+                            margin 0.3s ease;
+              box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 0 rgba(0, 0, 0, 0.08); }
+              .for_checkbox input + .slider:before {
+                display: none; }
+        .for_checkbox input:checked + .slider:after {
+          left: 50%; }
+          .for_checkbox input:checked + .slider {
+            background: #6299b0; }
+            .for_checkbox input:checked + .slider:active {
+              box-shadow: none; }
+              .for_checkbox input:checked + .slider:active:after {
+                margin-left: -0.8em; }
 
 .input-box.focus .label-invalid, .input-box.active .label-invalid {
   color: #dc3545 !important; }
   .input-box.focus .label-valid, .input-box.active .label-valid {
     color: #28a745 !important; }
     .input-box.focus .input-label, .input-box.active .input-label {
-      color: #1a73e8;
+      color: #6299b0;
       top: -0.6rem;
       background: rgba(255, 255, 255, 0);
       font-size: 0.8rem;
@@ -292,7 +294,7 @@ ul li {
       .circle-loader {
         margin-bottom: 4em;
         border: 5px solid rgba(0, 0, 0, 0.2);
-        border-left-color: #5cb85c;
+        border-left-color: #6299b0;
         animation: loader-spin 1.2s infinite linear;
         position: relative;
         display: inline-block;
@@ -303,7 +305,7 @@ ul li {
 
         .load-complete {
           animation: none;
-          border-color: #5cb85c;
+          border-color: #6299b0;
           transition: 500ms ease-out; }
 
           .checkmark {
@@ -319,8 +321,8 @@ ul li {
                 height: 4em;
                 width: 2em;
                 transform-origin: left top;
-                border-right: 5px solid #5cb85c;
-                border-top: 5px solid #5cb85c;
+                border-right: 5px solid #6299b0;
+                border-top: 5px solid #6299b0;
                 content: '';
                 left: 1.75em;
                 top: 3.75em;
@@ -354,6 +356,16 @@ ul li {
 
 body {
   font-family: "HelveticaNeue-Light"; }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%; }
+    footer .alert {
+      margin: 0; }
+
+.alert.flash_warning {
+  position: static; }
 
   .background_overlay {
     position: fixed;
@@ -758,7 +770,8 @@ body {
       font-size: 1.4rem;
       opacity: 0;
       transition: 500ms;
-      text-align: center; }
+      text-align: center;
+      color: white; }
       .confirmations_confirmation .confirmation_done_container {
         display: flex;
         flex-direction: column;
@@ -767,22 +780,18 @@ body {
         width: 80%;
         justify-content: center; }
         .confirmations_confirmation .confirmation_card_container {
-          width: 100vw;
-          height: 100vh;
+          width: 80%;
           display: flex;
           align-items: center;
           justify-content: center; }
           .confirmations_confirmation .confirmation_card_container .confirmation_card {
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: white;
             border-radius: 5px;
             display: flex;
             flex-direction: row;
-            align-items: center;
             transition: 250ms; }
             @media (min-width: 940px) {
               .confirmations_confirmation .confirmation_card_container .confirmation_card {
-                width: 75%;
-                height: 65%;
                 box-shadow: 0px 14px 22px -9px #bbcbd8, 4px 3px 10px rgba(0, 0, 0, 0.24);   }
 }
               @media (max-width: 940px) {
@@ -791,41 +800,44 @@ body {
                   height: 100%;   }
 }
                 .confirmations_confirmation .confirmation_card_container .confirmation_card .confirmation_image_container {
-                  height: 100%;
-                  width: 45%; }
+                  width: 40%;
+                  display: flex;
+                  justify-content: flex-end;
+                  align-items: flex-end;
+                  overflow: hidden; }
                   @media (max-width: 940px) {
                     .confirmations_confirmation .confirmation_card_container .confirmation_card .confirmation_image_container {
                       display: none;   }
 }
                     .confirmations_confirmation .confirmation_card_container .confirmation_card .confirmation_image_container .fit_image {
-                      width: 100%;
-                      height: 100%;
+                      max-width: 100%;
+                      max-height: 100%;
                       border-radius: 5px 0 0 5px;
-                      object-fit: cover; }
+                      object-fit: cover;
+                      object-position: right bottom; }
             .confirmations_confirmation .confirmation_card_container .confirmation_card .confirmation_form_container {
               height: 100%;
               display: flex;
               flex-direction: column;
               align-items: center;
-              justify-content: center;
-              background-color: white; }
+              justify-content: center; }
               @media (min-width: 940px) {
                 .confirmations_confirmation .confirmation_card_container .confirmation_card .confirmation_form_container {
-                  width: 55%;   }
+                  width: 60%;   }
 }
                 @media (max-width: 940px) {
                   .confirmations_confirmation .confirmation_card_container .confirmation_card .confirmation_form_container {
                     width: 100%;   }
 }
                   .confirmations_confirmation .confirmation_card_container .confirmation_card .confirmation_form_container .confirmation_form {
-                    width: 80%;
+                    width: 100%;
                     display: flex;
                     flex-direction: column;
-                    align-items: center; }
+                    align-items: center;
+                    padding: 2rem; }
                     .confirmations_confirmation .confirmation_card_container .confirmation_card .confirmation_form_container .confirmation_form .confirmation_input_container_row {
                       width: 100%;
-                      display: flex;
-                      justify-content: space-around; }
+                      display: flex; }
                       @media (max-width: 940px) {
                         .confirmations_confirmation .confirmation_card_container .confirmation_card .confirmation_form_container .confirmation_form .confirmation_input_container_row {
                           flex-direction: column;   }
@@ -837,6 +849,16 @@ body {
                           .confirmations_confirmation .confirmation_card_container .confirmation_card .confirmation_form_container .confirmation_form .confirmation_input_container_row .confirmation_input {
                             width: 100%;
                             margin: 0.25rem; }
+                            .confirmations_confirmation .confirmation_card_container .confirmation_card .confirmation_form_container .confirmation_form .confirmation_input_container_row .toggle {
+                              width: fit-content !important; }
+              .confirmations_confirmation .confirmation_card_container .confirmation_card .confirmation_form_container .contribution_button button {
+                padding: 1rem 1.5rem;
+                background-color: #6299b0;
+                margin-top: 2rem; }
+                .confirmations_confirmation .confirmation_card_container .confirmation_card .confirmation_form_container .contribution_button button:hover {
+                  background-color: #a6c8d1; }
+                  .confirmations_confirmation .confirmation_card_container .confirmation_card .confirmation_form_container .contribution_button button:focus {
+                    outline: none; }
 
 .faqs_faqs {
   min-height: 100vh;

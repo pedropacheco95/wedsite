@@ -17,9 +17,9 @@ def confirmation():
         food_restriction = request.form.get('food_restriction')
 
         if not name:
-            error = 'Pedimos desculpa, mas precisamos de um nome para poder confirmar a presença'
+            error = 'Pedimos desculpa, mas precisamos de um nome para poder confirmar a presença.'
         if has_food_restriction and not food_restriction:
-            error = 'Pedimos desculpa, mas esqueceu-se de indicar que restrição alimentar tem'
+            error = 'Pedimos desculpa, mas falta indicar qual a restrição alimentar.'
 
         if error is None:
             confirmation = Confirmation(name=name)

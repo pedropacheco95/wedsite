@@ -19,26 +19,25 @@ window.addEventListener('scroll', function () {
     var navbarItem = document.querySelectorAll('.navbar_item');
 
     if (window.scrollY > 50) {
-        navbar.style.backgroundColor = '#ffffff'; // Change to white
-        navbar.style.boxShadow = '0px 2px 5px rgba(0,0,0,0.3)'; // Adding shadow
+        navbar.style.backgroundColor = '#ffffff';
+        navbar.style.boxShadow = '0px 2px 5px rgba(0,0,0,0.3)';
         navbarItem.forEach(function (link) {
             link.addEventListener('mouseover', function () {
-                console.log("oi")
-                this.style.color = '#a6c8d1'; // Change to red on hover, example
+                this.style.color = '#a6c8d1';
             });
             link.addEventListener('mouseout', function () {
-                this.style.color = '#474a52'; // Change back to black when not hovering
+                this.style.color = '#474a52';
             });
         });
     } else {
-        navbar.style.backgroundColor = 'transparent'; // Change back to transparent
-        navbar.style.boxShadow = 'none'; // Remove shadow
+        navbar.style.backgroundColor = 'transparent';
+        navbar.style.boxShadow = 'none';
         navbarItem.forEach(function (link) {
             link.addEventListener('mouseover', function () {
-                this.style.color = '#ffffff'; // Change to white on hover
+                this.style.color = '#ffffff';
             });
             link.addEventListener('mouseout', function () {
-                this.style.color = '#474a52'; // Reset text color on mouse out
+                this.style.color = '#474a52';
             });
         });
     }

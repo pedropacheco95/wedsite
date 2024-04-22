@@ -34,9 +34,9 @@ def product(product_id,contribution_id=None):
         message = request.form.get('message')
 
         if not name:
-            error = 'Pedimos desculpa, mas precisamos de um nome para poder registar a contribuição'
+            error = 'Pedimos desculpa, mas precisamos de um nome para poder registar a contribuição.'
         if not value_contributed:
-            error = 'Pedimos desculpa, mas precisamos de um valor para poder registar a contribuição'
+            error = 'Pedimos desculpa, mas precisamos de um valor para poder registar a contribuição.'
 
         if error is None:
             contribution = Contribution(name=name,value_contributed=value_contributed,product_id=product.id)

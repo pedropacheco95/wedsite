@@ -7,38 +7,38 @@
 <div class="confirmations_confirmation appearing frontend_page">
     <div class="confirmation_card_container">
         <div class="confirmation_card">
-            <div class="confirmation_image_container">
-                <img class="fit_image" src="{{ url_for('static',filename='images/confirmation_background.jpg') }}" alt="Confirmation picture">
-            </div>
+
             <div class="confirmation_form_container">
                 <form method="post" class="confirmation_form">
                     <div class="confirmation_input_container_row">
                         <div class="confirmation_input">
-                            {{inputs.text_input('Nome','name',true)}}
+                            {{inputs.text_input('Nome(s)','name',true)}}
                         </div>
                     </div>
                     <div class="confirmation_input_container_row">
-                        <div class="confirmation_input">
+                        <div class="confirmation_input toggle"
+                            onclick="addOrRemoveClass('#food_restriction_input_container','disp-none')">
+                            {{inputs.boolean_input('Restrições Alimentares?','has_food_restriction',true)}}
+                        </div>
+                        <div class="confirmation_input disp-none" id="food_restriction_input_container">
+                            {{inputs.text_input('Quais?','food_restriction',false)}}
+                        </div>
+                    </div>
+                    <div class="confirmation_input_container_row">
+                        <div class="confirmation_input toggle">
                             {{inputs.boolean_input('Vegetariano?','is_vegetarian',false)}}
                         </div>
-                        <div class="confirmation_input" onclick="addOrRemoveClass('#food_restriction_input_container','disp-none')">
-                            {{inputs.boolean_input('Restrição Alimentar?','has_food_restriction',true)}}
-                        </div>
-                    </div>
-                    <div class="confirmation_input_container_row">
-                        <div class="confirmation_input disp-none" id="food_restriction_input_container">
-                            {{inputs.text_input('Qual?','food_restriction',false)}}
-                        </div>
-                    </div>
-                    <div class="confirmation_input_container_row">
                         <div class="confirmation_input">
-                            {{inputs.long_text_input('Comentário','comment',false)}}
+                            {{inputs.text_input('Observações','comment',false)}}
                         </div>
                     </div>
                     <div class="contribution_button">
                         {{ inputs.submit_button('Confirmar') }}
                     </div>
                 </form>
+            </div>
+            <div class="confirmation_image_container">
+                <img class="fit_image" src="../../static/images/convite.webp" alt="Confirmation picture">
             </div>
         </div>
     </div>

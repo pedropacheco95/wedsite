@@ -2,6 +2,20 @@ body {
   font-family: "HelveticaNeue-Light";
 }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  .alert {
+    margin: 0;
+  }
+}
+
+.alert.flash_warning {
+  position: static;
+}
+
 .background_overlay {
   position: fixed;
   width: 100%;
@@ -510,6 +524,7 @@ body {
     opacity: 0;
     transition: 500ms;
     text-align: center;
+    color: white;
   }
 
   .confirmation_done_container {
@@ -522,23 +537,19 @@ body {
   }
 
   .confirmation_card_container {
-    width: 100vw;
-    height: 100vh;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
 
     .confirmation_card {
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: white;
       border-radius: $border-radius;
       display: flex;
       flex-direction: row;
-      align-items: center;
       transition: 250ms;
 
       @include size-query(large) {
-        width: 75%;
-        height: 65%;
         box-shadow: $box-shadow;
       }
 
@@ -548,18 +559,22 @@ body {
       }
 
       .confirmation_image_container {
-        height: 100%;
-        width: 45%;
+        width: 40%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        overflow: hidden;
 
         @include size-query(small) {
           display: none;
         }
 
         .fit_image {
-          width: 100%;
-          height: 100%;
+          max-width: 100%;
+          max-height: 100%;
           border-radius: $border-radius 0 0 $border-radius;
           object-fit: cover;
+          object-position: right bottom;
         }
       }
 
@@ -569,10 +584,9 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color: white;
 
         @include size-query(large) {
-          width: 55%;
+          width: 60%;
         }
 
         @include size-query(small) {
@@ -580,15 +594,15 @@ body {
         }
 
         .confirmation_form {
-          width: 80%;
+          width: 100%;
           display: flex;
           flex-direction: column;
           align-items: center;
+          padding: 2rem;
 
           .confirmation_input_container_row {
             width: 100%;
             display: flex;
-            justify-content: space-around;
 
             @include size-query(small) {
               flex-direction: column;
@@ -602,6 +616,24 @@ body {
               width: 100%;
               margin: 0.25rem;
             }
+
+            .toggle {
+              width: fit-content !important;
+            }
+          }
+        }
+
+        .contribution_button button {
+          padding: 1rem 1.5rem;
+          background-color: #6299b0;
+          margin-top: 2rem;
+
+          &:hover {
+            background-color: #a6c8d1;
+          }
+
+          &:focus {
+            outline: none;
           }
         }
       }
