@@ -14,6 +14,20 @@ document.addEventListener('click', function (event) {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    var flashMessage = document.querySelector(".flash_warning");
+    if (flashMessage.innerText.trim() !== "") {
+        setTimeout(function () {
+            flashMessage.style.display = 'none';
+        }, 5000);
+    }
+});
+
+window.addEventListener('load', function () {
+    var loader = document.getElementById('loading-overlay');
+    loader.style.display = 'none';
+});
+
 window.addEventListener('scroll', function () {
     if (window.innerWidth >= 940) {
         var navbar = document.querySelector('.navbar');
