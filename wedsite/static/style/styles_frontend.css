@@ -348,46 +348,218 @@ ul li {
           opacity: 1;   }
 }
 
+.unfolding_circles_loader .loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
+  perspective: 600px;
+  transform-style: perserve-3d; }
+  .unfolding_circles_loader .dots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    perspective: 600px;
+    transform-style: perserve-3d;
+    animation: dots 6000ms cubic-bezier(0, 0, 1, 1) infinite; }
+    .unfolding_circles_loader .dot {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      margin-top: -10px;
+      margin-left: -10px;
+      border-radius: 999px;
+      background-color: #1e3f57;
+      transform-style: perserve-3d;
+      animation: dot 1500ms cubic-bezier(0.7, 0.05, 0.39, 0.88) infinite; }
+      .unfolding_circles_loader .dot:nth-child(1) {
+        transform: translateY(-40px); }
+        .unfolding_circles_loader .dot:nth-child(2) {
+          transform: translateX(-20px) translateY(-20px);
+          animation-name: dot2; }
+          .unfolding_circles_loader .dot:nth-child(3) {
+            transform: translateX(20px) translateY(-20px);
+            animation-name: dot3; }
+            .unfolding_circles_loader .dot:nth-child(4) {
+              transform: translateX(-40px) translateY(0px);
+              animation-name: dot4; }
+              .unfolding_circles_loader .dot:nth-child(5) {
+                transform: translateX(0px) translateY(0px);
+                animation-name: dot5; }
+                .unfolding_circles_loader .dot:nth-child(6) {
+                  transform: translateX(40px) translateY(0px);
+                  animation-name: dot6; }
+                  .unfolding_circles_loader .dot:nth-child(7) {
+                    transform: translateX(-20px) translateY(20px);
+                    animation-name: dot7; }
+                    .unfolding_circles_loader .dot:nth-child(8) {
+                      transform: translateX(20px) translateY(20px);
+                      animation-name: dot8; }
+                      .unfolding_circles_loader .dot:nth-child(9) {
+                        transform: translateX(0px) translateY(40px);
+                        animation-name: dot9; }
+
+@keyframes dots {
+  0%, 15% {
+    transform: rotateZ(0deg);   }
+    25%, 40% {
+      transform: rotateZ(90deg);   }
+      50%, 65% {
+        transform: rotateZ(180deg);   }
+        75%, 90% {
+          transform: rotateZ(270deg);   }
+          100% {
+            transform: rotateZ(360deg);   }
+}
+
+@keyframes dot {
+  0% {
+    transform: translateX(0) translateY(-40px);   }
+    10%, 20% {
+      transform: translateX(20px) translateY(-20px);   }
+      30%, 50% {
+        transform: translateX(0px) translateY(0px);   }
+}
+
+@keyframes dot2 {
+  0% {
+    transform: translateX(-20px) translateY(-20px);   }
+    10%, 55% {
+      transform: translateX(0px) translateY(0px);   }
+}
+
+@keyframes dot4 {
+  0% {
+    transform: translateX(-40px) translateY(0px);   }
+    10%, 30% {
+      transform: translateX(-20px) translateY(20px);   }
+      40%, 65% {
+        transform: translateX(0px) translateY(0px);   }
+}
+
+@keyframes dot6 {
+  0%, 10% {
+    transform: translateX(40px) translateY(0px);   }
+    20% {
+      transform: translateX(20px) translateY(-20px);   }
+      30%, 70% {
+        transform: translateX(0px) translateY(0px);   }
+}
+
+@keyframes dot8 {
+  0%, 10% {
+    transform: translateX(20px) translateY(20px);   }
+    20%, 80% {
+      transform: translateX(0px) translateY(0px);   }
+}
+
+@keyframes dot9 {
+  0%, 10% {
+    transform: translateX(0px) translateY(40px);   }
+    20%, 30% {
+      transform: translateX(-20px) translateY(20px);   }
+      40%, 85% {
+        transform: translateX(0px) translateY(0px);   }
+}
+
+@keyframes dot3 {
+  0%, 20% {
+    transform: translateX(20px) translateY(-20px);   }
+    30%, 60% {
+      transform: translateX(0px) translateY(0px);   }
+}
+
+@keyframes dot7 {
+  0%, 30% {
+    transform: translateX(-20px) translateY(20px);   }
+    40%, 75% {
+      transform: translateX(0px) translateY(0px);   }
+}
+
+.carousel-container {
+  width: 100vw; }
+  .carousel-container .carousel-inner {
+    left: 0px;
+    overflow: visible; }
+    .carousel-container .carousel-inner .carousel-cell {
+      position: absolute;
+      z-index: 10; }
+
 body {
   font-family: "HelveticaNeue-Light"; }
 
-  .background_overlay {
+  #loading-spinner {
     position: fixed;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: 2;
-    cursor: pointer; }
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(182, 182, 182, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; }
 
-    .fit_image {
-      width: 100%;
-      height: 100%; }
+    .spinner {
+      border: 16px solid #f3f3f3;
+      border-top: 16px solid #3498db;
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      animation: spin 2s linear infinite; }
 
-      .progressBar {
-        border-radius: 5px;
-        background-color: #a7adbf;
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);   }
+          100% {
+            transform: rotate(360deg);   }
+}
+
+.background_overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  cursor: pointer; }
+
+  .fit_image {
+    width: 100%;
+    height: 100%; }
+
+    .progressBar {
+      border-radius: 5px;
+      background-color: #a7adbf;
+      display: flex;
+      justify-content: flex-start;
+      height: 1.6rem;
+      font-weight: 100; }
+      .progressBar .progressBar_fill {
         display: flex;
-        justify-content: flex-start;
-        height: 1.6rem;
-        font-weight: 100; }
-        .progressBar .progressBar_fill {
-          display: flex;
-          justify-content: flex-end;
-          background-color: #405181;
+        justify-content: flex-end;
+        background-color: #405181;
+        border-radius: 5px;
+        transition: 0.5s ease-in-out;
+        align-items: center; }
+        .progressBar .progressBar_fill .progressBar_item {
+          height: 80%;
+          background: white;
           border-radius: 5px;
-          transition: 0.5s ease-in-out;
-          align-items: center; }
-          .progressBar .progressBar_fill .progressBar_item {
-            height: 80%;
-            background: white;
-            border-radius: 5px;
-            aspect-ratio: 1 / 1;
-            margin: 0px 2.5px 0 0;
-            display: none; }
+          aspect-ratio: 1 / 1;
+          margin: 0px 2.5px 0 0;
+          display: none; }
 
 .appearing {
   opacity: 0;

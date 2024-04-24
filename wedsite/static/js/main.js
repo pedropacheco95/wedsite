@@ -1,3 +1,14 @@
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Here too!')
+    document.getElementById('loading-spinner').style.display = 'block';
+});
+
+window.onload = function() {
+    console.log('Here!')
+    document.getElementById('loading-spinner').style.display = 'none';
+};
+
+
 var isMobile = ('ontouchstart' in document.documentElement); 
 
 document.addEventListener('click', function(event) {
