@@ -20,7 +20,7 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    color: $primary-color;
+    color: $gray;
 
     @include size-query(large) {
         display: flex;
@@ -55,7 +55,8 @@
     }
 
     @include size-query(small) {
-        padding: 1rem;
+        padding: 0.25rem;
+        margin: 0.75rem 0;
     }
 }
 
@@ -71,21 +72,21 @@
 
 .navbar_toggler {
     margin: 0;
-    padding: 1rem 0rem;
+    padding: 0.25rem 0rem;
     border: none;
     background: transparent !important;
 }
 
 .icon_bar {
     display: block;
-    height: 0.35rem;
+    height: 0.23rem;
     border-radius: 0.3rem;
-    width: 3rem;
-    background-color: black;
+    width: 2rem;
+    background-color: white;
     transition: all 0.25s;
     transform-origin: 10% 10%;
     transform: rotate(0);
-    margin: 0.5rem;
+    margin: 0.27rem;
 }
 
 .navbar_toggle_container {

@@ -1,5 +1,5 @@
 $color: #A8AEB3;
-$active-color: #6299b0;
+$active-color: $dark-blue;
 $input-value-color: #202124;
 $border-color: 2px solid #e8e9ea;
 
@@ -44,6 +44,11 @@ $background-image: #ecf0f5;
         pointer-events: none;
         padding: 0 0.5rem 0 0.5rem;
 
+        @include size-query(small) {
+            font-size: 1rem;
+            top: 0.35rem;
+        }
+
         svg {
             position: relative;
             width: 3rem;
@@ -83,6 +88,11 @@ $background-image: #ecf0f5;
             outline: none;
             border: 2px solid $active-color;
         }
+
+        @include size-query(small) {
+            height: 2rem;
+            font-size: 0.8rem;
+        }
     }
 
     textarea {
@@ -100,6 +110,10 @@ $background-image: #ecf0f5;
 
 .slider_container {
     width: 100%;
+
+    @include size-query(small) {
+        transform: scale(0.8);
+    }
 }
 
 .checkbox {
@@ -176,7 +190,7 @@ $background-image: #ecf0f5;
     }
 
     &:checked+.slider {
-        background: #6299b0;
+        background: $dark-blue;
 
         &:active {
             box-shadow: none;
@@ -203,7 +217,6 @@ $background-image: #ecf0f5;
         top: -0.6rem;
         background: rgba(255, 255, 255, 0);
         font-size: 0.8rem;
-
         transition: 250ms;
 
         svg {
@@ -227,7 +240,7 @@ $background-image: #ecf0f5;
 
 .submit_button {
     display: flex;
-    background: #94a2c9;
+    background: $dark-blue;
     justify-content: center;
     height: 3rem;
     align-items: center;
@@ -244,7 +257,11 @@ $background-image: #ecf0f5;
 
     &:hover {
         @include size-query(large) {
-            background: #4c65b8;
+            background: $light-blue;
         }
+    }
+
+    @include size-query(small) {
+        height: 2.5rem;
     }
 }

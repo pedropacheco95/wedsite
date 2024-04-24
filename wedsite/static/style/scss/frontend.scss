@@ -1,5 +1,6 @@
 body {
   font-family: "HelveticaNeue-Light";
+  color: $gray;
 }
 
 footer {
@@ -10,6 +11,15 @@ footer {
   .alert {
     margin: 0;
   }
+}
+
+.border {
+  border: none !important;
+  border-radius: 0%;
+}
+
+.new_bold {
+  font-weight: 500;
 }
 
 .alert.flash_warning {
@@ -36,7 +46,7 @@ footer {
 
 .progressBar {
   border-radius: $border-radius;
-  background-color: #a7adbf;
+  background-color: white;
   display: flex;
   justify-content: flex-start;
   height: 1.6rem;
@@ -45,7 +55,7 @@ footer {
   .progressBar_fill {
     display: flex;
     justify-content: flex-end;
-    background-color: $primary-color-shade;
+    background-color: $light-blue;
     border-radius: $border-radius;
     transition: 0.5s ease-in-out;
     align-items: center;
@@ -71,7 +81,7 @@ footer {
 }
 
 .progressBar_text {
-  color: white;
+  color: $gray;
   font-size: 1rem;
   position: relative;
   top: -1.55rem;
@@ -95,29 +105,32 @@ footer {
     }
 
     @include size-query(small) {
-      background-image: url(../images/index_background_phone.jpg);
+      background-image: url(../images/kikalu_mobile.webp);
       display: flex;
-      align-items: flex-end;
+      align-items: flex-start;
       flex-direction: row;
       justify-content: space-between;
     }
 
     .first_page_content {
-      color: $cover-color;
       display: flex;
       flex-direction: column;
       justify-content: center;
       text-align: center;
+      align-items: flex-start;
+
 
       @include size-query(large) {
         padding-top: 4rem;
-        align-items: flex-start;
         padding-left: 5rem;
+        color: $cover-color;
       }
 
       @include size-query(small) {
         padding: 1rem;
         width: 100%;
+        margin-top: 2.5rem;
+        color: white;
       }
     }
 
@@ -137,10 +150,16 @@ footer {
     .first_page_date {
       @include size-query(large) {
         font-size: 2.5rem;
+        display: flex;
       }
 
       @include size-query(small) {
         font-size: 2rem;
+        text-align: left;
+
+        .pipe {
+          display: none;
+        }
       }
 
       line-height: 1.2em;
@@ -149,9 +168,9 @@ footer {
   }
 
   button {
-    color: $primary-color;
+    color: $gray;
     background-color: $secondary-color;
-    border: 0.2rem solid $primary-color;
+    border: 0.2rem solid $gray;
     border-radius: $border-radius;
     height: 5rem;
     width: 10rem;
@@ -161,7 +180,7 @@ footer {
 
   button:hover {
     color: $secondary-color;
-    background-color: $primary-color;
+    background-color: $gray;
     box-shadow: $box-shadow;
   }
 }
@@ -223,7 +242,7 @@ footer {
 
   .products_container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     padding: 5rem 0;
     flex-wrap: wrap;
@@ -240,16 +259,16 @@ footer {
 
     .product_card {
       margin: 1rem;
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: rgba(255, 255, 255, 0.75);
       box-shadow: $box-shadow;
       border-radius: $border-radius;
-      aspect-ratio: 2/3;
       transition: 0.25s;
       overflow: hidden;
 
       @include size-query(large) {
         width: 30%;
         max-width: 22.5rem;
+        aspect-ratio: 2/3;
       }
 
       @include size-query(small) {
@@ -269,7 +288,7 @@ footer {
       display: flex;
       flex-direction: column;
       align-items: center;
-      color: $primary-color;
+      color: $gray;
     }
 
     .product_image_container {
@@ -283,6 +302,10 @@ footer {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
+
+      @include size-query(small) {
+        padding-bottom: 0.5rem;
+      }
     }
 
     .product_image {
@@ -326,23 +349,34 @@ footer {
       align-items: center;
       border-radius: $border-radius;
       transition: 250ms;
+      background-color: $dark-blue;
+      margin-top: 2rem;
+      cursor: pointer;
 
       .contribute_button {
-        padding: 0.4rem;
+        padding: 1rem 1.5rem;
         color: white;
         text-transform: uppercase;
         letter-spacing: .2rem;
       }
-    }
 
-    .product_contribute:hover {
-      @include size-query(large) {
-        background: #4c65b8;
+      &:hover {
+        @include size-query(large) {
+          background-color: #a6c8d1;
+        }
+      }
+
+      &:focus {
+        outline: none;
       }
     }
+
+
   }
 
   .already_paid {
+    padding-top: 0;
+
     .product_card {
       filter: grayscale(100%);
     }
@@ -365,14 +399,14 @@ footer {
 
   .cards_container {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: rgba(255, 255, 255, 0.8);
+    align-items: stretch;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.75);
     border-radius: $border-radius;
 
     @include size-query(large) {
-      height: 65%;
       width: 80%;
+      padding: 2rem 3rem;
     }
 
     @include size-query(small) {
@@ -397,8 +431,12 @@ footer {
   }
 
   .products_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     .product_name {
-      padding: 0.5rem;
+      padding: 0.5rem 0;
       width: 100%;
       font-size: 1.2rem;
       font-weight: 800;
@@ -406,16 +444,23 @@ footer {
     }
 
     .product_description {
-      margin: 0 1.2rem 1.2rem 1.2rem;
       color: rgb(100, 100, 100);
       font-size: 0.9rem;
     }
 
     .product_price {
-      padding: 0 0.75rem;
       width: 100%;
       font-size: 1.1rem;
       font-weight: 200;
+
+      .progressBar {
+        margin-top: 1rem;
+        height: 2rem;
+      }
+
+      .progressBar_text {
+        top: -1.75rem;
+      }
     }
 
     .transfer_type {
@@ -479,16 +524,19 @@ footer {
 
   .contribution_container {
     padding: 2rem;
-    border-radius: 5px;
-    height: 75%;
+    border-radius: $border-radius;
 
     @include size-query(large) {
-      width: 45%;
+      width: 60%;
       background: rgba(255, 255, 255, 0.9);
     }
 
     @include size-query(small) {
       width: 100%;
+    }
+
+    form {
+      padding-bottom: 2rem;
     }
   }
 
@@ -506,6 +554,7 @@ footer {
     opacity: 0;
     transition: 500ms;
     text-align: center;
+    color: white;
   }
 }
 
@@ -542,6 +591,11 @@ footer {
     align-items: center;
     justify-content: center;
 
+    @include size-query(small) {
+      width: 100%;
+      height: 100vh;
+    }
+
     .confirmation_card {
       background-color: white;
       border-radius: $border-radius;
@@ -556,6 +610,9 @@ footer {
       @include size-query(small) {
         width: 100%;
         height: 100%;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.5);
+        justify-content: space-between;
       }
 
       .confirmation_image_container {
@@ -566,13 +623,13 @@ footer {
         overflow: hidden;
 
         @include size-query(small) {
-          display: none;
+          width: 100%;
         }
 
         .fit_image {
           max-width: 100%;
           max-height: 100%;
-          border-radius: $border-radius 0 0 $border-radius;
+          border-radius: $border-radius 0;
           object-fit: cover;
           object-position: right bottom;
         }
@@ -591,6 +648,12 @@ footer {
 
         @include size-query(small) {
           width: 100%;
+          height: auto;
+          justify-content: flex-start;
+
+          div {
+            margin: 0.25rem;
+          }
         }
 
         .confirmation_form {
@@ -599,6 +662,10 @@ footer {
           flex-direction: column;
           align-items: center;
           padding: 2rem;
+
+          @include size-query(small) {
+            padding-top: 3rem;
+          }
 
           .confirmation_input_container_row {
             width: 100%;
@@ -625,7 +692,7 @@ footer {
 
         .contribution_button button {
           padding: 1rem 1.5rem;
-          background-color: #6299b0;
+          background-color: $dark-blue;
           margin-top: 2rem;
 
           &:hover {
@@ -678,7 +745,7 @@ footer {
     height: 25px;
     width: 25px;
     border-radius: 4px;
-    background: #dedede;
+    background: $lighter-gray;
     cursor: pointer;
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.09);
   }
@@ -691,7 +758,7 @@ footer {
     font-size: 1em;
     line-height: 1;
     font-weight: 500;
-    margin: 1rem;
+    margin: 1rem 0;
   }
 
   .active .item-icon i {
@@ -718,10 +785,10 @@ footer {
     max-width: 570px;
     margin: 0 auto;
     padding: 2rem;
-    background: rgba(255, 254, 254, 0.8);
+    background: rgba(255, 254, 254, 0.75);
     box-shadow: $box-shadow;
     border-radius: 8px;
-    color: $primary-color;
+    color: $gray;
 
     h2 {
       margin-bottom: 2rem;
@@ -747,19 +814,17 @@ footer {
 
   .timeline {
     width: 0.3rem;
-    background: #6299b0;
+    background: $dark-blue;
     border-radius: $border-radius;
   }
 
   .card {
     @include size-query(large) {
       width: 25rem;
-      aspect-ratio: 5/6;
     }
 
     @include size-query(small) {
       width: 17.5rem;
-      aspect-ratio: 2/3;
     }
 
     margin: 2.5rem;
@@ -775,7 +840,7 @@ footer {
       width: 100%;
 
       @include size-query(large) {
-        height: 80%;
+        height: 100%;
       }
 
       @include size-query(small) {
@@ -785,8 +850,8 @@ footer {
 
     .fit_image {
       width: 100%;
-      height: 100%;
       object-fit: cover;
+      object-position: top;
       border-radius: $border-radius $border-radius 0 0;
     }
 
@@ -798,10 +863,6 @@ footer {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-
-        p {
-          margin: 0;
-        }
       }
 
       @include size-query(small) {
@@ -812,15 +873,34 @@ footer {
         justify-content: space-around;
       }
 
+      p {
+        margin: 0;
+      }
+
       .title {
-        font-size: 1.8rem;
-        color: $primary-color;
+        color: $gray;
+
+        @include size-query(large) {
+          font-size: 1.8rem;
+        }
+
+        @include size-query(small) {
+          font-size: 1.5rem;
+        }
       }
 
       .icon_text {
-        font-size: 1.3rem;
         display: flex;
         gap: 0.7rem;
+
+        @include size-query(large) {
+          font-size: 1.3rem;
+        }
+
+        @include size-query(small) {
+          font-size: 1.1rem;
+          padding: 0.5rem 0;
+        }
 
         span {
           display: flex;
@@ -831,7 +911,7 @@ footer {
       .info {
         padding-top: 0.5rem;
         font-size: 1rem;
-        color: #6299b0;
+        color: $dark-blue;
         cursor: pointer;
       }
 
@@ -852,7 +932,7 @@ footer {
     position: absolute;
     width: 1.2rem;
     height: 1.2rem;
-    background: #6299b0;
+    background: $dark-blue;
     border-radius: 50%;
   }
 
@@ -911,7 +991,7 @@ footer {
 
     .hotels_header {
       font-size: 1.6rem;
-      color: $primary-color;
+      color: $gray;
     }
 
     .hotel_card {
@@ -933,7 +1013,7 @@ footer {
       .title {
         font-size: 1.2rem;
         font-weight: bold;
-        color: $primary-color;
+        color: $gray;
         text-transform: uppercase;
       }
 
@@ -945,7 +1025,7 @@ footer {
 
           .label {
             font-weight: bold;
-            color: $primary-color;
+            color: $gray;
           }
         }
       }

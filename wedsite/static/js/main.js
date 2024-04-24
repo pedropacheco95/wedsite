@@ -15,33 +15,36 @@ document.addEventListener('click', function (event) {
 });
 
 window.addEventListener('scroll', function () {
-    var navbar = document.querySelector('.navbar');
-    var navbarItem = document.querySelectorAll('.navbar_item');
+    if (window.innerWidth >= 940) {
+        var navbar = document.querySelector('.navbar');
+        var navbarItem = document.querySelectorAll('.navbar_item');
 
-    if (window.scrollY > 50) {
-        navbar.style.backgroundColor = '#ffffff';
-        navbar.style.boxShadow = '0px 2px 5px rgba(0,0,0,0.3)';
-        navbarItem.forEach(function (link) {
-            link.addEventListener('mouseover', function () {
-                this.style.color = '#a6c8d1';
+        if (window.scrollY > 50) {
+            navbar.style.backgroundColor = '#ffffff';
+            navbar.style.boxShadow = '0px 2px 5px rgba(0,0,0,0.3)';
+            navbarItem.forEach(function (link) {
+                link.addEventListener('mouseover', function () {
+                    this.style.color = '#a6c8d1';
+                });
+                link.addEventListener('mouseout', function () {
+                    this.style.color = '#474a52';
+                });
             });
-            link.addEventListener('mouseout', function () {
-                this.style.color = '#474a52';
+        } else {
+            navbar.style.backgroundColor = 'transparent';
+            navbar.style.boxShadow = 'none';
+            navbarItem.forEach(function (link) {
+                link.addEventListener('mouseover', function () {
+                    this.style.color = '#ffffff';
+                });
+                link.addEventListener('mouseout', function () {
+                    this.style.color = '#474a52';
+                });
             });
-        });
-    } else {
-        navbar.style.backgroundColor = 'transparent';
-        navbar.style.boxShadow = 'none';
-        navbarItem.forEach(function (link) {
-            link.addEventListener('mouseover', function () {
-                this.style.color = '#ffffff';
-            });
-            link.addEventListener('mouseout', function () {
-                this.style.color = '#474a52';
-            });
-        });
+        }
     }
 });
+
 
 
 function toggleNavbar() {

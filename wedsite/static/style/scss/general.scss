@@ -1,34 +1,36 @@
-.global_container{
-    padding-top:9rem;
+.global_container {
+    padding-top: 9rem;
 }
 
-.disp-none{
+.disp-none {
     display: none;
 }
 
-.content_container{
+.content_container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.content_width{
+.content_width {
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: $max-width;
-    background-color: rgba(255,255,255,0.3);
+    background-color: rgba(255, 255, 255, 0.3);
+
     @include size-query(large) {
         min-width: $min-width;
         width: 70%;
     }
+
     @include size-query(small) {
         justify-content: space-between;
         width: 100%;
     }
 }
 
-.first_section_index{
+.first_section_index {
     background-image: url('../images/background.jpg');
     height: 100vh;
 }
@@ -41,9 +43,12 @@
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
 }
 
 /* The Close Button */
@@ -62,17 +67,19 @@
     cursor: pointer;
 }
 
-.modal_content{
+.modal_content {
     @include size-query(small) {
         height: 80%;
         width: 80%;
         top: 10%;
     }
+
     @include size-query(large) {
         height: 70%;
         width: 70%;
         top: 15%;
     }
+
     background-color: #fefefe;
     margin: auto;
     border: 1px solid #888;
@@ -82,7 +89,8 @@
     flex-direction: column;
     pointer-events: auto;
     background-clip: padding-box;
-    border-radius: $border-radius;;
+    border-radius: $border-radius;
+    ;
     outline: 0;
     background-color: #fefefe;
     margin: auto;
@@ -90,15 +98,16 @@
     max-width: 65rem;
 }
 
-.input_picture_modal_content{
+.input_picture_modal_content {
     max-width: 50vh;
     max-height: 65vh;
-    .modal_footer{
-        max-height: 20%!important;
+
+    .modal_footer {
+        max-height: 20% !important;
     }
 }
 
-.modal_header{
+.modal_header {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: start;
@@ -115,7 +124,7 @@
     max-height: 10%;
 }
 
-.modal_body{
+.modal_body {
     position: relative;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
@@ -123,14 +132,14 @@
     overflow-x: hidden;
 }
 
-.input_picture_modal_body{
+.input_picture_modal_body {
     height: 50vh;
     width: 50vh;
     max-width: 100%;
-    overflow: hidden!important;
+    overflow: hidden !important;
 }
 
-.modal_footer{
+.modal_footer {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
@@ -142,15 +151,15 @@
     max-height: 10%;
 }
 
-.closeModal{
+.closeModal {
     cursor: pointer;
 }
 
-.closeModal.topButton{
+.closeModal.topButton {
     font-size: 3rem;
 }
 
-.overlay_canvas{
+.overlay_canvas {
     background-size: cover;
     content: '';
     width: 100%;
@@ -160,11 +169,11 @@
     z-index: 5;
 }
 
-.input_image{
+.input_image {
     width: 100%;
 }
 
-.input_image_footer{
+.input_image_footer {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -172,7 +181,7 @@
     align-items: center;
 }
 
-.input_image_footer_button{
+.input_image_footer_button {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -182,14 +191,15 @@
     padding: 0.5rem;
 }
 
-.input_image_footer_slider{
+.input_image_footer_slider {
     width: 100%;
 }
 
-.general_button{
-    background-color: $primary-color;
+.general_button {
+    background-color: $gray;
     color: $fourth-color;
-    border-radius: $border-radius;;
+    border-radius: $border-radius;
+    ;
     transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1);
     letter-spacing: 0.5px;
     padding: 0.8rem;
@@ -200,17 +210,17 @@
     margin: 0 0.4rem 0 0;
 }
 
-.general_button:hover{
+.general_button:hover {
     background-color: $fourth-color;
-    color: $primary-color;
-    box-shadow: 0 0 1px 1px $primary-color inset;
+    color: $gray;
+    box-shadow: 0 0 1px 1px $gray inset;
 }
 
-.modal_iframe_container{
+.modal_iframe_container {
     height: 100%;
 }
 
-.delete_icon{
+.delete_icon {
     height: 1.4rem;
     width: 1.4rem;
 }
