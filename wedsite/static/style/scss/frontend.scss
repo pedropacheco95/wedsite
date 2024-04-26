@@ -1,12 +1,11 @@
 @font-face {
-  font-family: 'HelveticaLight';
-  src: url('../../fonts/HelveticaNeueLight.otf') format('otf');
-  font-weight: 300;
-  font-style: normal;
+  font-family: "HelveticaNeue-Light";
+  src: url("/static/fonts/skia.tff");
 }
 
 body {
-  font-family: 'HelveticaLight', Arial, sans-serif;
+  font-family: 'HelveticaNeue-Light';
+  font-weight: normal;
   color: $gray;
 }
 
@@ -170,7 +169,6 @@ footer {
       justify-content: center;
       text-align: center;
       align-items: flex-start;
-
 
       @include size-query(large) {
         padding-top: 4rem;
