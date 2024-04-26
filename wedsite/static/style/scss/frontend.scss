@@ -1,5 +1,12 @@
+@font-face {
+  font-family: 'HelveticaLight';
+  src: url('../../fonts/HelveticaNeueLight.otf') format('otf');
+  font-weight: 300;
+  font-style: normal;
+}
+
 body {
-  font-family: "HelveticaNeue-Light";
+  font-family: 'HelveticaLight', Arial, sans-serif;
   color: $gray;
 }
 
