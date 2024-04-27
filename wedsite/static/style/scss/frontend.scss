@@ -295,6 +295,7 @@ footer {
       flex-direction: row;
       justify-content: flex-start;
       padding: 8rem 3rem;
+      gap: 4.5%;
     }
 
     @include size-query(small) {
@@ -303,7 +304,6 @@ footer {
     }
 
     .product_card {
-      margin: 1rem;
       background-color: rgba(255, 255, 255, 0.75);
       box-shadow: $box-shadow;
       border-radius: $border-radius;
@@ -311,6 +311,7 @@ footer {
       overflow: hidden;
 
       @include size-query(large) {
+        width: 30.333333%;
         max-width: 22.5rem;
         aspect-ratio: 2/3;
       }
@@ -318,6 +319,7 @@ footer {
       @include size-query(small) {
         width: 75%;
         max-width: 17.5rem;
+        margin: 1rem;
       }
     }
 
