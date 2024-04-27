@@ -3,8 +3,18 @@
   src: url("/static/fonts/skia.tff");
 }
 
+@font-face {
+  font-family: "HelveticaNeue-Regular";
+  src: url("/static/fonts/HelveticaNeueLight.tff");
+}
+
+@font-face {
+  font-family: "Manuscript";
+  src: url("/static/fonts/BrittanySignature.tff");
+}
+
 body {
-  font-family: 'HelveticaNeue-Light';
+  font-family: 'HelveticaNeue-Light', 'HelveticaNeue-Regular';
   font-weight: normal;
   color: $gray;
 }
@@ -296,14 +306,14 @@ footer {
     align-items: center;
     padding: 5rem 0;
     flex-wrap: wrap;
+    width: 100%;
 
     @include size-query(large) {
-      width: 90%;
       flex-direction: row;
+      padding: 5rem 3rem;
     }
 
     @include size-query(small) {
-      width: 100%;
       flex-direction: column;
     }
 
@@ -444,26 +454,27 @@ footer {
   width: 100vw;
 
   @include size-query(large) {
-    height: 100vh;
+    padding-top: 8rem;
   }
 
   .cards_container {
     display: flex;
     align-items: stretch;
-    justify-content: space-between;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: $border-radius;
 
     @include size-query(large) {
       width: 80%;
       padding: 2rem 3rem;
+      justify-content: space-between;
+      gap: 2rem;
     }
 
     @include size-query(small) {
-      height: 100%;
       width: 100%;
       flex-direction: column;
       padding: 1.2rem 0;
+      justify-content: flex-start;
     }
   }
 
@@ -484,6 +495,11 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @include size-query(small) {
+      padding: 3rem 2rem 0 2rem;
+      gap: 0.5rem;
+    }
 
     .product_name {
       padding: 0.5rem 0;
@@ -615,7 +631,7 @@ footer {
   width: 100vw;
 
   @include size-query(large) {
-    height: 100vh;
+    padding-top: 25vh;
   }
 
   .confirmation_thank_you {
@@ -655,6 +671,10 @@ footer {
 
       @include size-query(large) {
         box-shadow: $box-shadow;
+
+        .show_title_mobile {
+          display: none;
+        }
       }
 
       @include size-query(small) {
@@ -662,7 +682,12 @@ footer {
         height: 100%;
         flex-direction: column;
         background-color: rgba(255, 255, 255, 0.5);
-        justify-content: space-between;
+        justify-content: flex-start;
+
+        .show_title_mobile {
+          font-family: bradley hand;
+          font-size: 32px;
+        }
       }
 
       .confirmation_image_container {
@@ -673,6 +698,8 @@ footer {
         overflow: hidden;
 
         @include size-query(small) {
+          height: 100vh;
+          background-color: white;
           width: 100%;
         }
 
@@ -682,6 +709,10 @@ footer {
           border-radius: $border-radius 0;
           object-fit: cover;
           object-position: right bottom;
+
+          @media (max-height: 670px) and (max-width: 400px) {
+            object-fit: contain;
+          }
         }
       }
 
