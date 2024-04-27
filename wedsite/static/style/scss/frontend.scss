@@ -1,16 +1,5 @@
-@font-face {
-  font-family: "HelveticaNeue-Light";
-  src: url("/static/fonts/skia.tff");
-}
-
-@font-face {
-  font-family: "Manuscript";
-  src: url("/static/fonts/BrittanySignature.tff");
-}
-
 body {
-  font-family: 'HelveticaNeue-Light';
-  font-weight: normal;
+  font-weight: 300;
   color: $gray;
 }
 
@@ -297,7 +286,6 @@ footer {
 
   .products_container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 5rem 0;
     flex-wrap: wrap;
@@ -305,11 +293,13 @@ footer {
 
     @include size-query(large) {
       flex-direction: row;
-      padding: 5rem 3rem;
+      justify-content: flex-start;
+      padding: 8rem 3rem;
     }
 
     @include size-query(small) {
       flex-direction: column;
+      justify-content: space-between;
     }
 
     .product_card {
@@ -321,7 +311,6 @@ footer {
       overflow: hidden;
 
       @include size-query(large) {
-        width: 30%;
         max-width: 22.5rem;
         aspect-ratio: 2/3;
       }
@@ -352,7 +341,6 @@ footer {
     }
 
     .product_info_container {
-      height: 35%;
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -507,6 +495,8 @@ footer {
     .product_description {
       color: rgb(100, 100, 100);
       font-size: 0.9rem;
+      width: 20rem;
+      padding-bottom: 0.5rem;
     }
 
     .product_price {
@@ -792,6 +782,10 @@ footer {
   background-attachment: scroll;
   padding-top: 6rem;
 
+  @include size-query(large) {
+    padding-top: 8rem;
+  }
+
   .q_and_a_container {
     display: flex;
     flex-direction: column;
@@ -858,8 +852,7 @@ footer {
 
   .accordion-content {
     padding-top: 6rem;
-    max-width: 570px;
-    margin: 0 auto;
+    margin: 0 10rem;
     padding: 2rem;
     background: rgba(255, 254, 254, 0.75);
     box-shadow: $box-shadow;

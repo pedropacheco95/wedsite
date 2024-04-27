@@ -96,7 +96,6 @@
     .navbar_item {
       font-size: 1.5rem;
       color: #E8D67B;
-      font-family: 'Titillium Web', sans-serif;
       font-weight: bold;
       height: 100%;
       display: flex;
@@ -148,7 +147,6 @@
           letter-spacing: 0.5px;
           padding: 0.8rem;
           font-size: 0.8rem;
-          font-family: Helvetica, sans-serif;
           font-weight: bold;
           text-transform: uppercase;
           margin: 0 0.2rem 0 0.2rem; }
@@ -391,7 +389,6 @@
                           letter-spacing: 0.5px;
                           padding: 0.8rem;
                           font-size: 0.8rem;
-                          font-family: Helvetica, sans-serif;
                           font-weight: bold;
                           text-transform: uppercase;
                           margin: 0 0.4rem 0 0; }
@@ -667,7 +664,6 @@
           letter-spacing: 0.5px;
           padding: 0.8rem;
           font-size: 0.8rem;
-          font-family: Helvetica, sans-serif;
           font-weight: bold;
           text-transform: uppercase;
           margin: 0 0.2rem 0 0.2rem;
