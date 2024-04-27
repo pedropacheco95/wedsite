@@ -4,17 +4,12 @@
 }
 
 @font-face {
-  font-family: "HelveticaNeue-Regular";
-  src: url("/static/fonts/HelveticaNeueLight.tff");
-}
-
-@font-face {
   font-family: "Manuscript";
   src: url("/static/fonts/BrittanySignature.tff");
 }
 
 body {
-  font-family: 'HelveticaNeue-Regular';
+  font-family: 'HelveticaNeue-Light';
   font-weight: normal;
   color: $gray;
 }
