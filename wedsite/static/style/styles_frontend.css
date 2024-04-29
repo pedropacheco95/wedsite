@@ -635,7 +635,6 @@ footer {
                       @media (max-width: 940px) {
                         .products_all .products_container .product_card {
                           width: 75%;
-                          max-width: 17.5rem;
                           margin: 1rem;   }
 }
                 .products_all .products_container .product_card:hover {
@@ -1108,7 +1107,7 @@ footer {
 }
             @media (max-width: 940px) {
               .informations_informations .card {
-                width: 17.5rem;   }
+                width: 70vw;   }
 }
               .informations_informations .card .image_content {
                 width: 100%; }

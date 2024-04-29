@@ -310,7 +310,6 @@ footer {
 
       @include size-query(small) {
         width: 75%;
-        max-width: 17.5rem;
         margin: 1rem;
       }
     }
@@ -922,7 +921,7 @@ footer {
     }
 
     @include size-query(small) {
-      width: 17.5rem;
+      width: 70vw;
     }
 
     margin: 2.5rem;
