@@ -614,7 +614,7 @@ footer {
                 display: grid; }
                 @media (min-width: 940px) {
                   .products_all .products_container {
-                    padding: 8rem 6rem;
+                    padding: 8rem 6rem 0 6rem;
                     grid-template-columns: repeat(3, 1fr);
                     justify-items: start;
                     gap: 4rem;   }
@@ -657,15 +657,19 @@ footer {
                         flex-direction: column;
                         justify-content: space-around;
                         padding-bottom: 0.5rem; }
-                        .products_all .products_container .product_image {
-                          width: 100%;
-                          height: 100%;
-                          object-fit: cover;
-                          border-radius: 5px; }
-                          .products_all .products_container .product_image .fit_image {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover; }
+                        @media (min-width: 940px) {
+                          .products_all .products_container .product_info_container {
+                            padding-bottom: 1rem;   }
+}
+                .products_all .products_container .product_image {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 5px; }
+                  .products_all .products_container .product_image .fit_image {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover; }
                 .products_all .products_container .product_name {
                   padding: 0.75rem;
                   width: 100%;
@@ -702,21 +706,16 @@ footer {
 }
                   .products_all .products_container .product_contribute:focus {
                     outline: none; }
-            @media (max-width: 940px) {
-              .products_all .already_paid {
-                padding-bottom: 5rem;   }
-}
+            .products_all .already_paid {
+              padding-bottom: 5rem; }
               .products_all .already_paid .product_card {
-                filter: grayscale(100%); }
-                @media (max-width: 940px) {
-                  .products_all .already_paid .product_card {
-                    padding-bottom: 0.5rem;   }
-}
-                  .products_all .already_paid .product_card .product_info_container {
-                    height: 100%;
-                    justify-content: space-between; }
-                    .products_all .already_paid .product_card .product_contribute {
-                      display: none; }
+                filter: grayscale(100%);
+                padding-bottom: 0.5rem; }
+                .products_all .already_paid .product_card .product_info_container {
+                  height: 100%;
+                  justify-content: space-between; }
+                  .products_all .already_paid .product_card .product_contribute {
+                    display: none; }
 
 .products_product {
   display: flex;
@@ -841,15 +840,21 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: 50vh;
     width: 80%;
     justify-content: center; }
-    .products_product .contribution_thank_you {
-      font-size: 1.4rem;
-      opacity: 0;
-      transition: 500ms;
-      text-align: center;
-      color: white; }
+    @media (max-width: 940px) {
+      .products_product .contribution_done_container {
+        width: 100%;
+        height: 100vh;
+        padding: 0 2rem;   }
+}
+  .products_product .contribution_thank_you {
+    font-size: 1.4rem;
+    opacity: 0;
+    transition: 500ms;
+    text-align: center;
+    color: white; }
 
 .confirmations_confirmation {
   display: flex;
@@ -876,7 +881,8 @@ footer {
         @media (max-width: 940px) {
           .confirmations_confirmation .confirmation_done_container {
             width: 100%;
-            height: 100vh;   }
+            height: 100vh;
+            padding: 0 2rem;   }
 }
   .confirmations_confirmation .confirmation_card_container {
     width: 80%;
@@ -1051,8 +1057,12 @@ footer {
                         box-shadow: 0px 14px 22px -9px #bbcbd8, 4px 3px 10px rgba(0, 0, 0, 0.24);
                         border-radius: 8px;
                         color: #474a52; }
-                        .faqs_faqs .accordion-content h2 {
-                          margin-bottom: 2rem; }
+                        @media (max-width: 940px) {
+                          .faqs_faqs .accordion-content {
+                            margin: 0 1rem;   }
+}
+                          .faqs_faqs .accordion-content h2 {
+                            margin-bottom: 2rem; }
 
 .informations_informations {
   min-height: 100vh;

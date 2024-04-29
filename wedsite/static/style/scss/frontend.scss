@@ -288,7 +288,7 @@ footer {
     display: grid;
 
     @include size-query(large) {
-      padding: 8rem 6rem;
+      padding: 8rem 6rem 0 6rem;
       grid-template-columns: repeat(3, 1fr);
       justify-items: start;
       gap: 4rem;
@@ -307,8 +307,6 @@ footer {
       border-radius: $border-radius;
       transition: 0.25s;
       overflow: hidden;
-
-      @include size-query(large) {}
 
       @include size-query(small) {
         width: 75%;
@@ -342,6 +340,11 @@ footer {
       flex-direction: column;
       justify-content: space-around;
       padding-bottom: 0.5rem;
+
+      @include size-query(large) {
+        padding-bottom: 1rem;
+      }
+
     }
 
     .product_image {
@@ -409,16 +412,11 @@ footer {
   }
 
   .already_paid {
-    @include size-query(small) {
-      padding-bottom: 5rem;
-    }
+    padding-bottom: 5rem;
 
     .product_card {
       filter: grayscale(100%);
-
-      @include size-query(small) {
-        padding-bottom: 0.5rem;
-      }
+      padding-bottom: 0.5rem;
 
       .product_info_container {
         height: 100%;
@@ -597,9 +595,15 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: 50vh;
     width: 80%;
     justify-content: center;
+
+    @include size-query(small) {
+      width: 100%;
+      height: 100vh;
+      padding: 0 2rem;
+    }
   }
 
   .contribution_thank_you {
@@ -640,6 +644,7 @@ footer {
     @include size-query(small) {
       width: 100%;
       height: 100vh;
+      padding: 0 2rem;
     }
   }
 
@@ -865,6 +870,10 @@ footer {
     box-shadow: $box-shadow;
     border-radius: 8px;
     color: $gray;
+
+    @include size-query(small) {
+      margin: 0 1rem;
+    }
 
     h2 {
       margin-bottom: 2rem;
