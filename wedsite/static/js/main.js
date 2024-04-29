@@ -23,6 +23,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    function toggleFoodRestrictionInput() {
+        var checkbox = document.getElementById('checkbox_has_food_restriction');
+        var inputContainer = document.getElementById('food_restriction_input_container');
+
+        if (checkbox.checked) {
+            inputContainer.classList.remove('disp-none');
+        } else {
+            inputContainer.classList.add('disp-none');
+        }
+    }
+    var foodRestrictionCheckbox = document.getElementById('checkbox_has_food_restriction');
+    if (foodRestrictionCheckbox) {
+        foodRestrictionCheckbox.addEventListener('change', toggleFoodRestrictionInput);
+
+        toggleFoodRestrictionInput();
+    }
+});
+
 window.addEventListener('load', function () {
     var loader = document.getElementById('loading-overlay');
     loader.style.display = 'none';
