@@ -458,6 +458,10 @@ footer {
       flex-direction: column;
       padding: 1.2rem 0;
       justify-content: flex-start;
+
+      @include size-query(small) {
+        min-height: 100vh;
+      }
     }
   }
 
@@ -484,6 +488,11 @@ footer {
       gap: 0.5rem;
     }
 
+    .product_image_name {
+      display: flex;
+      flex-direction: column;
+    }
+
     .product_name {
       padding: 0.5rem 0;
       width: 100%;
@@ -497,6 +506,10 @@ footer {
       font-size: 0.9rem;
       width: 20rem;
       padding-bottom: 0.5rem;
+
+      @include size-query(small) {
+        width: 100%;
+      }
     }
 
     .product_price {
@@ -532,8 +545,8 @@ footer {
     }
 
     .product_image {
-      width: 20rem;
-      height: 20rem;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       border-radius: $border-radius;
       display: flex;
