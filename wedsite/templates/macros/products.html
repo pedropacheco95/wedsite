@@ -1,32 +1,40 @@
 {% macro card(product, already_paid) %}
 {% import 'macros/progress_bar.html' as progress_bar %}
 <div class="product_card {% if already_paid %}already_paid{% endif %}">
-    <div class="product_link" data-href="{{url_for('products.product',product_id=product.id)}}" onclick="linkToDatasetHref(this)">
-        <div class="product_image_container">
-            <div class="product_image"> 
-                {% if product.images %}
-                <img class="fit_image" src="{{url_for('static',filename='images/{value}'.format(value = product.images[0].filename))}}" alt="Imagem da Peça">
-                {% else %}
-                <img class="fit_image" src="{{url_for('static',filename='images/products/no_product.jpg')}}" alt="Imagem da Peça">
-                {% endif %}
+    {% if not already_paid %}
+    <div class="product_link" data-href="{{url_for('products.product', product_id=product.id)}}"
+        onclick="linkToDatasetHref(this)">
+        {% else %}
+        <div class="product_link">
+            {% endif %}
+            <div class="product_image_container">
+                <div class="product_image">
+                    {% if product.images %}
+                    <img class="fit_image"
+                        src="{{url_for('static',filename='images/{value}'.format(value = product.images[0].filename))}}"
+                        alt="Imagem da Peça">
+                    {% else %}
+                    <img class="fit_image" src="{{url_for('static',filename='images/products/no_product.jpg')}}"
+                        alt="Imagem da Peça">
+                    {% endif %}
+                </div>
             </div>
-        </div>
-        <div class="product_info_container">
-            <div class="product_name">
-                <div>{{product.name}}</div>
-            </div>
-            <div class="product_price">
-                {% if product.show_price %}
-                <div>{{product.price}}€</div>
-                {{progress_bar.progress_bar(product.calculate_percentage()|int)}}
-                {% endif %}
-            </div>
-            <div class="product_contribute">
-                <div class="contribute_button">
-                    Contribuir
+            <div class="product_info_container">
+                <div class="product_name">
+                    <div>{{product.name}}</div>
+                </div>
+                <div class="product_price">
+                    {% if product.show_price %}
+                    <div>{{product.price}}€</div>
+                    {{progress_bar.progress_bar(product.calculate_percentage()|int)}}
+                    {% endif %}
+                </div>
+                <div class="product_contribute">
+                    <div class="contribute_button">
+                        Contribuir
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-{% endmacro %}
+    {% endmacro %}

@@ -4,13 +4,8 @@
         <span class="label"> {{label}} </span>
         <span class="cover_line"></span>
     </label>
-    <input 
-    type="text" 
-    name="{{name}}" 
-    class="input-1 {{ 'needs-validation' if required }}"
-    onfocus="setFocus(true,this,this.parentNode)" 
-    onblur="setFocus(false,this,this.parentNode)" 
-    />
+    <input type="text" name="{{name}}" class="input-1 {{ 'needs-validation' if required }}"
+        onfocus="setFocus(true,this,this.parentNode)" onblur="setFocus(false,this,this.parentNode)" />
 </div>
 {% endmacro %}
 
@@ -20,15 +15,9 @@
         <span class="label"> {{label}} </span>
         <span class="cover_line"></span>
     </label>
-    <input 
-    type="number" 
-    inputmode="numeric" 
-    pattern="\d*" 
-    step=".01" 
-    name="{{name}}" 
-    class="input-1 {{ 'needs-validation' if required }}" 
-    onfocus="setFocus(true,this,this.parentNode)"
-    onblur="setFocus(false,this,this.parentNode)"/>
+    <input type="number" inputmode="numeric" pattern="\d*" step=".01" name="{{name}}" min="0"
+        class="input-1 {{ 'needs-validation' if required }}" onfocus="setFocus(true,this,this.parentNode)"
+        onblur="setFocus(false,this,this.parentNode)" />
 </div>
 {% endmacro %}
 
@@ -38,13 +27,8 @@
         <span class="label"> {{label}} </span>
         <span class="cover_line"></span>
     </label>
-    <textarea 
-    type="text" 
-    name="{{name}}" 
-    class="input-1 {{ 'needs-validation' if required }}"
-    onfocus="setFocus(true,this,this.parentNode)" 
-    onblur="setFocus(false,this,this.parentNode)" 
-    >
+    <textarea type="text" name="{{name}}" class="input-1 {{ 'needs-validation' if required }}"
+        onfocus="setFocus(true,this,this.parentNode)" onblur="setFocus(false,this,this.parentNode)">
     </textarea>
 </div>
 {% endmacro %}
@@ -53,12 +37,8 @@
 <div class="input-box for_checkbox">
     <label for="checkbox_{{name}}" class="checkbox-label">{{label}}</label>
     <div class="slider_container">
-        <input 
-        id="checkbox_{{name}}"
-        type="checkbox" 
-        name="{{name}}" 
-        class="input-1 checkbox" 
-        data-field_name="{{name}}"/>
+        <input id="checkbox_{{name}}" type="checkbox" name="{{name}}" class="input-1 checkbox"
+            data-field_name="{{name}}" />
         <span class="slider"></span>
     </div>
 </div>
