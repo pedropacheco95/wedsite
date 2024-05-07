@@ -722,7 +722,7 @@ footer {
   width: 100vw; }
   @media (min-width: 940px) {
     .products_product {
-      padding-top: 8rem;   }
+      padding: 8rem 0;   }
 }
     .products_product .cards_container {
       display: flex;
