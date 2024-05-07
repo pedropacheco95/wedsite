@@ -6,12 +6,12 @@
 <div class="products_all appearing frontend_page">
     <div class="products_container">
         {% for product in products %}
-            {{product_macro.card(product, False)}}
+        {{product_macro.card(product, False)}}
         {% endfor %}
     </div>
     <div class="products_container already_paid">
         {% for product in products_paid %}
-            {{product_macro.card(product, True)}}
+        {{product_macro.card(product, True)}}
         {% endfor %}
     </div>
 </div>

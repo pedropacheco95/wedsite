@@ -280,37 +280,42 @@ footer {
   align-items: center;
   width: 100vw;
 
-  @include size-query(large) {
-    height: 100vh;
-  }
+  height: 100%;
 
   .products_container {
     display: grid;
+    grid-template-columns: 1fr;
+    /* Default to 1 column on small screens */
+    padding-top: 5rem;
+    justify-items: center;
+    width: 100%;
 
-    @include size-query(large) {
-      padding: 8rem 6rem 0 6rem;
+    @media (min-width: 768px) {
+      /* Small devices */
+      grid-template-columns: repeat(2, 1fr);
+      padding: 5rem;
+      gap: 2rem;
+    }
+
+    @media (min-width: 1200px) {
+      /* Large devices */
       grid-template-columns: repeat(3, 1fr);
+      padding: 8rem 6rem 0 6rem;
       justify-items: start;
       gap: 4rem;
     }
 
-    @include size-query(small) {
-      grid-template-columns: repeat(1, 1fr);
-      padding-top: 5rem;
-      justify-items: center;
-      width: 100%;
-    }
-
     .product_card {
       background-color: rgba(255, 255, 255, 0.75);
-      box-shadow: $box-shadow;
-      border-radius: $border-radius;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
       transition: 0.25s;
       overflow: hidden;
+      width: 75%;
+      margin: 1rem;
 
-      @include size-query(small) {
-        width: 75%;
-        margin: 1rem;
+      @media (min-width: 1200px) {
+        width: auto;
       }
     }
 
@@ -340,17 +345,16 @@ footer {
       justify-content: space-around;
       padding-bottom: 0.5rem;
 
-      @include size-query(large) {
+      @media (min-width: 1200px) {
         padding-bottom: 1rem;
       }
-
     }
 
     .product_image {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: $border-radius;
+      border-radius: 8px;
 
       .fit_image {
         width: 100%;
@@ -399,9 +403,7 @@ footer {
       }
 
       &:hover {
-        @include size-query(large) {
-          background-color: #a6c8d1;
-        }
+        background-color: #a6c8d1;
       }
 
       &:focus {
@@ -436,7 +438,7 @@ footer {
   width: 100vw;
 
   @include size-query(large) {
-    padding-top: 8rem;
+    padding: 8rem 0;
   }
 
   .cards_container {
