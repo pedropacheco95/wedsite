@@ -81,8 +81,10 @@
                 </div>
             </form>
             <div class="transfer_type">
+                <p>Para fazer a contribuição, terão que transferir o valor indicado via MBWay ou transferência
+                    bancária.</p>
                 {% if client.use_mbway %}
-                <div><span class="new_bold">MB Way:</span> {{ client.get_formatted_mbways()}} </div>
+                <div><span class="new_bold">MBWay:</span> {{ client.get_formatted_mbways()}} </div>
                 {% endif %}
                 {% if client.use_nib %}
                 <div><span class="new_bold">IBAN:</span> {{ client.get_formatted_nibs() }} </div>

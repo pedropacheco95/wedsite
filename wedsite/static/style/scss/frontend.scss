@@ -489,6 +489,10 @@ footer {
       gap: 0.5rem;
     }
 
+    @include size-query(large) {
+      width: 40%;
+    }
+
     .product_image_name {
       display: flex;
       flex-direction: column;
@@ -588,7 +592,7 @@ footer {
   }
 
   .contribution_container {
-    padding: 2rem;
+    padding: 1rem 2rem 2rem 2rem;
     border-radius: $border-radius;
 
     @include size-query(large) {
@@ -598,6 +602,7 @@ footer {
 
     @include size-query(small) {
       width: 100%;
+      padding: 2rem;
     }
 
     form {

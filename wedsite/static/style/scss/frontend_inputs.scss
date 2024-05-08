@@ -31,21 +31,20 @@ $background-image: #ecf0f5;
     .input-label {
         position: absolute;
         color: $color;
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: 300;
         max-width: calc(100% - (2 * 8px));
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
         left: 0.8rem;
-        top: calc(1.75rem - 1.2rem);
+        top: calc(1.5rem - 1rem);
         transition: 250ms;
         user-select: none;
         pointer-events: none;
         padding: 0 0.5rem 0 0.5rem;
 
         @include size-query(small) {
-            font-size: 1rem;
             top: 0.35rem;
         }
 
@@ -72,7 +71,7 @@ $background-image: #ecf0f5;
 
     .input-1 {
         box-sizing: border-box;
-        height: 3rem;
+        height: 2.5rem;
         width: 100%;
         border-radius: 5px;
         color: $input-value-color;
@@ -96,7 +95,7 @@ $background-image: #ecf0f5;
     }
 
     textarea {
-        height: 12rem !important;
+        height: 10rem !important;
     }
 }
 
@@ -242,7 +241,7 @@ $background-image: #ecf0f5;
     display: flex;
     background: $dark-blue;
     justify-content: center;
-    height: 3rem;
+    height: 2.5rem;
     align-items: center;
     border-radius: $border-radius;
     transition: 250ms;
@@ -259,9 +258,5 @@ $background-image: #ecf0f5;
         @include size-query(large) {
             background: $light-blue;
         }
-    }
-
-    @include size-query(small) {
-        height: 2.5rem;
     }
 }
