@@ -490,7 +490,7 @@ footer {
     }
 
     @include size-query(large) {
-      width: 40%;
+      width: 30%;
     }
 
     .product_image_name {
@@ -509,7 +509,6 @@ footer {
     .product_description {
       color: rgb(100, 100, 100);
       font-size: 0.9rem;
-      width: 20rem;
       padding-bottom: 0.5rem;
 
       @include size-query(small) {
@@ -596,7 +595,7 @@ footer {
     border-radius: $border-radius;
 
     @include size-query(large) {
-      width: 60%;
+      width: 70%;
       background: rgba(255, 255, 255, 0.9);
     }
 
