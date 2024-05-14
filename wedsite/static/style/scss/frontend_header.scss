@@ -21,6 +21,7 @@
     margin: 0;
     padding: 0;
     color: $gray;
+    font-family: 'BallingerMono', sans-serif;
 
     @include size-query(large) {
         display: flex;
@@ -90,6 +91,7 @@
 }
 
 .navbar_toggle_container {
+    font-family: 'BallingerMono', sans-serif;
     @include size-query(large) {
         display: none;
     }

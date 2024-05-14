@@ -933,21 +933,24 @@
                   .user_background_color {
                     background-color: #c5c5e7; }
 
-                    .logout_block {
-                      z-index: 99;
-                      position: absolute;
-                      top: 3rem;
-                      right: 2rem;
-                      padding: 1rem;
-                      background: white;
-                      border-radius: 5px; }
-                      @media (max-width: 940px) {
-                        .logout_block {
-                          width: 50vw;   }
-}
-                        @media (min-width: 940px) {
+                    .client_background_color {
+                      background-color: #5a5ad1; }
+
+                      .logout_block {
+                        z-index: 99;
+                        position: absolute;
+                        top: 3rem;
+                        right: 2rem;
+                        padding: 1rem;
+                        background: white;
+                        border-radius: 5px; }
+                        @media (max-width: 940px) {
                           .logout_block {
-                            width: 25vw;   }
+                            width: 50vw;   }
+}
+                          @media (min-width: 940px) {
+                            .logout_block {
+                              width: 25vw;   }
 }
 
   .logout_container {
@@ -995,8 +998,7 @@
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
-                    ;
-color: white; }
+                    color: white; }
                     .editor_header_elements .header_buttons {
                       display: flex;
                       flex-direction: row; }
@@ -1232,8 +1234,7 @@ color: white; }
 
     .editor_objects_tabs_information {
       padding: 0.1rem 1rem 1rem 1rem;
-      ;
-height: calc(100% - 2.5rem); }
+      height: calc(100% - 2.5rem); }
       @media (min-width: 940px) {
         .editor_objects_tabs_information {
           box-shadow: 11px 6px 12px 0px rgba(0, 0, 0, 0.4);
@@ -1375,3 +1376,39 @@ height: calc(100% - 2.5rem); }
 
         label {
           margin: 0; }
+
+          @font-face {
+            font-family: 'BallingerMono';
+            src: url(../fonts/Ballinger/BallingerMono-Black.otf) format('opentype');
+            font-weight: 900;
+            font-style: normal; }
+
+            @font-face {
+              font-family: 'BallingerMono';
+              src: url(../fonts/Ballinger/BallingerMono-Bold.otf) format('opentype');
+              font-weight: 800;
+              font-style: normal; }
+
+              @font-face {
+                font-family: 'BallingerMono';
+                src: url(../fonts/Ballinger/BallingerMono-Medium.otf) format('opentype');
+                font-weight: 700;
+                font-style: normal; }
+
+                @font-face {
+                  font-family: 'BallingerMono';
+                  src: url(../fonts/Ballinger/BallingerMono-Regular.otf) format('opentype');
+                  font-weight: normal;
+                  font-style: normal; }
+
+                  @font-face {
+                    font-family: 'BallingerMono';
+                    src: url(../fonts/Ballinger/BallingerMono-Light.otf) format('opentype');
+                    font-weight: 300;
+                    font-style: normal; }
+
+                    @font-face {
+                      font-family: 'BallingerMono';
+                      src: url(../fonts/Ballinger/BallingerMono-Thin.otf) format('opentype');
+                      font-weight: 100;
+                      font-style: normal; }

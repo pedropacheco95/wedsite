@@ -9,9 +9,9 @@
                 <div> {{ client.main_title }} </div>
             </div>
             <div class="first_page_date">
-                <div>21 de setembro</div>
-                <div class="pipe">&nbsp;|&nbsp;</div>
-                <div>14:30</div>
+                {% if client %}
+                <div>{{ client.get_formatted_datetime() }}</div>
+                {% endif %}
             </div>
         </div>
     </div>

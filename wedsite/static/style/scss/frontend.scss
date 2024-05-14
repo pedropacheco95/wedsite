@@ -1,5 +1,5 @@
 body {
-  font-family: "HelveticaNeue-Light";
+  font-family: 'BallingerMono', "HelveticaNeue-Light", sans-serif;
   color: $gray;
 }
 
@@ -146,11 +146,11 @@ footer {
     background-attachment: scroll;
 
     @include size-query(large) {
-      background-image: url(../images/kikalu.webp);
+      background-image: url(../images/index_background.jpg);
     }
-
+    
     @include size-query(small) {
-      background-image: url(../images/kikalu_mobile.webp);
+      background-image: url(../images/index_background_phone.jpg);
       display: flex;
       align-items: flex-start;
       flex-direction: row;
