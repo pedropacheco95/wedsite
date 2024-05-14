@@ -7,17 +7,19 @@ $border-color: 1px solid #000000;
 
 $border-color-active: 2px solid $active-color;
 $default-background: #fff;
-$background-image:#ecf0f5;
+$background-image: #ecf0f5;
 
 
-button, input[type="submit"], input[type="reset"] {
+button,
+input[type="submit"],
+input[type="reset"] {
     background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
 }
 
 input:focus {
@@ -33,10 +35,13 @@ input {
     margin: 1rem 0;
     display: flex;
     justify-content: center;
+
     @include size-query(small) {
         width: 20rem;
     }
+
     width: 25rem;
+
     .input-label {
         position: absolute;
         color: $color;
@@ -52,14 +57,16 @@ input {
         transition: 250ms;
         user-select: none;
         pointer-events: none;
+
         svg {
-        position: relative;
-        width: 3rem;
-        height: 2rem;
-        top: 2px;
-        transition: 250ms;
+            position: relative;
+            width: 3rem;
+            height: 2rem;
+            top: 2px;
+            transition: 250ms;
         }
     }
+
     .input-1 {
         box-sizing: border-box;
         min-height: 3.8rem;
@@ -71,10 +78,11 @@ input {
         padding: 1rem 1rem;
 
         transition: 250ms;
+
         &:focus {
-        outline: none;
-        border: 2px solid $active-color;
-        transition: 250ms;
+            outline: none;
+            border: 2px solid $active-color;
+            transition: 250ms;
         }
     }
 
@@ -88,9 +96,10 @@ input {
         border: none;
 
         transition: 250ms;
+
         &:focus {
-        outline: none;
-        transition: 250ms;
+            outline: none;
+            transition: 250ms;
         }
     }
 
@@ -104,22 +113,24 @@ input {
         border: none;
 
         transition: 250ms;
+
         &:focus {
-        outline: none;
-        transition: 250ms;
+            outline: none;
+            transition: 250ms;
         }
     }
 }
 
 .input-box.focus,
 .input-box.active {
-    .label-invalid{
-        color: #dc3545!important;
+    .label-invalid {
+        color: #dc3545 !important;
     }
-    
-    .label-valid{
-        color: #28a745!important;
+
+    .label-valid {
+        color: #28a745 !important;
     }
+
     .input-label {
         color: $active-color;
         top: -0.2rem;
@@ -129,16 +140,16 @@ input {
         transition: 250ms;
 
         svg {
-        position: relative;
-        width: 11px;
-        height: 11px;
-        top: 2px;
-        transition: 250ms;
+            position: relative;
+            width: 11px;
+            height: 11px;
+            top: 2px;
+            transition: 250ms;
         }
     }
 }
 
-.color-label{
+.color-label {
     background: transparent;
     transition: 250ms;
     color: $color;
@@ -154,7 +165,7 @@ input {
     text-align: center;
 }
 
-.checkbox-label{
+.checkbox-label {
     background: transparent;
     transition: 250ms;
     color: $color;
@@ -170,7 +181,7 @@ input {
     text-align: center;
 }
 
-.for_color{
+.for_color {
     display: flex;
     flex-direction: row;
     border-radius: 10px;
@@ -178,7 +189,7 @@ input {
     border: $border-color;
 }
 
-.for_checkbox{
+.for_checkbox {
     display: flex;
     flex-direction: row;
     border-radius: 10px;
@@ -189,6 +200,7 @@ input {
 .pull-right {
     float: right;
 }
+
 .clear {
     clear: both;
 }
@@ -214,7 +226,7 @@ input {
     height: 12rem;
     display: flex;
     align-items: center;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     cursor: pointer;
 }
@@ -234,7 +246,7 @@ input {
     margin: 0 auto;
     left: -1%;
     bottom: -1rem;
-    background: rgba(0,0,0,1);
+    background: rgba(0, 0, 0, 1);
     text-align: center;
     width: max-content;
     font-size: 1rem;
@@ -266,11 +278,11 @@ input {
     max-width: 100%;
 }
 
-.inactive_image{
-    display: none!important;
+.inactive_image {
+    display: none !important;
 }
 
-.added_image{
+.added_image {
     position: relative;
     height: 12rem;
     width: 12rem;
@@ -280,29 +292,29 @@ input {
     cursor: pointer;
     justify-content: center;
 
-    .dropzone-desc{
+    .dropzone-desc {
         display: none;
     }
 
-    .rechose_image{
+    .rechose_image {
         display: block;
     }
 
-    .final_input_image{
+    .final_input_image {
         display: block;
     }
 }
 
-.is-valid{
-    border-color: #28a745!important;
+.is-valid {
+    border-color: #28a745 !important;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-position: right calc(0.375em + 0.1875rem) center;
     background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
 
-.is-invalid{
-    border-color: #dc3545!important;
+.is-invalid {
+    border-color: #dc3545 !important;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-position: right calc(0.375em + 0.1875rem) center;
@@ -315,7 +327,7 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-.submit_button{
+.submit_button {
     border-radius: 0.5rem;
     transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1);
     letter-spacing: 0.5px;
@@ -330,42 +342,42 @@ input::-webkit-inner-spin-button {
     box-shadow: 0 0 0 2px $fifth-color inset;
 }
 
-.submit_button:hover{
+.submit_button:hover {
     @include size-query(large) {
         background: $fourth-color;
-        color: $primary-color;
+        color: $gray;
     }
 }
 
-.general_form{
+.general_form {
     padding: 1rem;
 }
 
-.readonly_image_input:hover{
-    .dropzone-desc-readonly{
+.readonly_image_input:hover {
+    .dropzone-desc-readonly {
         display: block;
     }
 }
 
-.readonly_image_input{
-    .dropzone-desc{
+.readonly_image_input {
+    .dropzone-desc {
         display: none;
     }
 
-    .rechose_image{
+    .rechose_image {
         display: none;
     }
 
-    .dropzone{
+    .dropzone {
         display: none;
     }
 }
 
-.dropzone-desc-readonly{
+.dropzone-desc-readonly {
     display: none;
 }
 
-.rechose_image{
+.rechose_image {
     height: 20%;
     position: absolute;
     bottom: -10%;
@@ -375,29 +387,29 @@ input::-webkit-inner-spin-button {
     display: none;
 }
 
-.rechose_image:hover{
+.rechose_image:hover {
     transform: scale(1.1);
 }
 
-.editor_header_edit_button{
+.editor_header_edit_button {
     display: none;
 }
 
-.readonly_header{
-    .editor_header_create_button{
+.readonly_header {
+    .editor_header_create_button {
         display: none;
     }
 
-    .editor_header_edit_button{
+    .editor_header_edit_button {
         display: block;
     }
 }
 
-.multi_select{
+.multi_select {
     display: flex;
     flex-direction: column;
 
-    .options_list{
+    .options_list {
         margin-top: 0.5rem;
         opacity: 1;
         visibility: visible;
@@ -413,77 +425,78 @@ input::-webkit-inner-spin-button {
         top: 4rem;
         z-index: 1000;
 
-        .options{
+        .options {
             padding: 0.5rem 2rem;
             color: #666666;
             font-size: 1rem;
             display: none;
         }
 
-        
+
         .options:nth-child(-n+4) {
             display: inherit;
         }
-        
-        .options:hover{
+
+        .options:hover {
             background-color: #4d84fe;
             color: #343434;
         }
 
-        .create_new_option{
+        .create_new_option {
             padding: 0.4rem 1rem
         }
 
-        .create_new_option:hover{
+        .create_new_option:hover {
             background-color: #b8b8b8;
         }
 
     }
 
-    .selected_options{
+    .selected_options {
         display: flex;
         flex-direction: row-reverse;
         justify-content: flex-end;
         flex-wrap: wrap;
 
-        .text_input_select{
+        .text_input_select {
             border: none;
             outline: none;
         }
 
-        .option_div{
+        .option_div {
             background-color: #eef4ff;
             padding: 0.5rem;
             border-radius: 0.4rem;
             font-size: 0.9rem;
-            margin: 0.25rem 0.5rem;;
+            margin: 0.25rem 0.5rem;
+            ;
         }
     }
 }
 
-.not_readonly_div{
-    span{
+.not_readonly_div {
+    span {
         display: none;
     }
 }
 
-.was_not_readonly_div{
-    span{
+.was_not_readonly_div {
+    span {
         display: contents;
     }
 }
 
-.manytomany_text_search{
+.manytomany_text_search {
     background: #fff;
     width: 96%;
     margin: 2%;
     border-radius: 0.2rem;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    border: 1px solid rgb(205,205,205);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    border: 1px solid rgb(205, 205, 205);
     outline: none;
 }
 
-.modal_input_footer_button_container{
+.modal_input_footer_button_container {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -493,39 +506,39 @@ input::-webkit-inner-spin-button {
     padding: 0.5rem;
 }
 
-.modal_content_from_url{
+.modal_content_from_url {
     height: 100%;
 
-    .editor_objects_container{
+    .editor_objects_container {
         height: 100%;
     }
-    .editor_objects_information_container{
+
+    .editor_objects_information_container {
         height: 60%;
         width: 90%;
         padding: 0;
         margin: 0;
     }
 
-    .editor_objects_main_block{
+    .editor_objects_main_block {
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    .editor_objects_tabs_block{
+    .editor_objects_tabs_block {
         max-height: 0;
     }
 
-    .editor_objects_main_block_info{
+    .editor_objects_main_block_info {
         width: 80%;
         display: flex;
         justify-content: center;
         flex-direction: column;
 
-        .input-box{
+        .input-box {
             width: 100%;
         }
     }
 
 }
-

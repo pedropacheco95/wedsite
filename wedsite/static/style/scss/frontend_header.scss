@@ -1,11 +1,14 @@
-.navbar{
+.navbar {
     width: 100%;
     position: fixed;
     z-index: 1000;
+
     @include size-query(large) {
         height: 4rem;
-        background: linear-gradient($primary-color-shade, transparent 100%, rgba(0, 212, 255, 0));
+        background: transparent;
+        transition: backgroundColor 0.3s ease-in-out;
     }
+
     @include size-query(small) {
         display: flex;
         flex-direction: column;
@@ -13,20 +16,21 @@
     }
 }
 
-.navbar_items_container{
+.navbar_items_container {
     width: 100%;
     margin: 0;
     padding: 0;
-    color: $primary-color;
-    
+    color: $gray;
+    font-family: 'BallingerMono', sans-serif;
+
     @include size-query(large) {
         display: flex;
         width: 100%;
         flex-direction: row;
         justify-content: space-around;
         font-size: 1.2rem;
-        font-weight: bold;
     }
+
     @include size-query(small) {
         display: none;
         width: 85%;
@@ -40,49 +44,58 @@
     }
 }
 
-.navbar_items_container.show{
+.navbar_items_container.show {
     display: flex;
 }
 
-.navbar_item{
+.navbar_item {
     border-bottom: 2px solid rgba(0, 0, 0, 0);
 
     @include size-query(large) {
-        padding: 0.5rem;
+        padding: 0.25rem;
     }
+
     @include size-query(small) {
-        padding: 1rem;
+        padding: 0.25rem;
+        margin: 0.75rem 0;
     }
 }
 
-.navbar_item:hover{
+.navbar_item:hover {
     border-bottom: 2px solid white;
-    color: #b6b8bd;
+    color: white;
 }
 
-.navbar_toggler{
+.navbar_item.active {
+    border-bottom: 2px solid;
+    font-weight: 500;
+}
+
+.navbar_toggler {
     margin: 0;
-    padding: 1rem 0rem;
+    padding: 0.25rem 0rem;
     border: none;
     background: transparent !important;
 }
 
-.icon_bar{
+.icon_bar {
     display: block;
-    height: 0.35rem;
+    height: 0.23rem;
     border-radius: 0.3rem;
-    width: 3rem;
-    background-color: black;
+    width: 2rem;
+    background-color: white;
     transition: all 0.25s;
     transform-origin: 10% 10%;
     transform: rotate(0);
-    margin: 0.5rem;
+    margin: 0.27rem;
 }
 
-.navbar_toggle_container{
+.navbar_toggle_container {
+    font-family: 'BallingerMono', sans-serif;
     @include size-query(large) {
         display: none;
     }
+
     @include size-query(small) {
         display: flex;
         justify-content: flex-end;
@@ -91,18 +104,18 @@
 }
 
 .navbar_toggler.collapsed .icon_bar:nth-of-type(1) {
-	transform: rotate(45deg);
-	transform-origin: 10% 10%;
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
     height: 0.3rem;
 }
 
 .navbar_toggler.collapsed .icon_bar:nth-of-type(2) {
-	opacity: 0;
-	filter: alpha(opacity=0);
+    opacity: 0;
+    filter: alpha(opacity=0);
 }
 
 .navbar_toggler.collapsed .icon_bar:nth-of-type(3) {
-	transform: rotate(-45deg);
-	transform-origin: 10% 90%;
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
     height: 0.3rem;
 }

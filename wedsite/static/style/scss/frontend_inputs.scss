@@ -1,5 +1,5 @@
 $color: #A8AEB3;
-$active-color: #1a73e8;
+$active-color: $dark-blue;
 $input-value-color: #202124;
 $border-color: 2px solid #e8e9ea;
 
@@ -39,6 +39,12 @@ $background-image:#ecf0f5;
         user-select: none;
         pointer-events: none;
         padding: 0 0.5rem 0 0.5rem;
+
+        @include size-query(small) {
+            font-size: 1rem;
+            top: 0.35rem;
+        }
+
         svg {
             position: relative;
             width: 3rem;
@@ -75,6 +81,11 @@ $background-image:#ecf0f5;
         outline: none;
         border: 2px solid $active-color;
         }
+
+        @include size-query(small) {
+            height: 2rem;
+            font-size: 0.8rem;
+        }
     }
 
     textarea{
@@ -88,6 +99,10 @@ $background-image:#ecf0f5;
 
 .slider_container{
     width: 100%;
+
+    @include size-query(small) {
+        transform: scale(0.8);
+    }
 }
 
 .checkbox{
@@ -141,24 +156,26 @@ $background-image:#ecf0f5;
 		&:after {
 			left: 0;
             border-radius: 2em;
-			background: #fbfbfb;
-			transition:
-            left .3s cubic-bezier(
-            0.175, 0.885, 0.320, 1.275
-            ),
-            padding .3s ease, margin .3s ease;
-                box-shadow:
-            0 0 0 1px rgba(0,0,0,.1),
-            0 4px 0 rgba(0,0,0,.08);
-		}
-    
-		&:before {
-			display: none;
-		}
-	}
-	&:checked + .slider:after {
-		left: 50%;
-	}
+            background: #fbfbfb;
+            transition:
+                left .3s cubic-bezier(0.175, 0.885, 0.320, 1.275),
+                padding .3s ease, margin .3s ease;
+            box-shadow:
+                0 0 0 1px rgba(0, 0, 0, .1),
+                0 4px 0 rgba(0, 0, 0, .08);
+        }
+
+        &:before {
+            display: none;
+        }
+    }
+
+    &:checked+.slider:after {
+        left: 50%;
+    }
+
+    &:checked+.slider {
+        background: $dark-blue;
 
     &:checked + .slider {
         background: #869cd9;
@@ -185,7 +202,6 @@ $background-image:#ecf0f5;
         top: -0.6rem;
         background: rgba(255, 255, 255, 0);
         font-size: 0.8rem;
-
         transition: 250ms;
 
         svg {
@@ -209,7 +225,7 @@ $background-image:#ecf0f5;
 
 .submit_button{
     display: flex;
-    background: #94a2c9;
+    background: $dark-blue;
     justify-content: center;
     height: 3rem;
     align-items: center;
@@ -226,7 +242,12 @@ $background-image:#ecf0f5;
 
     &:hover{
         @include size-query(large) {
-            background: #4c65b8;
+            background: $light-blue;
         }
     }
+
+    @include size-query(small) {
+        height: 2.5rem;
+    }
+}
 }

@@ -19,10 +19,12 @@ class Client(db.Model ,model.Model,model.Base):
     party_location_name = Column(Text)
     party_location_url = Column(Text)
     party_image_path = Column(Text)
+    party_description = Column(Text)
 
     church_location_name = Column(Text)
     church_location_url = Column(Text)
     church_image_path = Column(Text)
+    church_description = Column(Text)
 
     use_mbway = Column(Boolean)
     mbway_numbers = Column(Text)
@@ -43,7 +45,9 @@ class Client(db.Model ,model.Model,model.Base):
         return self.nibs.split(';')
     
     def get_formatted_datetime(self):
-        return self.datetime.strftime("%d/%m, %H:%M")
+        if self.datetime:
+            return self.datetime.strftime("%d/%m, %H:%M")
+        return 'Dia, Horas'
     
     def get_formatted_mbways(self):
         mbways = self.get_mbway_numbers()
@@ -117,6 +121,8 @@ class Client(db.Model ,model.Model,model.Base):
 
         # Create Informations tab
         fields = [
+            get_field(name='party_description',label='Descrição para a festa',type='Text'),
+            get_field(name='church_description',label='Descrição para a igreja',type='Text'),
             get_field(name='party_location_name',label='Festa',type='Text'),
             get_field(name='party_location_url',label='Local da festa (url)',type='Text'),
             get_field(name='church_location_name',label='Igreja',type='Text'),

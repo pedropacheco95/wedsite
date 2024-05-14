@@ -11,8 +11,15 @@
                 <img src="{{url_for('static',filename='images/{value}'.format(value = client.church_image_path))}}" alt="Church" class="fit_image">
             </div>
             <div class="description_content">
-                <div class="title"> {{client.church_location_name}} </div>
-                <div class="info"><a href="{{client.church_location_url}}">Ver mapa</a></div>
+                <div>
+                    <div class="icon_text">
+                        <span class="fa fa-church" aria-hidden="true"></span>
+                        <p>{{client.church_location_name}}</p>
+                    </div>
+                    <p>{{client.church_description}}</p>
+                    <div class="info"><a target="_blank" href="{{client.church_location_url}}">Ver mapa</a>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="card">
@@ -20,8 +27,15 @@
                 <img src="{{url_for('static',filename='images/{value}'.format(value = client.party_image_path))}}" alt="Party" class="fit_image">
             </div>
             <div class="description_content">
-                <div class="title"> {{client.party_location_name}} </div>
-                <div class="info"><a href="{{client.party_location_url}}">Ver mapa</a></div>
+                <div>
+                    <div class="icon_text">
+                        <span class="fa fa-glass-martini" aria-hidden="true"></span>
+                        <p> {{client.party_location_name}} </p>
+                    </div>
+                    <p>{{client.party_description}}</p>
+                    <div class="info"><a target="_blank" href="{{client.party_location_url}}">Ver mapa</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -30,20 +44,20 @@
         <h2 class="hotels_header"> Onde ficar?</h2>
         <div class="hotels_cards_container">
             {% for hotel in hotels %}
-                <div class="hotel_card">
-                    <div class="title">{{hotel.name}}</div>
-                    <div class="info">
-                        <div class="info_line">
-                            {% if hotel.adress %}<span class="label">Morada:</span> <br> {{hotel.adress}}{% endif %}
-                        </div>
-                        <div class="info_line">
-                            {% if hotel.email %}<span class="label">Email:</span> <br> {{hotel.email}}{% endif %}
-                        </div>
-                        <div class="info_line">
-                            {% if hotel.phone %}<span class="label">Telefone:</span> <br> {{hotel.phone}}{% endif %}
-                        </div>
+            <div class="hotel_card">
+                <div class="title">{{hotel.name}}</div>
+                <div class="info">
+                    <div class="info_line">
+                        {% if hotel.adress %}<span class="label">Morada:</span> <br> {{hotel.adress}}{% endif %}
+                    </div>
+                    <div class="info_line">
+                        {% if hotel.email %}<span class="label">Email:</span> <br> {{hotel.email}}{% endif %}
+                    </div>
+                    <div class="info_line">
+                        {% if hotel.phone %}<span class="label">Telefone:</span> <br> {{hotel.phone}}{% endif %}
                     </div>
                 </div>
+            </div>
             {% endfor %}
         </div>
     </div>

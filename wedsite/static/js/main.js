@@ -1,9 +1,9 @@
-var isMobile = ('ontouchstart' in document.documentElement); 
+var isMobile = ('ontouchstart' in document.documentElement);
 
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
     let hideIfClickOutside = document.getElementsByClassName('hide_if_click_outside');
     for (let elementToHide of hideIfClickOutside) {
-        if (elementToHide.classList.contains('just_added')){
+        if (elementToHide.classList.contains('just_added')) {
             elementToHide.classList.remove('just_added');
             continue;
         }
@@ -14,32 +14,79 @@ document.addEventListener('click', function(event) {
     }
 });
 
-function toggleNavbar(){
-    addOrRemoveClass('.navbar_toggler','collapsed');
-    addOrRemoveClass('.navbar_items_container','show');
-    addOrRemoveClass('overlay','background_overlay');
+document.addEventListener("DOMContentLoaded", function () {
+    var flashMessage = document.querySelector(".flash_warning");
+    if (flashMessage.innerText.trim() !== "") {
+        setTimeout(function () {
+            flashMessage.style.display = 'none';
+        }, 5000);
+    }
+});
+
+window.addEventListener('load', function () {
+    var loader = document.getElementById('loading-overlay');
+    loader.style.display = 'none';
+});
+
+window.addEventListener('scroll', function () {
+    if (window.innerWidth >= 940) {
+        var navbar = document.querySelector('.navbar');
+        var navbarItem = document.querySelectorAll('.navbar_item');
+
+        if (window.scrollY > 50) {
+            navbar.style.backgroundColor = '#ffffff';
+            navbar.style.boxShadow = '0px 2px 5px rgba(0,0,0,0.3)';
+            navbarItem.forEach(function (link) {
+                link.addEventListener('mouseover', function () {
+                    this.style.color = '#a6c8d1';
+                });
+                link.addEventListener('mouseout', function () {
+                    this.style.color = '#474a52';
+                });
+            });
+        } else {
+            navbar.style.backgroundColor = 'transparent';
+            navbar.style.boxShadow = 'none';
+            navbarItem.forEach(function (link) {
+                link.addEventListener('mouseover', function () {
+                    this.style.color = '#ffffff';
+                });
+                link.addEventListener('mouseout', function () {
+                    this.style.color = '#474a52';
+                });
+            });
+        }
+    }
+});
+
+
+
+function toggleNavbar() {
+    addOrRemoveClass('.navbar_toggler', 'collapsed');
+    addOrRemoveClass('.navbar_items_container', 'show');
+    addOrRemoveClass('overlay', 'background_overlay');
 }
 
-function duplicateElement(element){
+function duplicateElement(element) {
     var newElement = element.cloneNode(true);
     element.parentNode.insertBefore(newElement, element.nextSibling);
 }
 
-function duplicateInputElement(element){
+function duplicateInputElement(element) {
     var newElement = element.cloneNode(true);
     newElement.value = ""
     element.parentNode.insertBefore(newElement, element.nextSibling);
 }
 
-function linkToDatasetHref(element){
+function linkToDatasetHref(element) {
     window.location.href = element.dataset.href;
 }
 
-function addOrRemoveClass(element_selector, className){
+function addOrRemoveClass(element_selector, className) {
     var elements = document.querySelectorAll(element_selector);
-    if (elements){
-        for (let element of elements){
-            if (element.classList.contains(className)){
+    if (elements) {
+        for (let element of elements) {
+            if (element.classList.contains(className)) {
                 element.classList.remove(className);
             } else {
                 element.classList.add(className);
@@ -49,7 +96,7 @@ function addOrRemoveClass(element_selector, className){
 }
 
 function setFocus(on, element, focus_element) {
-    if (!element.readOnly){
+    if (!element.readOnly) {
         if (on) {
             setTimeout(function () {
                 focus_element.classList.add("focus");
@@ -74,27 +121,27 @@ function showHidePassword(element) {
     }
 }
 
-function validateForm(form){
+function validateForm(form) {
     var inputs = form.querySelectorAll("input");
     var valid = true;
-    for (let input of inputs){
-        if (input.value == "" && input.classList.contains("needs-validation")){
+    for (let input of inputs) {
+        if (input.value == "" && input.classList.contains("needs-validation")) {
             valid = false;
-            if (!input.classList.contains("is-invalid")){
+            if (!input.classList.contains("is-invalid")) {
                 input.classList.add("is-invalid");
                 let label = input.parentNode.querySelector("label")
-                if (label){
+                if (label) {
                     label.classList.add("label-invalid");
                 }
             }
         } else {
-            if (!input.classList.contains("is-valid")){
+            if (!input.classList.contains("is-valid")) {
                 input.classList.add("is-valid");
-                if (input.parentNode.classList.contains("for_color")){
+                if (input.parentNode.classList.contains("for_color")) {
                     input.parentNode.classList.add("validated_color_field")
                 }
                 let label = input.parentNode.querySelector("label")
-                if (label){
+                if (label) {
                     label.classList.add("label-valid");
                 }
             }
@@ -103,7 +150,7 @@ function validateForm(form){
     return valid;
 }
 
-function showHideElement(element_id){
+function showHideElement(element_id) {
     let elementToHide = document.getElementById(element_id)
     if (elementToHide.style.display === "none") {
         elementToHide.style.display = "block";
@@ -114,9 +161,9 @@ function showHideElement(element_id){
     }
 }
 
-function showHideElementByClass(element_class){
+function showHideElementByClass(element_class) {
     let elements = document.getElementsByClassName(element_class)
-    for (let element of elements){
+    for (let element of elements) {
         if (element.style.display === "none") {
             element.style.display = "";
         } else {
@@ -159,23 +206,23 @@ function searchTable(input) {
     }
 }
 
-function sortTable(header,columnIndex) {
+function sortTable(header, columnIndex) {
     var table = header.parentNode.parentNode.parentNode;
     var rows = Array.from(table.tBodies[0].rows);
     var headerCells = table.querySelectorAll("th");
-    columnIndex = parseInt(columnIndex)-1;
+    columnIndex = parseInt(columnIndex) - 1;
     // Toggle the sort order for the clicked column
     var sortOrder = headerCells[columnIndex].classList.toggle('sort-order') ? 1 : -1;
-    
+
     // Reset the sort order for the other columns
-    headerCells.forEach(function(cell, index) {
+    headerCells.forEach(function (cell, index) {
         if (index !== columnIndex) {
             cell.classList.remove('sort-order');
         }
     });
-    
+
     // Sort the table rows
-    rows.sort(function(a, b) {
+    rows.sort(function (a, b) {
         var cellA = a.cells[columnIndex].textContent.toUpperCase();
         var cellB = b.cells[columnIndex].textContent.toUpperCase();
         if (cellA < cellB) {
@@ -186,31 +233,31 @@ function sortTable(header,columnIndex) {
             return 0;
         }
     });
-    
+
     // Update the table with the sorted rows
-    rows.forEach(function(row) {
+    rows.forEach(function (row) {
         table.tBodies[0].appendChild(row);
     });
-    
+
     // Update the sort indicator and remove the other indicators
-    headerCells.forEach(function(cell, index) {
+    headerCells.forEach(function (cell, index) {
         var indicator = cell.querySelector('.sort-indicator');
         indicator.classList.remove('indicator-up', 'indicator-down');
     });
 
     var indicator = headerCells[columnIndex].querySelector('.sort-indicator');
-    if (sortOrder == -1){
+    if (sortOrder == -1) {
         indicator.classList.add('indicator-down');
         indicator.classList.remove('indicator-up');
     }
-    else{
+    else {
         indicator.classList.add('indicator-up');
         indicator.classList.remove('indicator-down');
     }
 }
 
-function switchTab(element){
-    if (element.classList.contains('active_tab_title')){
+function switchTab(element) {
+    if (element.classList.contains('active_tab_title')) {
         return;
     };
     // Remove active tab
@@ -224,106 +271,106 @@ function switchTab(element){
     element.classList.add("active_tab_title");
 }
 
-function removeAllReadonlys(){
+function removeAllReadonlys() {
     let inputs = document.querySelectorAll("input");
-    for (let input of inputs){
+    for (let input of inputs) {
         input.removeAttribute("readonly");
         input.classList.add("was_readonly_input");
     }
     let disabled_inputs = document.querySelectorAll(".disabled_input");
-    for (let input of disabled_inputs){
+    for (let input of disabled_inputs) {
         input.removeAttribute("disabled");
         input.classList.add("was_disabled_input");
     }
     let header = document.querySelector(".readonly_header");
-    if (header){
+    if (header) {
         header.classList.remove("readonly_header");
         header.classList.add("was_readonly_header");
     }
     let imagesContainers = document.querySelectorAll(".readonly_image_input");
-    for (let container of imagesContainers){
+    for (let container of imagesContainers) {
         container.classList.remove("readonly_image_input");
         container.classList.add("was_readonly_image_input");
     }
     let divs_not = document.querySelectorAll(".not_readonly_div");
-    for (let div of divs_not){
+    for (let div of divs_not) {
         div.classList.remove("not_readonly_div");
         div.classList.add("was_not_readonly_div");
     }
-    let divs  = document.querySelectorAll(".readonly_div");
-    for (let div of divs){
+    let divs = document.querySelectorAll(".readonly_div");
+    for (let div of divs) {
         div.classList.remove("readonly_div");
         div.classList.add("was_readonly_div");
     }
 }
 
-function addReadonlys(){
+function addReadonlys() {
     let inputs = document.querySelectorAll(".was_readonly_input");
-    for (let input of inputs){
-        input.setAttribute("readonly",true);
+    for (let input of inputs) {
+        input.setAttribute("readonly", true);
     }
     let disabled_inputs = document.querySelectorAll(".was_disabled_input");
-    for (let input of disabled_inputs){
-        input.setAttribute("disabled",true);
+    for (let input of disabled_inputs) {
+        input.setAttribute("disabled", true);
     }
     let header = document.querySelector(".was_readonly_header");
-    if (header){
+    if (header) {
         header.classList.remove("was_readonly_header");
         header.classList.add("readonly_header");
     }
     let imagesContainers = document.querySelectorAll(".was_readonly_image_input");
-    for (let container of imagesContainers){
+    for (let container of imagesContainers) {
         container.classList.remove("was_readonly_image_input");
         container.classList.add("readonly_image_input");
     }
     let divs_not = document.querySelectorAll(".was_not_readonly_div");
-    for (let div of divs_not){
+    for (let div of divs_not) {
         div.classList.remove("was_not_readonly_div");
         div.classList.add("not_readonly_div");
     }
-    let divs  = document.querySelectorAll(".was_readonly_div");
-    for (let div of divs){
+    let divs = document.querySelectorAll(".was_readonly_div");
+    for (let div of divs) {
         div.classList.remove("was_readonly_div");
         div.classList.add("readonly_div");
     }
 }
 
-function validateFormWithNoStyles(form){
+function validateFormWithNoStyles(form) {
     var inputs = form.querySelectorAll(".needs-validation");
-    for (let input of inputs){
-        if (input.value == ""){
+    for (let input of inputs) {
+        if (input.value == "") {
             return false;
         }
     }
     return true;
 }
 
-function removeClassFromAllElements(className){
-    let elements = document.querySelectorAll("."+className);
-    for (let element of elements){
+function removeClassFromAllElements(className) {
+    let elements = document.querySelectorAll("." + className);
+    for (let element of elements) {
         element.classList.remove(className);
     }
 }
 
-function removeClassesFromAllElements(classNames){
-    for (let className of classNames){
+function removeClassesFromAllElements(classNames) {
+    for (let className of classNames) {
         removeClassFromAllElements(className);
     }
 }
 
-async function callAPI(element,redirect){
+async function callAPI(element, redirect) {
     let url = element.dataset.href;
     const response = await fetch(url, {
         method: 'POST'
     });
-    if (redirect){
+    if (redirect) {
         window.location.href = await response.json();
     }
     return response;
 }
 
-async function downloadCSV(element){
-    let response = await callAPI(element,false);
+async function downloadCSV(element) {
+    let response = await callAPI(element, false);
     let filepath = await response.text();
     downloadFile(filepath);
 }
@@ -346,8 +393,8 @@ function downloadFile(filepath) {
     }, 0);
 }
 
-function showHideElements(elements){
-    for (let element of elements){
+function showHideElements(elements) {
+    for (let element of elements) {
         element = document.getElementById(element);
         if (element.style.display === "none") {
             element.style.display = "";
