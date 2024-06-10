@@ -1,6 +1,6 @@
 body {
   font-family: 'BallingerMono', "HelveticaNeue-Light", sans-serif;
-  color: $gray;
+  color: $cover-color;
 }
 
 #loading-overlay {
@@ -175,7 +175,7 @@ footer {
         padding: 1rem;
         width: 100%;
         margin-top: 2.5rem;
-        color: white;
+        color: $cover-color;
       }
     }
 
@@ -650,8 +650,8 @@ footer {
       transition: 250ms;
 
       @include size-query(large) {
-        width: 75%;
-        height: 65%;
+        width: 85%;
+        height: 80%;
         box-shadow: $box-shadow;
       }
 

@@ -16,10 +16,12 @@ document.addEventListener('click', function (event) {
 
 document.addEventListener("DOMContentLoaded", function () {
     var flashMessage = document.querySelector(".flash_warning");
-    if (flashMessage.innerText.trim() !== "") {
-        setTimeout(function () {
-            flashMessage.style.display = 'none';
-        }, 5000);
+    if (flashMessage){
+        if (flashMessage.innerText.trim() !== "") {
+            setTimeout(function () {
+                flashMessage.style.display = 'none';
+            }, 5000);
+        }
     }
 });
 

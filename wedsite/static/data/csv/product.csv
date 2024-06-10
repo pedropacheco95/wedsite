@@ -1,0 +1,2 @@
+id,imageable_id,name,description,price,price_paid,store,show_price,priority
+1,1,Sofá,Este é o melhor sofá,1400.0,1000.0,,True,10

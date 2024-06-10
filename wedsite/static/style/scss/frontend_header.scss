@@ -20,7 +20,7 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    color: $gray;
+    color: $cover-color;
     font-family: 'BallingerMono', sans-serif;
 
     @include size-query(large) {
