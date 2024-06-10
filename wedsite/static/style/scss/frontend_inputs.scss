@@ -94,7 +94,7 @@ $background-image:#ecf0f5;
 }
 
 .for_checkbox{
-    width: 12.5rem;
+    width: 15rem;
 }
 
 .slider_container{
@@ -187,6 +187,7 @@ $background-image:#ecf0f5;
         }
     }
 }
+}
 
 .input-box.focus,
 .input-box.active {
@@ -249,5 +250,4 @@ $background-image:#ecf0f5;
     @include size-query(small) {
         height: 2.5rem;
     }
-}
 }
