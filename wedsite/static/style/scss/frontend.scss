@@ -236,7 +236,7 @@ footer {
 }
 
 .products_all_background {
-  background-color: #a6c8d1;
+  background-color: $main-background-color;
   z-index: -10;
   position: fixed;
   height: 100vh;
@@ -246,7 +246,7 @@ footer {
 }
 
 .confirmation_background {
-  background-color: #a6c8d1;
+  background-color: $main-background-color;
   z-index: -10;
   position: fixed;
   height: 100vh;
@@ -256,7 +256,7 @@ footer {
 }
 
 .faqs_background {
-  background-color: #a6c8d1;
+  background-color: $main-background-color;
   z-index: -10;
   position: fixed;
   height: 100vh;
@@ -266,7 +266,7 @@ footer {
 }
 
 .informations_background {
-  background-color: #a6c8d1;
+  background-color: $main-background-color;
   z-index: -10;
   position: fixed;
   height: 100vh;
@@ -407,7 +407,7 @@ footer {
 
       &:hover {
         @include size-query(large) {
-          background-color: #a6c8d1;
+          background-color: $main-background-color;
         }
       }
 
@@ -741,7 +741,7 @@ footer {
           margin-top: 2rem;
 
           &:hover {
-            background-color: #a6c8d1;
+            background-color: $main-background-color;
           }
 
           &:focus {
