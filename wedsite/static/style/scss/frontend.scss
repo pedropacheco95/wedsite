@@ -21,7 +21,7 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: white;
+  background-color: $main-background-color;
   margin: 0 2px;
   animation: wave 1.2s infinite ease-in-out;
 }
