@@ -31,6 +31,7 @@ def create_app(test_config=None):
     @app.context_processor
     def inject_client_info():
         client = session.get('client')
+        something = 4
         return dict(client=client)
 
     # Configure session to use filesystem (instead of signed cookies)
