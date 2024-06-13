@@ -28,11 +28,6 @@ def create_app(test_config=None):
         response.headers["Pragma"] = "no-cache"
         return response
 
-    @app.context_processor
-    def inject_client_info():
-        client = session.get('client')
-        return dict(client=client)
-
     # Configure session to use filesystem (instead of signed cookies)
     app.config["SESSION_FILE_DIR"] = mkdtemp()
     app.config["SESSION_PERMANENT"] = False
