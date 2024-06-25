@@ -146,7 +146,7 @@ footer {
     background-attachment: scroll;
 
     @include size-query(large) {
-      background-image: url(../images/index_background.jpg);
+      background-image:linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)),  url(../images/index_background.jpg);
     }
     
     @include size-query(small) {
@@ -189,7 +189,6 @@ footer {
       }
 
       line-height: 1.2em;
-      text-shadow: 0.5px 0.5px #6f7070;
     }
 
     .first_page_date {
@@ -273,6 +272,34 @@ footer {
   width: 100vw;
   background-size: cover;
   background-position: center;
+}
+
+.products_header{
+  margin-top: 5rem;
+  text-align: center;
+  
+  @include size-query(large) {
+    width: 60%;
+  }
+
+  @include size-query(small) {
+    width: 90%;
+  }
+
+  .products_comment{
+    margin-top: 2rem;
+  }
+}
+
+.product_name_description{
+  padding: 1rem 0 1rem 0;
+  text-align: center;
+}
+
+.product_image_name{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .products_all {
@@ -372,6 +399,7 @@ footer {
       font-size: 1rem;
       font-weight: bold;
       text-transform: uppercase;
+      text-align: center;
     }
 
     .product_price {
@@ -432,6 +460,17 @@ footer {
   }
 }
 
+.chapter_container{
+  width: 95%;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid gray;
+
+  .chapter_name{
+    font-size: 1.5rem;
+  }
+}
+
 .products_product {
   display: flex;
   align-items: center;
@@ -444,7 +483,7 @@ footer {
 
   .cards_container {
     display: flex;
-    align-items: stretch;
+    align-items: center;
     justify-content: space-between;
     background-color: rgba(255, 255, 255, 0.75);
     border-radius: $border-radius;
@@ -479,6 +518,9 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @include size-query(large) {
+      width: 35%;
+    }
 
     .product_name {
       padding: 0.5rem 0;
@@ -491,12 +533,17 @@ footer {
     .product_description {
       color: rgb(100, 100, 100);
       font-size: 0.9rem;
+      text-align: center;
     }
 
     .product_price {
       width: 100%;
       font-size: 1.1rem;
       font-weight: 200;
+      text-align: center;
+      border-bottom: 1px solid;
+      border-top: 1px solid;
+      padding: 0.5rem 0 0.5rem 0;
 
       .progressBar {
         margin-top: 1rem;

@@ -24,8 +24,10 @@ class Product(model.Imageable ,model.Model):
     store = Column(Text)
     show_price = Column(Boolean, default=True)
     priority = Column(Integer, default=10)
+    chapter_id = Column(Integer, ForeignKey('chapter.id'))
 
     contributions = relationship('Contribution', back_populates="product", cascade="all, delete-orphan")
+    chapter = relationship('Chapter', back_populates="products")
 
     __mapper_args__ = {
         'polymorphic_identity': model_name,
@@ -78,6 +80,7 @@ class Product(model.Imageable ,model.Model):
             get_field(name='store',label='Loja',type='Text'),
             get_field(name='show_price',label='Mostrar Preço',type='Boolean'),
             get_field(name='priority',label='Prioridade',type='Integer'),
+            get_field(name='chapter',label='Capitulo',type='ManyToOne',related_model='Chapter'),
         ]
         info_block = Block('info_block',fields)
         form.add_block(info_block)

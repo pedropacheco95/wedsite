@@ -14,6 +14,7 @@ def index():
         {'name':'Hotéis','url':url_for('editor.display_all',model='Hotel'),'app_image':url_for('static', filename='images/editor/app_images/hotel.png'),'style':'hotel_background_color'},
         {'name':'FAQs','url':url_for('editor.display_all',model='FAQ'),'app_image':url_for('static', filename='images/editor/app_images/faq.png'),'style':'faq_background_color'},
         {'name':'Utilizadores','url':url_for('editor.display_all',model='User'),'app_image':url_for('static', filename='images/editor/app_images/user.png'),'style':'user_background_color'},
+        {'name':'Capítulos','url':url_for('editor.display_all',model='Chapter'),'app_image':url_for('static', filename='images/editor/app_images/chapter.png'),'style':'chapter_background_color'},
         {'name':'Website','url':url_for('editor.display_all',model='Client'),'app_image':url_for('static', filename='images/editor/app_images/client.png'),'style':'client_background_color'},
     ]
     return render_template('editor/index.html',page='editor_index',apps=apps)

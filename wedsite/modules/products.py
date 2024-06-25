@@ -2,7 +2,7 @@ from flask import Blueprint, flash, g, redirect, render_template, request, sessi
 from werkzeug.security import check_password_hash, generate_password_hash
 from wedsite.tools import tools
 
-from wedsite.models import Product , Contribution
+from wedsite.models import Product , Contribution, Chapter
 
 
 bp = Blueprint('products', __name__, url_prefix='/products')
@@ -11,12 +11,11 @@ bp = Blueprint('products', __name__, url_prefix='/products')
 @bp.route('/all/<update>', methods=('GET', 'POST'))
 def all(update=None):    
     products = Product.query.filter_by().order_by(Product.priority).all()
+    chapters = Chapter.query.all()
     if update == 'update':
         for product in products:
             product.update_price_paid()
-    products_paid = [product for product in products if product.is_paid()]
-    products = [product for product in products if not product.is_paid()]
-    return render_template('products/all.html',products=products , products_paid=products_paid)
+    return render_template('products/all.html', chapters=chapters)
 
 @bp.route('/product/<product_id>', methods=('GET', 'POST'))
 @bp.route('/product/<product_id>/<contribution_id>', methods=('GET', 'POST'))
