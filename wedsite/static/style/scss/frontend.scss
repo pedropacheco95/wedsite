@@ -314,18 +314,17 @@ footer {
 
   .products_container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 5rem 0;
     flex-wrap: wrap;
+    width: 100%;
 
     @include size-query(large) {
-      width: 90%;
       flex-direction: row;
     }
 
     @include size-query(small) {
-      width: 100%;
       flex-direction: column;
     }
 
