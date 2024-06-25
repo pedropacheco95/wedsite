@@ -126,19 +126,23 @@ function searchOptions(input) {
     }
 }
 
-function getAllOptions(ele){
-    let model_name = ele.dataset.related_model;
+function getAllOptions(ele) {
+    let model_name = ele.dataset.relatedModel;
     let many_to_many_values_inputed = document.getElementsByClassName('many_to_many_values_inputed');
     let values = Array.from(many_to_many_values_inputed).map(el => +el.dataset.value);
-    $.getJSON(`/api/query/${model_name}` , function(data) {
-        for (let option of data) {
-            let option_text = option.name;
-            let option_value = option.value;
-            let show = !values.includes(option_value);
-            let option_div = createManyToManyOption(ele.dataset.name,option_text,option_value,show);
-            ele.insertBefore(option_div, ele.lastElementChild);
-        }
-    });
+
+    fetch(`/api/query/${model_name}`)
+        .then(response => response.json())
+        .then(data => {
+            for (let option of data) {
+                let option_text = option.name;
+                let option_value = option.value;
+                let show = !values.includes(option_value);
+                let option_div = createManyToManyOption(ele.dataset.name, option_text, option_value, show);
+                ele.insertBefore(option_div, ele.lastElementChild);
+            }
+        })
+        .catch(error => console.error('Error:', error));
 }
 
 function fillAllManyToManyOptions(){
