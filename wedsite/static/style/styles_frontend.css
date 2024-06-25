@@ -675,18 +675,17 @@
 }
           .products_all .products_container {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             padding: 5rem 0;
-            flex-wrap: wrap; }
+            flex-wrap: wrap;
+            width: 100%; }
             @media (min-width: 940px) {
               .products_all .products_container {
-                width: 90%;
                 flex-direction: row;   }
 }
               @media (max-width: 940px) {
                 .products_all .products_container {
-                  width: 100%;
                   flex-direction: column;   }
 }
                 .products_all .products_container .product_card {
