@@ -998,8 +998,7 @@
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
-                    ;
-color: white; }
+                    color: white; }
                     .editor_header_elements .header_buttons {
                       display: flex;
                       flex-direction: row; }
@@ -1235,8 +1234,7 @@ color: white; }
 
     .editor_objects_tabs_information {
       padding: 0.1rem 1rem 1rem 1rem;
-      ;
-height: calc(100% - 2.5rem); }
+      height: calc(100% - 2.5rem); }
       @media (min-width: 940px) {
         .editor_objects_tabs_information {
           box-shadow: 11px 6px 12px 0px rgba(0, 0, 0, 0.4);
